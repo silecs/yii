@@ -7724,8 +7724,11 @@ abstract class CActiveRecord extends CModel
 			$this->_c=null;
 		return $this;
 	}
-	public static function model($className=__CLASS__)
+	public static function model(?string $className = null)
 	{
+		if (!$className) {
+			$className = static::class;
+		}
 		if(isset(self::$_models[$className]))
 			return self::$_models[$className];
 		else
