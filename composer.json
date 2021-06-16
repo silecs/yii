@@ -76,8 +76,21 @@
 	},
 	"autoload": {
 		"classmap" : [
-			"framework/YiiBase.php",
-			"framework/yii.php"
+			"framework/base/",
+			"framework/caching/",
+			"framework/cli/commands/",
+			"framework/collections/",
+			"framework/console/",
+			"framework/db/",
+			"framework/i18n/",
+			"framework/logging/",
+			"framework/test/",
+			"framework/utils/",
+			"framework/validators/",
+			"framework/vendors/",
+			"framework/web/",
+			"framework/zii/",
+			"framework/YiiBase.php"
 		]
 	},
 	"require-dev": {
