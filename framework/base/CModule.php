@@ -402,7 +402,7 @@ abstract class CModule extends CComponent
 	 * The component will be initialized by calling its {@link CApplicationComponent::init() init()}
 	 * method if it has not done so.
 	 * @param string $id component ID
-	 * @param array|IApplicationComponent $component application component
+	 * @param array|IApplicationComponent|null $component application component
 	 * (either configuration array or instance). If this parameter is null,
 	 * component will be unloaded from the module.
 	 * @param boolean $merge whether to merge the new component configuration
