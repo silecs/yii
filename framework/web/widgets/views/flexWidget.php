@@ -9,6 +9,7 @@
  * @package system.web.widgets.views
  * @since 1.0
  */
+/** @var CController $this */
 ?>
 <script type="text/javascript">
 /*<![CDATA[*/
