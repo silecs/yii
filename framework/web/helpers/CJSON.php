@@ -105,7 +105,6 @@ class CJSON
 				return (int) $var;
 
 			case 'double':
-			case 'float':
 				return str_replace(',','.',(float)$var); // locale-independent representation
 
 			case 'string':
