@@ -145,17 +145,17 @@ class CPhpAuthManager extends CAuthManager
 
 	/**
 	 * Returns the children of the specified item.
-	 * @param mixed $names the parent item name. This can be either a string or an array.
+	 * @param mixed $itemName the parent item name. This can be either a string or an array.
 	 * The latter represents a list of item names.
 	 * @return array all child items of the parent
 	 */
-	public function getItemChildren($names)
+	public function getItemChildren($itemName)
 	{
-		if(is_string($names))
-			return isset($this->_children[$names]) ? $this->_children[$names] : array();
+		if(is_string($itemName))
+			return isset($this->_children[$itemName]) ? $this->_children[$itemName] : array();
 
 		$children=array();
-		foreach($names as $name)
+		foreach($itemName as $name)
 		{
 			if(isset($this->_children[$name]))
 				$children=array_merge($children,$this->_children[$name]);

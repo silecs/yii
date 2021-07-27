@@ -1468,18 +1468,18 @@ class CCookieCollection extends CMap
 	 * Adds a cookie with the specified name.
 	 * This overrides the parent implementation by performing additional
 	 * operations for each newly added CHttpCookie object.
-	 * @param mixed $name Cookie name.
-	 * @param CHttpCookie $cookie Cookie object.
+	 * @param mixed $key Cookie name.
+	 * @param CHttpCookie $value Cookie object.
 	 * @throws CException if the item to be inserted is not a CHttpCookie object.
 	 */
-	public function add($name,$cookie)
+	public function add($key,$value)
 	{
-		if($cookie instanceof CHttpCookie)
+		if($value instanceof CHttpCookie)
 		{
-			$this->remove($name);
-			parent::add($name,$cookie);
+			$this->remove($key);
+			parent::add($key,$value);
 			if($this->_initialized)
-				$this->addCookie($cookie);
+				$this->addCookie($value);
 		}
 		else
 			throw new CException(Yii::t('yii','CHttpCookieCollection can only hold CHttpCookie objects.'));
@@ -1499,13 +1499,13 @@ class CCookieCollection extends CMap
 	 * Yii::app()->request->cookies->remove('cookie',$options);
 	 * </pre>
 	 *
-	 * @param mixed $name Cookie name.
+	 * @param mixed $key Cookie name.
 	 * @param array $options Cookie configuration array consisting of name-value pairs, available since 1.1.11.
 	 * @return CHttpCookie The removed cookie object.
 	 */
-	public function remove($name,$options=array())
+	public function remove($key,$options=array())
 	{
-		if(($cookie=parent::remove($name))!==null)
+		if(($cookie=parent::remove($key))!==null)
 		{
 			if($this->_initialized)
 			{
