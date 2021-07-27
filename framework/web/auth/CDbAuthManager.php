@@ -205,19 +205,19 @@ class CDbAuthManager extends CAuthManager
 
 	/**
 	 * Returns the children of the specified item.
-	 * @param mixed $names the parent item name. This can be either a string or an array.
+	 * @param mixed $itemName the parent item name. This can be either a string or an array.
 	 * The latter represents a list of item names.
 	 * @return array all child items of the parent
 	 */
-	public function getItemChildren($names)
+	public function getItemChildren($itemName)
 	{
-		if(is_string($names))
-			$condition='parent='.$this->db->quoteValue($names);
-		elseif(is_array($names) && $names!==array())
+		if(is_string($itemName))
+			$condition='parent='.$this->db->quoteValue($itemName);
+		elseif(is_array($itemName) && $itemName!==array())
 		{
-			foreach($names as &$name)
+			foreach($itemName as &$name)
 				$name=$this->db->quoteValue($name);
-			$condition='parent IN ('.implode(', ',$names).')';
+			$condition='parent IN ('.implode(', ',$itemName).')';
 		}
 
 		$rows=$this->db->createCommand()
