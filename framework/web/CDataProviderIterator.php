@@ -27,6 +27,8 @@
  * @property CDataProvider $dataProvider the data provider to iterate over
  * @property integer $totalItemCount the total number of items in the iterator
  *
+ * @template-implements Iterator<int, mixed>
+ *
  * @author Charles Pick <charles.pick@gmail.com>
  * @author Carsten Brandt <mail@cebe.cc>
  * @package system.web

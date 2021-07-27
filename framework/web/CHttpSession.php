@@ -65,6 +65,9 @@
  * @property integer $count The number of session variables.
  * @property array $keys The list of session variable names.
  *
+ * @template-implements IteratorAggregate<string, mixed>
+ * @template-implements ArrayAccess<string, mixed>
+ *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @package system.web
  * @since 1.0

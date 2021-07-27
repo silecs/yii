@@ -42,6 +42,8 @@
  *
  * CCache also implements ArrayAccess so that it can be used like an array.
  *
+ * @template-implements ArrayAccess<string, mixed>
+ *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @package system.caching
  * @since 1.0

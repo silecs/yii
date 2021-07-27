@@ -296,7 +296,7 @@ EOD;
 		else  // with regular expression
 		{
 			$pattern=$matches[1];
-			$pos=strrpos($className,$pattern);
+			$pos=strrpos($className,(string) $pattern);
 			if($pos>0)  // only regexp is given
 				$basePath=Yii::getPathOfAlias(rtrim(substr($className,0,$pos),'.'));
 			else

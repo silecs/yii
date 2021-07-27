@@ -13,6 +13,8 @@
  *
  * It allows CHttpSession to return a new iterator for traversing the session variables.
  *
+ * @template-implements Iterator<mixed, mixed>
+ *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @package system.web
  * @since 1.0

@@ -14,6 +14,9 @@
  * CTypedMap extends {@link CMap} by making sure that the elements to be
  * added to the list is of certain class type.
  *
+ * @template-implements IteratorAggregate<int|string, object>
+ * @template-implements ArrayAccess<int|string, object>
+ *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @package system.collections
  * @since 1.0
@@ -35,15 +38,15 @@ class CTypedMap extends CMap
 	 * Adds an item into the map.
 	 * This method overrides the parent implementation by
 	 * checking the item to be inserted is of certain type.
-	 * @param integer $index the specified position.
+	 * @param integer $key the specified position.
 	 * @param mixed $item new item
 	 * @throws CException If the index specified exceeds the bound,
 	 * the map is read-only or the element is not of the expected type.
 	 */
-	public function add($index,$item)
+	public function add($key,$value)
 	{
-		if($item instanceof $this->_type)
-			parent::add($index,$item);
+		if($value instanceof $this->_type)
+			parent::add($key,$value);
 		else
 			throw new CException(Yii::t('yii','CTypedMap<{type}> can only hold objects of {type} class.',
 				array('{type}'=>$this->_type)));

@@ -16,6 +16,8 @@
  * By replacing CDummyCache with some other cache component, one can quickly switch from
  * non-caching mode to caching mode.
  *
+ * @template-implements ArrayAccess<string, mixed>
+ *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @package system.caching
  * @since 1.0

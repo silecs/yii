@@ -22,6 +22,9 @@
  * @property array $safeAttributeNames Safe attribute names.
  * @property CMapIterator $iterator An iterator for traversing the items in the list.
  *
+ * @template-implements IteratorAggregate<mixed, mixed>
+ * @template-implements ArrayAccess<mixed, mixed>
+ *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @package system.base
  * @since 1.0

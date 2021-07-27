@@ -75,6 +75,8 @@
  * @property CFormElementCollection $elements The form elements.
  * @property CFormElementCollection $buttons The form elements.
  *
+ * @template-implements ArrayAccess<string, mixed>
+ *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @package system.web.form
  * @since 1.1

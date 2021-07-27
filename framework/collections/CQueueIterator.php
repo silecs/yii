@@ -13,6 +13,8 @@
  *
  * It allows CQueue to return a new iterator for traversing the items in the queue.
  *
+ * @template-implements Iterator<int, mixed>
+ *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @package system.collections
  * @since 1.0

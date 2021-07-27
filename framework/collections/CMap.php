@@ -28,6 +28,9 @@
  * @property integer $count The number of items in the map.
  * @property array $keys The key list.
  *
+ * @template-implements IteratorAggregate<int|string, mixed>
+ * @template-implements ArrayAccess<int|string, mixed>
+ *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @package system.collections
  * @since 1.0

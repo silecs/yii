@@ -432,41 +432,13 @@ class CSecurityManager extends CApplicationComponent
 	}
 
 	/**
-	 * Generate a pseudo random block of data using several sources. On some systems this may be a bit
-	 * better than PHP's {@link mt_rand} built-in function, which is not really random.
+	 * Generate a pseudo random block of data using several sources.
 	 * @return string of 64 pseudo random bytes.
 	 * @since 1.1.14
 	 */
 	public function generatePseudoRandomBlock()
 	{
-		$bytes='';
-
-		if (function_exists('openssl_random_pseudo_bytes')
-			&& ($bytes=openssl_random_pseudo_bytes(512))!==false
-			&& $this->strlen($bytes)>=512)
-		{
-			return $this->substr($bytes,0,512);
-		}
-
-		for($i=0;$i<32;++$i)
-			$bytes.=pack('S',mt_rand(0,0xffff));
-
-		// On UNIX and UNIX-like operating systems the numerical values in `ps`, `uptime` and `iostat`
-		// ought to be fairly unpredictable. Gather the non-zero digits from those.
-		foreach(array('ps','uptime','iostat') as $command) {
-			@exec($command,$commandResult,$retVal);
-			if(is_array($commandResult) && !empty($commandResult) && $retVal==0)
-				$bytes.=preg_replace('/[^1-9]/','',implode('',$commandResult));
-		}
-
-		// Gather the current time's microsecond part. Note: this is only a source of entropy on
-		// the first call! If multiple calls are made, the entropy is only as much as the
-		// randomness in the time between calls.
-		$bytes.=$this->substr(microtime(),2,6);
-
-		// Concatenate everything gathered, mix it with sha512. hash() is part of PHP core and
-		// enabled by default but it can be disabled at compile time but we ignore that possibility here.
-		return hash('sha512',$bytes,true);
+		return random_bytes(64);
 	}
 
 	/**

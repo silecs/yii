@@ -433,7 +433,7 @@ class CHttpRequest extends CApplicationComponent
 				$this->_scriptUrl=$_SERVER['ORIG_SCRIPT_NAME'];
 			elseif(($pos=strpos($_SERVER['PHP_SELF'],'/'.$scriptName))!==false)
 				$this->_scriptUrl=substr($_SERVER['SCRIPT_NAME'],0,$pos).'/'.$scriptName;
-			elseif(isset($_SERVER['DOCUMENT_ROOT']) && strpos($_SERVER['SCRIPT_FILENAME'],$_SERVER['DOCUMENT_ROOT'])===0)
+			elseif(isset($_SERVER['DOCUMENT_ROOT']) && strpos($_SERVER['SCRIPT_FILENAME'],(string) $_SERVER['DOCUMENT_ROOT'])===0)
 				$this->_scriptUrl=str_replace('\\','/',str_replace($_SERVER['DOCUMENT_ROOT'],'',$_SERVER['SCRIPT_FILENAME']));
 			else
 				throw new CException(Yii::t('yii','CHttpRequest is unable to determine the entry script URL.'));
@@ -568,7 +568,7 @@ class CHttpRequest extends CApplicationComponent
 				$this->_requestUri=$_SERVER['REQUEST_URI'];
 				if(!empty($_SERVER['HTTP_HOST']))
 				{
-					if(strpos($this->_requestUri,$_SERVER['HTTP_HOST'])!==false)
+					if(strpos($this->_requestUri,(string) $_SERVER['HTTP_HOST'])!==false)
 						$this->_requestUri=preg_replace('/^\w+:\/\/[^\/]+/','',$this->_requestUri);
 				}
 				else

@@ -25,6 +25,8 @@
  * @property Iterator $iterator An iterator for traversing the items in the queue.
  * @property integer $count The number of items in the queue.
  *
+ * @template-implements IteratorAggregate<int, mixed>
+ *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @package system.collections
  * @since 1.0

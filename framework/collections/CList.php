@@ -31,6 +31,9 @@
  * @property Iterator $iterator An iterator for traversing the items in the list.
  * @property integer $count The number of items in the list.
  *
+ * @template-implements IteratorAggregate<int, mixed>
+ * @template-implements ArrayAccess<int, mixed>
+ *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @package system.collections
  * @since 1.0
@@ -123,7 +126,7 @@ class CList extends CComponent implements IteratorAggregate,ArrayAccess,Countabl
 		if(isset($this->_d[$index]))
 			return $this->_d[$index];
 		elseif($index>=0 && $index<$this->_c) // in case the value is null
-			return $this->_d[$index];
+			return null;
 		else
 			throw new CException(Yii::t('yii','List index "{index}" is out of bound.',
 				array('{index}'=>$index)));
