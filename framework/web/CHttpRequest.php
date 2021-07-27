@@ -1033,7 +1033,7 @@ class CHttpRequest extends CApplicationComponent
 		if($this->_preferredAcceptTypes===null)
 		{
 			$accepts=self::parseAcceptHeader($this->getAcceptTypes());
-			usort($accepts,array(get_class($this),'compareAcceptTypes'));
+			usort($accepts, self::compareAcceptTypes(...));
 			$this->_preferredAcceptTypes=$accepts;
 		}
 		return $this->_preferredAcceptTypes;
