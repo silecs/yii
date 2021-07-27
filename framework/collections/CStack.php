@@ -70,7 +70,7 @@ class CStack extends CComponent implements IteratorAggregate,Countable
 	 */
 	public function copyFrom($data)
 	{
-		if(is_array($data) || ($data instanceof Traversable))
+		if(is_iterable($data))
 		{
 			$this->clear();
 			foreach($data as $item)
