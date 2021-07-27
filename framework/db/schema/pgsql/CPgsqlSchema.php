@@ -216,7 +216,7 @@ EOD;
 		$c->allowNull=!$column['attnotnull'];
 		$c->isPrimaryKey=false;
 		$c->isForeignKey=false;
-		$c->comment=$column['comment']===null ? '' : $column['comment'];
+		$c->comment=$column['comment'] ?? '';
 
 		$c->init($column['type'],$column['atthasdef'] ? $column['adsrc'] : null);
 

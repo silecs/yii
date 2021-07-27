@@ -636,7 +636,7 @@ class CDbCommand extends CComponent
 	 */
 	public function getSelect()
 	{
-		return isset($this->_query['select']) ? $this->_query['select'] : '';
+		return $this->_query['select'] ?? '';
 	}
 
 	/**
@@ -670,7 +670,7 @@ class CDbCommand extends CComponent
 	 */
 	public function getDistinct()
 	{
-		return isset($this->_query['distinct']) ? $this->_query['distinct'] : false;
+		return $this->_query['distinct'] ?? false;
 	}
 
 	/**
@@ -723,7 +723,7 @@ class CDbCommand extends CComponent
 	 */
 	public function getFrom()
 	{
-		return isset($this->_query['from']) ? $this->_query['from'] : '';
+		return $this->_query['from'] ?? '';
 	}
 
 	/**
@@ -839,7 +839,7 @@ class CDbCommand extends CComponent
 	 */
 	public function getWhere()
 	{
-		return isset($this->_query['where']) ? $this->_query['where'] : '';
+		return $this->_query['where'] ?? '';
 	}
 
 	/**
@@ -879,7 +879,7 @@ class CDbCommand extends CComponent
 	 */
 	public function getJoin()
 	{
-		return isset($this->_query['join']) ? $this->_query['join'] : '';
+		return $this->_query['join'] ?? '';
 	}
 
 	/**
@@ -1024,7 +1024,7 @@ class CDbCommand extends CComponent
 	 */
 	public function getGroup()
 	{
-		return isset($this->_query['group']) ? $this->_query['group'] : '';
+		return $this->_query['group'] ?? '';
 	}
 
 	/**
@@ -1061,7 +1061,7 @@ class CDbCommand extends CComponent
 	 */
 	public function getHaving()
 	{
-		return isset($this->_query['having']) ? $this->_query['having'] : '';
+		return $this->_query['having'] ?? '';
 	}
 
 	/**
@@ -1123,7 +1123,7 @@ class CDbCommand extends CComponent
 	 */
 	public function getOrder()
 	{
-		return isset($this->_query['order']) ? $this->_query['order'] : '';
+		return $this->_query['order'] ?? '';
 	}
 
 	/**
@@ -1159,7 +1159,7 @@ class CDbCommand extends CComponent
 	 */
 	public function getLimit()
 	{
-		return isset($this->_query['limit']) ? $this->_query['limit'] : -1;
+		return $this->_query['limit'] ?? -1;
 	}
 
 	/**
@@ -1192,7 +1192,7 @@ class CDbCommand extends CComponent
 	 */
 	public function getOffset()
 	{
-		return isset($this->_query['offset']) ? $this->_query['offset'] : -1;
+		return $this->_query['offset'] ?? -1;
 	}
 
 	/**
@@ -1230,7 +1230,7 @@ class CDbCommand extends CComponent
 	 */
 	public function getUnion()
 	{
-		return isset($this->_query['union']) ? $this->_query['union'] : '';
+		return $this->_query['union'] ?? '';
 	}
 
 	/**

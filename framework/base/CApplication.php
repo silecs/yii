@@ -325,7 +325,7 @@ abstract class CApplication extends CModule
 	 */
 	public function getLanguage()
 	{
-		return $this->_language===null ? $this->sourceLanguage : $this->_language;
+		return $this->_language ?? $this->sourceLanguage;
 	}
 
 	/**
@@ -404,7 +404,7 @@ abstract class CApplication extends CModule
 	 */
 	public function getLocale($localeID=null)
 	{
-		return call_user_func_array(array($this->localeClass, 'getInstance'),array($localeID===null?$this->getLanguage():$localeID));
+		return call_user_func_array(array($this->localeClass, 'getInstance'),array($localeID ?? $this->getLanguage()));
 	}
 
 	/**

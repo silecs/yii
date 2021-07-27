@@ -119,7 +119,7 @@ EOD;
 		$args[]='index';
 		$actions=array_unique(array_splice($args,1));
 
-		$templatePath=$this->templatePath===null?YII_PATH.'/cli/views/shell/controller':$this->templatePath;
+		$templatePath=$this->templatePath ?? YII_PATH.'/cli/views/shell/controller';
 
 		$list=array(
 			basename($controllerFile)=>array(

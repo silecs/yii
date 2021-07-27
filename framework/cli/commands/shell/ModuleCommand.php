@@ -59,7 +59,7 @@ EOD;
 		$moduleClass=ucfirst($moduleID).'Module';
 		$modulePath=Yii::app()->getModulePath().DIRECTORY_SEPARATOR.$moduleID;
 
-		$sourceDir=$this->templatePath===null?YII_PATH.'/cli/views/shell/module':$this->templatePath;
+		$sourceDir=$this->templatePath ?? YII_PATH.'/cli/views/shell/module';
 		$list=$this->buildFileList($sourceDir,$modulePath);
 		$list['module.php']['target']=$modulePath.DIRECTORY_SEPARATOR.$moduleClass.'.php';
 		$list['module.php']['callback']=array($this,'generateModuleClass');

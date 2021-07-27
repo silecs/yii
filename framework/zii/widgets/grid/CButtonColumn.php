@@ -356,9 +356,9 @@ EOD;
 	{
 		if (isset($button['visible']) && !$this->evaluateExpression($button['visible'],array('row'=>$row,'data'=>$data)))
   			return;
-		$label=isset($button['label']) ? $button['label'] : $id;
+		$label=$button['label'] ?? $id;
 		$url=isset($button['url']) ? $this->evaluateExpression($button['url'],array('data'=>$data,'row'=>$row)) : '#';
-		$options=isset($button['options']) ? $button['options'] : array();
+		$options=$button['options'] ?? array();
 		if(!isset($options['title']))
 			$options['title']=$label;
 		if(isset($button['imageUrl']) && is_string($button['imageUrl']))

@@ -107,7 +107,7 @@ abstract class CBaseUserIdentity extends CComponent implements IUserIdentity
 	 */
 	public function getState($name,$defaultValue=null)
 	{
-		return isset($this->_state[$name])?$this->_state[$name]:$defaultValue;
+		return $this->_state[$name] ?? $defaultValue;
 	}
 
 	/**

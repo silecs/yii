@@ -234,7 +234,7 @@ EOD;
 		$c->isPrimaryKey=strpos($column['KEY'],'P')!==false;
 		$c->isForeignKey=false;
 		$c->init($column['DATA_TYPE'],$column['DATA_DEFAULT']);
-		$c->comment=$column['COLUMN_COMMENT']===null ? '' : $column['COLUMN_COMMENT'];
+		$c->comment=$column['COLUMN_COMMENT'] ?? '';
 
 		return $c;
 	}

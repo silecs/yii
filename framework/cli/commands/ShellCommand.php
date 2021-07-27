@@ -54,7 +54,7 @@ EOD;
 	{
 		if(!isset($args[0]))
 			$args[0]='index.php';
-		$entryScript=isset($args[0]) ? $args[0] : 'index.php';
+		$entryScript=$args[0] ?? 'index.php';
 		if(($entryScript=realpath($args[0]))===false || !is_file($entryScript))
 			$this->usageError("{$args[0]} does not exist or is not an entry script file.");
 

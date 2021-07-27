@@ -143,8 +143,8 @@ EOD;
 			$controllerID[0]=strtolower($controllerID[0]);
 		}
 
-		$templatePath=$this->templatePath===null?YII_PATH.'/cli/views/shell/crud':$this->templatePath;
-		$functionalTestPath=$this->functionalTestPath===null?Yii::getPathOfAlias('application.tests.functional'):$this->functionalTestPath;
+		$templatePath=$this->templatePath ?? YII_PATH.'/cli/views/shell/crud';
+		$functionalTestPath=$this->functionalTestPath ?? Yii::getPathOfAlias('application.tests.functional');
 
 		$viewPath=$module->viewPath.DIRECTORY_SEPARATOR.str_replace('.',DIRECTORY_SEPARATOR,$controllerID);
 		$fixtureName=$this->pluralize($modelClass);

@@ -91,7 +91,7 @@ class CWidget extends CBaseController
 	 */
 	public function __construct($owner=null)
 	{
-		$this->_owner=$owner===null?Yii::app()->getController():$owner;
+		$this->_owner=$owner ?? Yii::app()->getController();
 	}
 
 	/**

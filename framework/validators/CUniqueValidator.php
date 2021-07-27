@@ -91,7 +91,7 @@ class CUniqueValidator extends CValidator
 		}
 
 		$className=$this->className===null?get_class($object):Yii::import($this->className);
-		$attributeName=$this->attributeName===null?$attribute:$this->attributeName;
+		$attributeName=$this->attributeName ?? $attribute;
 		$finder=$this->getModel($className);
 		$table=$finder->getTableSchema();
 		if(($column=$table->getColumn($attributeName))===null)
@@ -130,7 +130,7 @@ class CUniqueValidator extends CValidator
 
 		if($exists)
 		{
-			$message=$this->message!==null?$this->message:Yii::t('yii','{attribute} "{value}" has already been taken.');
+			$message=$this->message ?? Yii::t('yii','{attribute} "{value}" has already been taken.');
 			$this->addError($object,$attribute,$message,array('{value}'=>$value));
 		}
 	}

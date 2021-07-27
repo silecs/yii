@@ -76,7 +76,7 @@ class CSqlDataProvider extends CDataProvider
 	{
 		if(!($this->sql instanceof CDbCommand))
 		{
-			$db=$this->db===null ? Yii::app()->db : $this->db;
+			$db=$this->db ?? Yii::app()->db;
 			$command=$db->createCommand($this->sql);
 		}
 		else

@@ -473,7 +473,7 @@ class CClientScript extends CApplicationComponent
 					$html.=CHtml::scriptFile($scriptFileUrl)."\n";
 			}
 		}
-		$scripts=isset($this->scripts[self::POS_END]) ? $this->scripts[self::POS_END] : array();
+		$scripts=$this->scripts[self::POS_END] ?? array();
 		if(isset($this->scripts[self::POS_READY]))
 		{
 			if($fullPage)
@@ -756,7 +756,7 @@ class CClientScript extends CApplicationComponent
 		if($httpEquiv!==null)
 			$options['http-equiv']=$httpEquiv;
 		$options['content']=$content;
-		$this->metaTags[null===$id?count($this->metaTags):$id]=$options;
+		$this->metaTags[$id ?? count($this->metaTags)]=$options;
 		$this->recordCachingAction('clientScript','registerMetaTag',$params);
 		return $this;
 	}

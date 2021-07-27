@@ -64,7 +64,7 @@ class CDbTableSchema extends CComponent
 	 */
 	public function getColumn($name)
 	{
-		return isset($this->columns[$name]) ? $this->columns[$name] : null;
+		return $this->columns[$name] ?? null;
 	}
 
 	/**

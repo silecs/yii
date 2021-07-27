@@ -569,7 +569,7 @@ class CWsdlGenerator extends CComponent
 					$sequence=$dom->createElement('xsd:sequence');
 					$element=$dom->createElement('xsd:element');
 					$element->setAttribute('name','item');
-					$element->setAttribute('type',(isset(self::$typeMap[$arrayType]) ? self::$typeMap[$arrayType] : 'tns:'.$arrayType));
+					$element->setAttribute('type',(self::$typeMap[$arrayType] ?? 'tns:'.$arrayType));
 					$element->setAttribute('minOccurs','0');
 					$element->setAttribute('maxOccurs','unbounded');
 					$sequence->appendChild($element);

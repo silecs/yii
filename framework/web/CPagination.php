@@ -199,7 +199,7 @@ class CPagination extends CComponent
 	 */
 	public function createPageUrl($controller,$page)
 	{
-		$params=$this->params===null ? $_GET : $this->params;
+		$params=$this->params ?? $_GET;
 		if($page>0) // page 0 is the default
 			$params[$this->pageVar]=$page+1;
 		else

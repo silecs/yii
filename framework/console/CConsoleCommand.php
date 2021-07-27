@@ -233,7 +233,7 @@ abstract class CConsoleCommand extends CComponent
 			if(preg_match('/^--(\w+)(=(.*))?$/',$arg,$matches))  // an option
 			{
 				$name=$matches[1];
-				$value=isset($matches[3]) ? $matches[3] : true;
+				$value=$matches[3] ?? true;
 				if(isset($options[$name]))
 				{
 					if(!is_array($options[$name]))
@@ -370,8 +370,8 @@ abstract class CConsoleCommand extends CComponent
 		{
 			$source=strtr($file['source'],'/\\',DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR);
 			$target=strtr($file['target'],'/\\',DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR);
-			$callback=isset($file['callback']) ? $file['callback'] : null;
-			$params=isset($file['params']) ? $file['params'] : null;
+			$callback=$file['callback'] ?? null;
+			$params=$file['params'] ?? null;
 
 			if(is_dir($source))
 			{
