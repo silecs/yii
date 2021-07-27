@@ -260,7 +260,7 @@ class CList extends CComponent implements IteratorAggregate,ArrayAccess,Countabl
 	 */
 	public function copyFrom($data)
 	{
-		if(is_array($data) || ($data instanceof Traversable))
+		if(is_iterable($data))
 		{
 			if($this->_c>0)
 				$this->clear();
@@ -281,7 +281,7 @@ class CList extends CComponent implements IteratorAggregate,ArrayAccess,Countabl
 	 */
 	public function mergeWith($data)
 	{
-		if(is_array($data) || ($data instanceof Traversable))
+		if(is_iterable($data))
 		{
 			if($data instanceof CList)
 				$data=$data->_d;

@@ -201,7 +201,7 @@ class CAttributeCollection extends CMap
 	 */
 	public function mergeWith($data,$recursive=true)
 	{
-		if(!$this->caseSensitive && (is_array($data) || $data instanceof Traversable))
+		if(!$this->caseSensitive && (is_iterable($data)))
 		{
 			$d=array();
 			foreach($data as $key=>$value)

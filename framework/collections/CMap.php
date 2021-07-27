@@ -205,7 +205,7 @@ class CMap extends CComponent implements IteratorAggregate,ArrayAccess,Countable
 	 */
 	public function copyFrom($data)
 	{
-		if(is_array($data) || $data instanceof Traversable)
+		if(is_iterable($data))
 		{
 			if($this->getCount()>0)
 				$this->clear();
@@ -237,7 +237,7 @@ class CMap extends CComponent implements IteratorAggregate,ArrayAccess,Countable
 	 */
 	public function mergeWith($data,$recursive=true)
 	{
-		if(is_array($data) || $data instanceof Traversable)
+		if(is_iterable($data))
 		{
 			if($data instanceof CMap)
 				$data=$data->_d;
