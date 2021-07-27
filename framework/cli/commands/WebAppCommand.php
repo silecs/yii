@@ -116,7 +116,7 @@ EOD;
 	 */
 	protected function getSourceDir()
 	{
-		return realpath(dirname(__FILE__).'/../views/webapp');
+		return realpath(__DIR__.'/../views/webapp');
 	}
 
 	/**
@@ -142,7 +142,7 @@ EOD;
 	public function generateIndex($source,$params)
 	{
 		$content=file_get_contents($source);
-		$yii=realpath(dirname(__FILE__).'/../../yii.php');
+		$yii=realpath(__DIR__.'/../../yii.php');
 		$yii=$this->getRelativePath($yii,$this->_rootPath.DIRECTORY_SEPARATOR.'index.php');
 		$yii=str_replace('\\','\\\\',$yii);
 		return preg_replace('/\$yii\s*=(.*?);/',"\$yii=$yii;",$content);
@@ -158,7 +158,7 @@ EOD;
 	public function generateTestBoostrap($source,$params)
 	{
 		$content=file_get_contents($source);
-		$yii=realpath(dirname(__FILE__).'/../../yiit.php');
+		$yii=realpath(__DIR__.'/../../yiit.php');
 		$yii=$this->getRelativePath($yii,$this->_rootPath.DIRECTORY_SEPARATOR.'protected'.DIRECTORY_SEPARATOR.'tests'.DIRECTORY_SEPARATOR.'bootstrap.php');
 		$yii=str_replace('\\','\\\\',$yii);
 		return preg_replace('/\$yiit\s*=(.*?);/',"\$yiit=$yii;",$content);
@@ -174,7 +174,7 @@ EOD;
 	public function generateYiic($source,$params)
 	{
 		$content=file_get_contents($source);
-		$yiic=realpath(dirname(__FILE__).'/../../yiic.php');
+		$yiic=realpath(__DIR__.'/../../yiic.php');
 		$yiic=$this->getRelativePath($yiic,$this->_rootPath.DIRECTORY_SEPARATOR.'protected'.DIRECTORY_SEPARATOR.'yiic.php');
 		$yiic=str_replace('\\','\\\\',$yiic);
 		return preg_replace('/\$yiic\s*=(.*?);/',"\$yiic=$yiic;",$content);

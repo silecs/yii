@@ -89,7 +89,7 @@ class CRedisCache extends CCache
 			$this->hostname.':'.$this->port,
 			$errorNumber,
 			$errorDescription,
-			$this->timeout ? $this->timeout : ini_get("default_socket_timeout"),
+			$this->timeout ?: ini_get("default_socket_timeout"),
 			$this->options
 		);
 		if ($this->_socket)
