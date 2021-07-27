@@ -73,7 +73,7 @@ class CLocale extends CComponent
 		if($locales===null)
 		{
 			$locales=array();
-			$dataPath=self::$dataPath===null ? dirname(__FILE__).DIRECTORY_SEPARATOR.'data' : self::$dataPath;
+			$dataPath=self::$dataPath===null ? __DIR__.DIRECTORY_SEPARATOR.'data' : self::$dataPath;
 			$folder=@opendir($dataPath);
 			while(($file=@readdir($folder))!==false)
 			{
@@ -97,7 +97,7 @@ class CLocale extends CComponent
 	protected function __construct($id)
 	{
 		$this->_id=self::getCanonicalID($id);
-		$dataPath=self::$dataPath===null ? dirname(__FILE__).DIRECTORY_SEPARATOR.'data' : self::$dataPath;
+		$dataPath=self::$dataPath===null ? __DIR__.DIRECTORY_SEPARATOR.'data' : self::$dataPath;
 		$dataFile=$dataPath.DIRECTORY_SEPARATOR.$this->_id.'.php';
 		if(is_file($dataFile))
 			$this->_data=require($dataFile);

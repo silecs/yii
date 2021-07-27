@@ -333,7 +333,7 @@ class CDateFormatter extends CComponent
 			case 'e':
 			case 'ee':
 			case 'c':
-				return $day ? $day : 7;
+				return $day ?: 7;
 			case 'ccc':
 				return $this->_locale->getWeekDayName($day,'abbreviated',true);
 			case 'cccc':

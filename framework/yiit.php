@@ -10,12 +10,11 @@
  * @copyright 2008-2013 Yii Software LLC
  * @license http://www.yiiframework.com/license/
  */
-
 // disable Yii error handling logic
 defined('YII_ENABLE_EXCEPTION_HANDLER') or define('YII_ENABLE_EXCEPTION_HANDLER',false);
 defined('YII_ENABLE_ERROR_HANDLER') or define('YII_ENABLE_ERROR_HANDLER',false);
 
-require_once(dirname(__FILE__).'/yii.php');
+require_once(__DIR__.'/yii.php');
 
 Yii::import('system.test.CTestCase');
 Yii::import('system.test.CDbTestCase');

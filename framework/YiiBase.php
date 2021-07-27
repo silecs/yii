@@ -35,7 +35,7 @@ defined('YII_ENABLE_ERROR_HANDLER') or define('YII_ENABLE_ERROR_HANDLER',true);
 /**
  * Defines the Yii framework installation path.
  */
-defined('YII_PATH') or define('YII_PATH',dirname(__FILE__));
+defined('YII_PATH') or define('YII_PATH',__DIR__);
 /**
  * Defines the Zii library installation path.
  */
