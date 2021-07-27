@@ -457,8 +457,15 @@ class YiiBase
 						}
 					}
 				}
-				else
-					include($className.'.php');
+				else {
+					if ($className === 'false' || $className === 'true') {
+						return false;
+					}
+					// Try to load the file, and if it fails let the next autoloader handle it.
+					if ((include "$className.php") === false) {
+						return false;
+					}
+				}
 			}
 			else  // class name with namespace in PHP 5.3
 			{
