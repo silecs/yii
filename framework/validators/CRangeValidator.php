@@ -80,12 +80,12 @@ class CRangeValidator extends CValidator
 		}
 		if(!$this->not && !$result)
 		{
-			$message=$this->message!==null?$this->message:Yii::t('yii','{attribute} is not in the list.');
+			$message=$this->message ?? Yii::t('yii','{attribute} is not in the list.');
 			$this->addError($object,$attribute,$message);
 		}
 		elseif($this->not && $result)
 		{
-			$message=$this->message!==null?$this->message:Yii::t('yii','{attribute} is in the list.');
+			$message=$this->message ?? Yii::t('yii','{attribute} is in the list.');
 			$this->addError($object,$attribute,$message);
 		}
 	}

@@ -456,7 +456,7 @@ class CActiveForm extends CWidget
 			return CHtml::error($model,$attribute,$htmlOptions);
 
 		$id=CHtml::activeId($model,$attribute);
-		$inputID=isset($htmlOptions['inputID']) ? $htmlOptions['inputID'] : $id;
+		$inputID=$htmlOptions['inputID'] ?? $id;
 		unset($htmlOptions['inputID']);
 		if(!isset($htmlOptions['id']))
 			$htmlOptions['id']=$inputID.'_em_';

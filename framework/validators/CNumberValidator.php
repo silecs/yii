@@ -82,7 +82,7 @@ class CNumberValidator extends CValidator
 		{
 			// https://github.com/yiisoft/yii/issues/1955
 			// https://github.com/yiisoft/yii/issues/1669
-			$message=$this->message!==null?$this->message:Yii::t('yii','{attribute} must be a number.');
+			$message=$this->message ?? Yii::t('yii','{attribute} must be a number.');
 			$this->addError($object,$attribute,$message);
 			return;
 		}
@@ -90,7 +90,7 @@ class CNumberValidator extends CValidator
 		{
 			if(!preg_match($this->integerPattern,"$value"))
 			{
-				$message=$this->message!==null?$this->message:Yii::t('yii','{attribute} must be an integer.');
+				$message=$this->message ?? Yii::t('yii','{attribute} must be an integer.');
 				$this->addError($object,$attribute,$message);
 			}
 		}
@@ -98,18 +98,18 @@ class CNumberValidator extends CValidator
 		{
 			if(!preg_match($this->numberPattern,"$value"))
 			{
-				$message=$this->message!==null?$this->message:Yii::t('yii','{attribute} must be a number.');
+				$message=$this->message ?? Yii::t('yii','{attribute} must be a number.');
 				$this->addError($object,$attribute,$message);
 			}
 		}
 		if($this->min!==null && $value<$this->min)
 		{
-			$message=$this->tooSmall!==null?$this->tooSmall:Yii::t('yii','{attribute} is too small (minimum is {min}).');
+			$message=$this->tooSmall ?? Yii::t('yii','{attribute} is too small (minimum is {min}).');
 			$this->addError($object,$attribute,$message,array('{min}'=>$this->min));
 		}
 		if($this->max!==null && $value>$this->max)
 		{
-			$message=$this->tooBig!==null?$this->tooBig:Yii::t('yii','{attribute} is too big (maximum is {max}).');
+			$message=$this->tooBig ?? Yii::t('yii','{attribute} is too big (maximum is {max}).');
 			$this->addError($object,$attribute,$message,array('{max}'=>$this->max));
 		}
 	}

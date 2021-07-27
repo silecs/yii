@@ -185,7 +185,7 @@ class CDetailView extends CWidget
 					throw new CException(Yii::t('zii','The attribute must be specified in the format of "Name:Type:Label", where "Type" and "Label" are optional.'));
 				$attribute=array(
 					'name'=>$matches[1],
-					'type'=>isset($matches[3]) ? $matches[3] : 'text',
+					'type'=>$matches[3] ?? 'text',
 				);
 				if(isset($matches[5]))
 					$attribute['label']=$matches[5];
@@ -237,7 +237,7 @@ class CDetailView extends CWidget
 	 */
 	protected function renderItem($options,$templateData)
 	{
-		echo strtr(isset($options['template']) ? $options['template'] : $this->itemTemplate,$templateData);
+		echo strtr($options['template'] ?? $this->itemTemplate,$templateData);
 	}
 
 	/**

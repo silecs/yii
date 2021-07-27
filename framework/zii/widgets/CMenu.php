@@ -196,7 +196,7 @@ class CMenu extends CWidget
 		foreach($items as $item)
 		{
 			$count++;
-			$options=isset($item['itemOptions']) ? $item['itemOptions'] : array();
+			$options=$item['itemOptions'] ?? array();
 			$class=array();
 			if($item['active'] && $this->activeCssClass!='')
 				$class[]=$this->activeCssClass;
@@ -219,7 +219,7 @@ class CMenu extends CWidget
 			$menu=$this->renderMenuItem($item);
 			if(isset($this->itemTemplate) || isset($item['template']))
 			{
-				$template=isset($item['template']) ? $item['template'] : $this->itemTemplate;
+				$template=$item['template'] ?? $this->itemTemplate;
 				echo strtr($template,array('{menu}'=>$menu));
 			}
 			else
@@ -227,7 +227,7 @@ class CMenu extends CWidget
 
 			if(isset($item['items']) && count($item['items']))
 			{
-				echo "\n".CHtml::openTag('ul',isset($item['submenuOptions']) ? $item['submenuOptions'] : $this->submenuHtmlOptions)."\n";
+				echo "\n".CHtml::openTag('ul',$item['submenuOptions'] ?? $this->submenuHtmlOptions)."\n";
 				$this->renderMenuRecursive($item['items']);
 				echo CHtml::closeTag('ul')."\n";
 			}
@@ -248,10 +248,10 @@ class CMenu extends CWidget
 		if(isset($item['url']))
 		{
 			$label=$this->linkLabelWrapper===null ? $item['label'] : CHtml::tag($this->linkLabelWrapper, $this->linkLabelWrapperHtmlOptions, $item['label']);
-			return CHtml::link($label,$item['url'],isset($item['linkOptions']) ? $item['linkOptions'] : array());
+			return CHtml::link($label,$item['url'],$item['linkOptions'] ?? array());
 		}
 		else
-			return CHtml::tag('span',isset($item['linkOptions']) ? $item['linkOptions'] : array(), $item['label']);
+			return CHtml::tag('span',$item['linkOptions'] ?? array(), $item['label']);
 	}
 
 	/**
@@ -272,7 +272,7 @@ class CMenu extends CWidget
 			}
 			if(!isset($item['label']))
 				$item['label']='';
-			$encodeLabel = isset($item['encodeLabel']) ? $item['encodeLabel'] : $this->encodeLabel;
+			$encodeLabel = $item['encodeLabel'] ?? $this->encodeLabel;
 			if($encodeLabel)
 				$items[$i]['label']=CHtml::encode($item['label']);
 			$hasActiveChild=false;

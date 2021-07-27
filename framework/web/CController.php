@@ -1027,7 +1027,7 @@ class CController extends CBaseController
 	{
 		if(is_array($url))
 		{
-			$route=isset($url[0]) ? $url[0] : '';
+			$route=$url[0] ?? '';
 			$url=$this->createUrl($route,array_splice($url,1));
 		}
 		Yii::app()->getRequest()->redirect($url,$terminate,$statusCode);
@@ -1163,7 +1163,7 @@ class CController extends CBaseController
 	{
 		if($this->_pageStates===null)
 			$this->_pageStates=$this->loadPageStates();
-		return isset($this->_pageStates[$name])?$this->_pageStates[$name]:$defaultValue;
+		return $this->_pageStates[$name] ?? $defaultValue;
 	}
 
 	/**

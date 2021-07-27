@@ -81,7 +81,7 @@ class CExistValidator extends CValidator
 		}
 
 		$className=$this->className===null?get_class($object):Yii::import($this->className);
-		$attributeName=$this->attributeName===null?$attribute:$this->attributeName;
+		$attributeName=$this->attributeName ?? $attribute;
 		$finder=$this->getModel($className);
 		$table=$finder->getTableSchema();
 		if(($column=$table->getColumn($attributeName))===null)
@@ -99,7 +99,7 @@ class CExistValidator extends CValidator
 
 		if(!$finder->exists($criteria))
 		{
-			$message=$this->message!==null?$this->message:Yii::t('yii','{attribute} "{value}" is invalid.');
+			$message=$this->message ?? Yii::t('yii','{attribute} "{value}" is invalid.');
 			$this->addError($object,$attribute,$message,array('{value}'=>$value));
 		}
 	}

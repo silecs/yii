@@ -173,7 +173,7 @@ EOD;
 
 	protected function getClassName($tableName)
 	{
-		return isset($this->_tables[$tableName]) ? $this->_tables[$tableName] : $this->generateClassName($tableName);
+		return $this->_tables[$tableName] ?? $this->generateClassName($tableName);
 	}
 
 	/**
@@ -286,7 +286,7 @@ EOD;
 				$this->generateRelations();
 			else
 			{
-				$tableName=isset($args[1])?$args[1]:$className;
+				$tableName=$args[1] ?? $className;
 				$tableName=$this->addPrefix($tableName);
 				$this->_tables[$tableName]=$className;
 				$this->generateRelations();
@@ -319,9 +319,9 @@ EOD;
 				return;
 		}
 
-		$templatePath=$this->templatePath===null?YII_PATH.'/cli/views/shell/model':$this->templatePath;
-		$fixturePath=$this->fixturePath===null?Yii::getPathOfAlias('application.tests.fixtures'):$this->fixturePath;
-		$unitTestPath=$this->unitTestPath===null?Yii::getPathOfAlias('application.tests.unit'):$this->unitTestPath;
+		$templatePath=$this->templatePath ?? YII_PATH.'/cli/views/shell/model';
+		$fixturePath=$this->fixturePath ?? Yii::getPathOfAlias('application.tests.fixtures');
+		$unitTestPath=$this->unitTestPath ?? Yii::getPathOfAlias('application.tests.unit');
 
 		$list=array();
 		$files=array();

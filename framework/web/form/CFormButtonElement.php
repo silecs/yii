@@ -112,7 +112,7 @@ class CFormButtonElement extends CFormElement
 			else
 				$attributes['name']=$this->name;
 			if($method==='imageButton')
-				return CHtml::imageButton(isset($attributes['src']) ? $attributes['src'] : '',$attributes);
+				return CHtml::imageButton($attributes['src'] ?? '',$attributes);
 			else
 				return CHtml::$method($this->label,$attributes);
 		}

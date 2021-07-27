@@ -381,7 +381,7 @@ class CSort extends CComponent
 	public function getDirection($attribute)
 	{
 		$this->getDirections();
-		return isset($this->_directions[$attribute]) ? $this->_directions[$attribute] : null;
+		return $this->_directions[$attribute] ?? null;
 	}
 
 	/**
@@ -397,7 +397,7 @@ class CSort extends CComponent
 		$sorts=array();
 		foreach($directions as $attribute=>$descending)
 			$sorts[]=$descending ? $attribute.$this->separators[1].$this->descTag : $attribute;
-		$params=$this->params===null ? $_GET : $this->params;
+		$params=$this->params ?? $_GET;
 		$params[$this->sortVar]=implode($this->separators[0],$sorts);
 		return $controller->createUrl($this->route,$params);
 	}

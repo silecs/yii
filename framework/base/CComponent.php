@@ -273,7 +273,7 @@ class CComponent
 	 */
 	public function asa($behavior)
 	{
-		return isset($this->_m[$behavior]) ? $this->_m[$behavior] : null;
+		return $this->_m[$behavior] ?? null;
 	}
 
 	/**

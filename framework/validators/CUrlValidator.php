@@ -63,7 +63,7 @@ class CUrlValidator extends CValidator
 			$object->$attribute=$value;
 		else
 		{
-			$message=$this->message!==null?$this->message:Yii::t('yii','{attribute} is not a valid URL.');
+			$message=$this->message ?? Yii::t('yii','{attribute} is not a valid URL.');
 			$this->addError($object,$attribute,$message);
 		}
 	}
@@ -120,7 +120,7 @@ if (info)
 		else
 			$validateIDN='';
 
-		$message=$this->message!==null ? $this->message : Yii::t('yii','{attribute} is not a valid URL.');
+		$message=$this->message ?? Yii::t('yii','{attribute} is not a valid URL.');
 		$message=strtr($message, array(
 			'{attribute}'=>$object->getAttributeLabel($attribute),
 		));

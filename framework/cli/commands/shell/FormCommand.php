@@ -69,12 +69,12 @@ EOD;
 			echo $this->getHelp();
 			return 1;
 		}
-		$scenario=isset($args[2]) ? $args[2] : '';
+		$scenario=$args[2] ?? '';
 		$modelClass=Yii::import($args[0],true);
 		$model=new $modelClass($scenario);
 		$attributes=$model->getSafeAttributeNames();
 
-		$templatePath=$this->templatePath===null?YII_PATH.'/cli/views/shell/form':$this->templatePath;
+		$templatePath=$this->templatePath ?? YII_PATH.'/cli/views/shell/form';
 		$viewPath=Yii::getPathOfAlias($args[1]);
 		$viewName=basename($viewPath);
 		$viewPath.='.php';

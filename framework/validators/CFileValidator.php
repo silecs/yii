@@ -150,7 +150,7 @@ class CFileValidator extends CValidator
 				return $this->emptyAttribute($object, $attribute);
 			if(count($files) > $this->maxFiles)
 			{
-				$message=$this->tooMany!==null?$this->tooMany : Yii::t('yii', '{attribute} cannot accept more than {limit} files.');
+				$message=$this->tooMany ?? Yii::t('yii', '{attribute} cannot accept more than {limit} files.');
 				$this->addError($object, $attribute, $message, array('{attribute}'=>$attribute, '{limit}'=>$this->maxFiles));
 			}
 			else
@@ -163,7 +163,7 @@ class CFileValidator extends CValidator
 			{
 				if (count($files) > 1)
 				{
-					$message=$this->tooMany!==null?$this->tooMany : Yii::t('yii', '{attribute} cannot accept more than {limit} files.');
+					$message=$this->tooMany ?? Yii::t('yii', '{attribute} cannot accept more than {limit} files.');
 					$this->addError($object, $attribute, $message, array('{attribute}'=>$attribute, '{limit}'=>$this->maxFiles));
 					return;
 				}
@@ -194,7 +194,7 @@ class CFileValidator extends CValidator
 		$error=(null===$file ? null : $file->getError());
 		if($error==UPLOAD_ERR_INI_SIZE || $error==UPLOAD_ERR_FORM_SIZE || $this->maxSize!==null && $file->getSize()>$this->maxSize)
 		{
-			$message=$this->tooLarge!==null?$this->tooLarge : Yii::t('yii','The file "{file}" is too large. Its size cannot exceed {limit} bytes.');
+			$message=$this->tooLarge ?? Yii::t('yii','The file "{file}" is too large. Its size cannot exceed {limit} bytes.');
 			$this->addError($object,$attribute,$message,array('{file}'=>$file->getName(), '{limit}'=>$this->getSizeLimit()));
 			if($error!==UPLOAD_ERR_OK)
 				return;
@@ -217,7 +217,7 @@ class CFileValidator extends CValidator
 
 		if($this->minSize!==null && $file->getSize()<$this->minSize)
 		{
-			$message=$this->tooSmall!==null?$this->tooSmall : Yii::t('yii','The file "{file}" is too small. Its size cannot be smaller than {limit} bytes.');
+			$message=$this->tooSmall ?? Yii::t('yii','The file "{file}" is too small. Its size cannot be smaller than {limit} bytes.');
 			$this->addError($object,$attribute,$message,array('{file}'=>$file->getName(), '{limit}'=>$this->minSize));
 		}
 
@@ -229,7 +229,7 @@ class CFileValidator extends CValidator
 				$types=$this->types;
 			if(!in_array(strtolower($file->getExtensionName()),$types))
 			{
-				$message=$this->wrongType!==null?$this->wrongType : Yii::t('yii','The file "{file}" cannot be uploaded. Only files with these extensions are allowed: {extensions}.');
+				$message=$this->wrongType ?? Yii::t('yii','The file "{file}" cannot be uploaded. Only files with these extensions are allowed: {extensions}.');
 				$this->addError($object,$attribute,$message,array('{file}'=>$file->getName(), '{extensions}'=>implode(', ',$types)));
 			}
 		}
@@ -254,7 +254,7 @@ class CFileValidator extends CValidator
 
 			if($mimeType===false || !in_array(strtolower($mimeType),$mimeTypes))
 			{
-				$message=$this->wrongMimeType!==null?$this->wrongMimeType : Yii::t('yii','The file "{file}" cannot be uploaded. Only files of these MIME-types are allowed: {mimeTypes}.');
+				$message=$this->wrongMimeType ?? Yii::t('yii','The file "{file}" cannot be uploaded. Only files of these MIME-types are allowed: {mimeTypes}.');
 				$this->addError($object,$attribute,$message,array('{file}'=>$file->getName(), '{mimeTypes}'=>implode(', ',$mimeTypes)));
 			}
 		}
@@ -273,7 +273,7 @@ class CFileValidator extends CValidator
 
 		if(!$this->allowEmpty)
 		{
-			$message=$this->message!==null?$this->message : Yii::t('yii','{attribute} cannot be blank.');
+			$message=$this->message ?? Yii::t('yii','{attribute} cannot be blank.');
 			$this->addError($object,$attribute,$message);
 		}
 	}

@@ -88,7 +88,7 @@ class CCompareValidator extends CValidator
 			$compareTo=$compareValue=$this->compareValue;
 		else
 		{
-			$compareAttribute=$this->compareAttribute===null ? $attribute.'_repeat' : $this->compareAttribute;
+			$compareAttribute=$this->compareAttribute ?? $attribute.'_repeat';
 			$compareValue=$object->$compareAttribute;
 			$compareTo=$object->getAttributeLabel($compareAttribute);
 		}
@@ -98,27 +98,27 @@ class CCompareValidator extends CValidator
 			case '=':
 			case '==':
 				if(($this->strict && $value!==$compareValue) || (!$this->strict && $value!=$compareValue))
-					$message=$this->message!==null?$this->message:Yii::t('yii','{attribute} must be repeated exactly.');
+					$message=$this->message ?? Yii::t('yii','{attribute} must be repeated exactly.');
 				break;
 			case '!=':
 				if(($this->strict && $value===$compareValue) || (!$this->strict && $value==$compareValue))
-					$message=$this->message!==null?$this->message:Yii::t('yii','{attribute} must not be equal to "{compareValue}".');
+					$message=$this->message ?? Yii::t('yii','{attribute} must not be equal to "{compareValue}".');
 				break;
 			case '>':
 				if($value<=$compareValue)
-					$message=$this->message!==null?$this->message:Yii::t('yii','{attribute} must be greater than "{compareValue}".');
+					$message=$this->message ?? Yii::t('yii','{attribute} must be greater than "{compareValue}".');
 				break;
 			case '>=':
 				if($value<$compareValue)
-					$message=$this->message!==null?$this->message:Yii::t('yii','{attribute} must be greater than or equal to "{compareValue}".');
+					$message=$this->message ?? Yii::t('yii','{attribute} must be greater than or equal to "{compareValue}".');
 				break;
 			case '<':
 				if($value>=$compareValue)
-					$message=$this->message!==null?$this->message:Yii::t('yii','{attribute} must be less than "{compareValue}".');
+					$message=$this->message ?? Yii::t('yii','{attribute} must be less than "{compareValue}".');
 				break;
 			case '<=':
 				if($value>$compareValue)
-					$message=$this->message!==null?$this->message:Yii::t('yii','{attribute} must be less than or equal to "{compareValue}".');
+					$message=$this->message ?? Yii::t('yii','{attribute} must be less than or equal to "{compareValue}".');
 				break;
 			default:
 				throw new CException(Yii::t('yii','Invalid operator "{operator}".',array('{operator}'=>$this->operator)));
@@ -145,7 +145,7 @@ class CCompareValidator extends CValidator
 		}
 		else
 		{
-			$compareAttribute=$this->compareAttribute === null ? $attribute . '_repeat' : $this->compareAttribute;
+			$compareAttribute=$this->compareAttribute ?? $attribute . '_repeat';
 			$compareValue="jQuery('#" . (CHtml::activeId($object, $compareAttribute)) . "').val()";
 			$compareTo=$object->getAttributeLabel($compareAttribute);
 		}

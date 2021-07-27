@@ -144,7 +144,7 @@ class CActiveFinder extends CComponent
 		Yii::trace(get_class($this->_joinTree->model).'.count() eagerly','system.db.ar.CActiveRecord');
 		$this->joinAll=$criteria->together!==true;
 
-		$alias=$criteria->alias===null ? 't' : $criteria->alias;
+		$alias=$criteria->alias ?? 't';
 		$this->_joinTree->tableAlias=$alias;
 		$this->_joinTree->rawTableAlias=$this->_builder->getSchema()->quoteTableName($alias);
 
@@ -382,7 +382,7 @@ class CJoinElement
 			$this->_parent=$parent;
 			$this->model=$this->_finder->getModel($relation->className);
 			$this->_builder=$this->model->getCommandBuilder();
-			$this->tableAlias=$relation->alias===null?$relation->name:$relation->alias;
+			$this->tableAlias=$relation->alias ?? $relation->name;
 			$this->rawTableAlias=$this->_builder->getSchema()->quoteTableName($this->tableAlias);
 			$this->_table=$this->model->getTableSchema();
 		}
@@ -1524,7 +1524,7 @@ class CStatElement
 
 		// populate the results into existing records
 		foreach($records as $pk=>$record)
-			$record->addRelatedRecord($relation->name,isset($stats[$pk])?$stats[$pk]:$relation->defaultValue,false);
+			$record->addRelatedRecord($relation->name,$stats[$pk] ?? $relation->defaultValue,false);
 	}
 
 	/**
@@ -1662,6 +1662,6 @@ class CStatElement
 		}
 
 		foreach($records as $pk=>$record)
-			$record->addRelatedRecord($relation->name,isset($stats[$pk])?$stats[$pk]:$this->relation->defaultValue,false);
+			$record->addRelatedRecord($relation->name,$stats[$pk] ?? $this->relation->defaultValue,false);
 	}
 }

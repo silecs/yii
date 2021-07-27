@@ -50,7 +50,7 @@ class CCaptchaValidator extends CValidator
 		// reason of array checking is explained here: https://github.com/yiisoft/yii/issues/1955
 		if(is_array($value) || !$captcha->validate($value,$this->caseSensitive))
 		{
-			$message=$this->message!==null?$this->message:Yii::t('yii','The verification code is incorrect.');
+			$message=$this->message ?? Yii::t('yii','The verification code is incorrect.');
 			$this->addError($object,$attribute,$message);
 		}
 	}
@@ -91,7 +91,7 @@ class CCaptchaValidator extends CValidator
 	public function clientValidateAttribute($object,$attribute)
 	{
 		$captcha=$this->getCaptchaAction();
-		$message=$this->message!==null ? $this->message : Yii::t('yii','The verification code is incorrect.');
+		$message=$this->message ?? Yii::t('yii','The verification code is incorrect.');
 		$message=strtr($message, array(
 			'{attribute}'=>$object->getAttributeLabel($attribute),
 		));

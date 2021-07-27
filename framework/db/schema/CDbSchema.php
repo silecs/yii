@@ -345,7 +345,7 @@ abstract class CDbSchema extends CComponent
 		elseif(($pos=strpos($type,' '))!==false)
 		{
 			$t=substr($type,0,$pos);
-			return (isset($this->columnTypes[$t]) ? $this->columnTypes[$t] : $t).substr($type,$pos);
+			return ($this->columnTypes[$t] ?? $t).substr($type,$pos);
 		}
 		else
 			return $type;

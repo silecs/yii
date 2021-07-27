@@ -360,7 +360,7 @@ abstract class CModel extends CComponent implements IteratorAggregate, ArrayAcce
 		if($attribute===null)
 			return $this->_errors;
 		else
-			return isset($this->_errors[$attribute]) ? $this->_errors[$attribute] : array();
+			return $this->_errors[$attribute] ?? array();
 	}
 
 	/**
@@ -446,7 +446,7 @@ abstract class CModel extends CComponent implements IteratorAggregate, ArrayAcce
 		{
 			$values2=array();
 			foreach($names as $name)
-				$values2[$name]=isset($values[$name]) ? $values[$name] : null;
+				$values2[$name]=$values[$name] ?? null;
 			return $values2;
 		}
 		else
