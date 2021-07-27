@@ -68,7 +68,8 @@
 		"framework/yiic"
 	],
 	"require": {
-		"php": ">=7.3.0"
+		"php": ">=7.3.0",
+		"ext-json": "*"
 	},
 	"suggest": {
 		"ext-mcrypt": "Required by encrypt and decrypt methods of CSecurityManager",

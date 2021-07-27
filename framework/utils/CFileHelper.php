@@ -243,7 +243,7 @@ class CFileHelper
 	{
 		foreach($exclude as $e)
 		{
-			if($file===$e || strpos($base.'/'.$file,$e)===0)
+			if($file===$e || strpos($base.'/'.$file,(string) $e)===0)
 				return false;
 		}
 		if(!$isFile || empty($fileTypes))

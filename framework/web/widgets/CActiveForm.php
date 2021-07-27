@@ -989,7 +989,7 @@ class CActiveForm extends CWidget
 			foreach($model->getErrors() as $attribute=>$errors)
 				$result[CHtml::activeId($model,$attribute)]=$errors;
 		}
-		return function_exists('json_encode') ? json_encode($result) : CJSON::encode($result);
+		return json_encode($result, JSON_THROW_ON_ERROR);
 	}
 
 	/**
@@ -1018,6 +1018,6 @@ class CActiveForm extends CWidget
 			foreach($model->getErrors() as $attribute=>$errors)
 				$result[CHtml::activeId($model,'['.$i.']'.$attribute)]=$errors;
 		}
-		return function_exists('json_encode') ? json_encode($result) : CJSON::encode($result);
+		return json_encode($result, JSON_THROW_ON_ERROR);
 	}
 }
