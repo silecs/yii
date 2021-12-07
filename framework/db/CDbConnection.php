@@ -93,8 +93,8 @@
  * </pre>
  *
  * @property boolean $active Whether the DB connection is established.
- * @property PDO $pdoInstance The PDO instance, null if the connection is not established yet.
- * @property CDbTransaction $currentTransaction The currently active transaction. Null if no active transaction.
+ * @property ?PDO $pdoInstance The PDO instance, null if the connection is not established yet.
+ * @property ?CDbTransaction $currentTransaction The currently active transaction. Null if no active transaction.
  * @property CDbSchema $schema The database schema for the current connection.
  * @property CDbCommandBuilder $commandBuilder The command builder.
  * @property string $lastInsertID The row ID of the last row inserted, or the last value retrieved from the sequence object.
@@ -199,7 +199,7 @@ class CDbConnection extends CApplicationComponent
 	 */
 	public $autoConnect=true;
 	/**
-	 * @var string the charset used for database connection. The property is only used
+	 * @var ?string the charset used for database connection. The property is only used
 	 * for MySQL, MariaDB and PostgreSQL databases. Defaults to null, meaning using default charset
 	 * as specified by the database.
 	 *
@@ -209,7 +209,7 @@ class CDbConnection extends CApplicationComponent
 	 */
 	public $charset;
 	/**
-	 * @var boolean whether to turn on prepare emulation. Defaults to false, meaning PDO
+	 * @var ?bool whether to turn on prepare emulation. Defaults to false, meaning PDO
 	 * will use the native prepare support if available. For some databases (such as MySQL),
 	 * this may need to be set true so that PDO can emulate the prepare support to bypass
 	 * the buggy native prepare support. Note, this property is only effective for PHP 5.1.3 or above.
@@ -231,7 +231,7 @@ class CDbConnection extends CApplicationComponent
 	 */
 	public $enableProfiling=false;
 	/**
-	 * @var string the default prefix for table names. Defaults to null, meaning no table prefix.
+	 * @var ?string the default prefix for table names. Defaults to null, meaning no table prefix.
 	 * By setting this property, any token like '{{tableName}}' in {@link CDbCommand::text} will
 	 * be replaced by 'prefixTableName', where 'prefix' refers to this property value.
 	 * @since 1.1.0
@@ -478,7 +478,7 @@ class CDbConnection extends CApplicationComponent
 
 	/**
 	 * Returns the PDO instance.
-	 * @return PDO the PDO instance, null if the connection is not established yet
+	 * @return ?PDO the PDO instance, null if the connection is not established yet
 	 */
 	public function getPdoInstance()
 	{
@@ -501,7 +501,7 @@ class CDbConnection extends CApplicationComponent
 
 	/**
 	 * Returns the currently active transaction.
-	 * @return CDbTransaction the currently active transaction. Null if no active transaction.
+	 * @return ?CDbTransaction the currently active transaction. Null if no active transaction.
 	 */
 	public function getCurrentTransaction()
 	{

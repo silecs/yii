@@ -318,7 +318,7 @@ abstract class CActiveRecord extends CModel
 	/**
 	 * Returns the query criteria associated with this model.
 	 * @param boolean $createIfNull whether to create a criteria instance if it does not exist. Defaults to true.
-	 * @return CDbCriteria the query criteria that is associated with this model.
+	 * @return ?CDbCriteria the query criteria that is associated with this model.
 	 * This criteria is mainly used by {@link scopes named scope} feature to accumulate
 	 * different criteria specifications.
 	 */
@@ -641,7 +641,7 @@ abstract class CActiveRecord extends CModel
 	/**
 	 * Returns the named relation declared for this AR class.
 	 * @param string $name the relation name
-	 * @return CActiveRelation the named relation declared for this AR class. Null if the relation does not exist.
+	 * @return ?CActiveRelation the named relation declared for this AR class. Null if the relation does not exist.
 	 */
 	public function getActiveRelation($name)
 	{
@@ -1449,7 +1449,7 @@ abstract class CActiveRecord extends CModel
 	 * @param array $params parameters to be bound to an SQL statement.
 	 * This is only used when the first parameter is a string (query condition).
 	 * In other cases, please use {@link CDbCriteria::params} to set parameters.
-	 * @return static|null the record found. Null if no record is found.
+	 * @return ?static the record found. Null if no record is found.
 	 */
 	public function find($condition='',$params=array())
 	{
@@ -1478,7 +1478,7 @@ abstract class CActiveRecord extends CModel
 	 * @param mixed $pk primary key value(s). Use array for multiple primary keys. For composite key, each key value must be an array (column name=>column value).
 	 * @param mixed $condition query condition or criteria.
 	 * @param array $params parameters to be bound to an SQL statement.
-	 * @return static|null the record found. Null if none is found.
+	 * @return ?static the record found. Null if none is found.
 	 */
 	public function findByPk($pk,$condition='',$params=array())
 	{
@@ -1511,7 +1511,7 @@ abstract class CActiveRecord extends CModel
 	 * An attribute value can be an array which will be used to generate an IN condition.
 	 * @param mixed $condition query condition or criteria.
 	 * @param array $params parameters to be bound to an SQL statement.
-	 * @return static|null the record found. Null if none is found.
+	 * @return ?static the record found. Null if none is found.
 	 */
 	public function findByAttributes($attributes,$condition='',$params=array())
 	{
@@ -1542,7 +1542,7 @@ abstract class CActiveRecord extends CModel
 	 * Finds a single active record with the specified SQL statement.
 	 * @param string $sql the SQL statement
 	 * @param array $params parameters to be bound to the SQL statement
-	 * @return static|null the record found. Null if none is found.
+	 * @return ?static the record found. Null if none is found.
 	 */
 	public function findBySql($sql,$params=array())
 	{

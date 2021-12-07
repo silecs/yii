@@ -69,7 +69,7 @@
  * @property CErrorHandler $errorHandler The error handler application component.
  * @property CSecurityManager $securityManager The security manager application component.
  * @property CStatePersister $statePersister The state persister application component.
- * @property CCache $cache The cache application component. Null if the component is not enabled.
+ * @property ?CCache $cache The cache application component. Null if the component is not enabled.
  * @property CPhpMessageSource $coreMessages The core message translations.
  * @property CMessageSource $messages The application message translations.
  * @property CHttpRequest $request The request component.
@@ -488,7 +488,7 @@ abstract class CApplication extends CModule
 
 	/**
 	 * Returns the cache component.
-	 * @return CCache the cache application component. Null if the component is not enabled.
+	 * @return ?CCache the cache application component. Null if the component is not enabled.
 	 */
 	public function getCache()
 	{

@@ -269,7 +269,7 @@ class CComponent
 	 * Returns the named behavior object.
 	 * The name 'asa' stands for 'as a'.
 	 * @param string $behavior the behavior name
-	 * @return IBehavior the behavior object, or null if the behavior does not exist
+	 * @return ?IBehavior the behavior object, or null if the behavior does not exist
 	 */
 	public function asa($behavior)
 	{
@@ -334,7 +334,7 @@ class CComponent
 	 * Detaches a behavior from the component.
 	 * The behavior's {@link IBehavior::detach} method will be invoked.
 	 * @param string $name the behavior's name. It uniquely identifies the behavior.
-	 * @return IBehavior the detached behavior. Null if the behavior does not exist.
+	 * @return ?IBehavior the detached behavior. Null if the behavior does not exist.
 	 */
 	public function detachBehavior($name)
 	{

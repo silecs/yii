@@ -58,7 +58,7 @@
  * For object-based filters, the '+' and '-' operators are following the class name.
  *
  * @property array $actionParams The request parameters to be used for action parameter binding.
- * @property CAction $action The action currently being executed, null if no active action.
+ * @property ?CAction $action The action currently being executed, null if no active action.
  * @property string $id ID of the controller.
  * @property string $uniqueId The controller ID that is prefixed with the module ID (if any).
  * @property string $route The route (module ID, controller ID and action ID) of the current request.
@@ -404,7 +404,7 @@ class CController extends CBaseController
 	 * The action can be either an inline action or an object.
 	 * The latter is created by looking up the action map specified in {@link actions}.
 	 * @param string $actionID ID of the action. If empty, the {@link defaultAction default action} will be used.
-	 * @return CAction the action instance, null if the action does not exist.
+	 * @return ?CAction the action instance, null if the action does not exist.
 	 * @see actions
 	 * @throws CException
 	 */
@@ -432,7 +432,7 @@ class CController extends CBaseController
 	 * @param string $actionID the action ID that has its prefix stripped off
 	 * @param string $requestActionID the originally requested action ID
 	 * @param array $config the action configuration that should be applied on top of the configuration specified in the map
-	 * @return CAction the action instance, null if the action does not exist.
+	 * @return ?CAction the action instance, null if the action does not exist.
 	 * @throws CException
 	 */
 	protected function createActionFromMap($actionMap,$actionID,$requestActionID,$config=array())
@@ -488,7 +488,7 @@ class CController extends CBaseController
 	}
 
 	/**
-	 * @return CAction the action currently being executed, null if no active action.
+	 * @return ?CAction the action currently being executed, null if no active action.
 	 */
 	public function getAction()
 	{
@@ -532,7 +532,7 @@ class CController extends CBaseController
 	}
 
 	/**
-	 * @return CWebModule the module that this controller belongs to. It returns null
+	 * @return ?CWebModule the module that this controller belongs to. It returns null
 	 * if the controller does not belong to any module
 	 */
 	public function getModule()
@@ -774,7 +774,7 @@ class CController extends CBaseController
 	 * about how the view script is resolved.
 	 * @param array $data data to be extracted into PHP variables and made available to the view script
 	 * @param boolean $return whether the rendering result should be returned instead of being displayed to end users.
-	 * @return string the rendering result. Null if the rendering result is not required.
+	 * @return ?string the rendering result. Null if the rendering result is not required.
 	 * @see renderPartial
 	 * @see getLayoutFile
 	 */
@@ -827,7 +827,7 @@ class CController extends CBaseController
 	 * The string will be inserted in the current controller layout and returned back.
 	 * @param string $text the static text string
 	 * @param boolean $return whether the rendering result should be returned instead of being displayed to end users.
-	 * @return string the rendering result. Null if the rendering result is not required.
+	 * @return ?string the rendering result. Null if the rendering result is not required.
 	 * @see getLayoutFile
 	 */
 	public function renderText($text,$return=false)
@@ -859,7 +859,7 @@ class CController extends CBaseController
 	 * @param array $data data to be extracted into PHP variables and made available to the view script
 	 * @param boolean $return whether the rendering result should be returned instead of being displayed to end users
 	 * @param boolean $processOutput whether the rendering result should be postprocessed using {@link processOutput}.
-	 * @return string the rendering result. Null if the rendering result is not required.
+	 * @return ?string the rendering result. Null if the rendering result is not required.
 	 * @throws CException if the view does not exist
 	 * @see getViewFile
 	 * @see processOutput

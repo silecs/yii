@@ -80,7 +80,7 @@ class CPagination extends CComponent
 	 */
 	public $route='';
 	/**
-	 * @var array of parameters (name=>value) that should be used instead of GET when generating pagination URLs.
+	 * @var ?array of parameters (name=>value) that should be used instead of GET when generating pagination URLs.
 	 * Defaults to null, meaning using the currently available GET parameters.
 	 */
 	public $params;

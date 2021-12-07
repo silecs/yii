@@ -17,7 +17,7 @@
  * @property string $basePath The root directory of the module. Defaults to the directory containing the module class.
  * @property CAttributeCollection $params The list of user-defined parameters.
  * @property string $modulePath The directory that contains the application modules. Defaults to the 'modules' subdirectory of {@link basePath}.
- * @property CModule $parentModule The parent module. Null if this module does not have a parent.
+ * @property ?CModule $parentModule The parent module. Null if this module does not have a parent.
  * @property array $modules The configuration of the currently installed modules (module ID => configuration).
  * @property array $components The application components (indexed by their IDs).
  * @property array $import List of aliases to be imported.
@@ -252,7 +252,7 @@ abstract class CModule extends CComponent
 
 	/**
 	 * Returns the parent module.
-	 * @return CModule the parent module. Null if this module does not have a parent.
+	 * @return ?CModule the parent module. Null if this module does not have a parent.
 	 */
 	public function getParentModule()
 	{
@@ -264,7 +264,7 @@ abstract class CModule extends CComponent
 	 * The module has to be declared in {@link modules}. A new instance will be created
 	 * when calling this method with the given ID for the first time.
 	 * @param string $id application module ID (case-sensitive)
-	 * @return CModule the module instance, null if the module is disabled or does not exist.
+	 * @return ?CModule the module instance, null if the module is disabled or does not exist.
 	 */
 	public function getModule($id)
 	{
@@ -376,7 +376,7 @@ abstract class CModule extends CComponent
 	 * Retrieves the named application component.
 	 * @param string $id application component ID (case-sensitive)
 	 * @param boolean $createIfNull whether to create the component if it doesn't exist yet.
-	 * @return IApplicationComponent the application component instance, null if the application component is disabled or does not exist.
+	 * @return ?IApplicationComponent the application component instance, null if the application component is disabled or does not exist.
 	 * @see hasComponent
 	 */
 	public function getComponent($id,$createIfNull=true)

@@ -83,7 +83,7 @@ abstract class CBaseController extends CComponent
 	 * @param string $viewFile view file path
 	 * @param array $data data to be extracted and made available to the view
 	 * @param boolean $return whether the rendering result should be returned instead of being echoed
-	 * @return string the rendering result. Null if the rendering result is not required.
+	 * @return ?string the rendering result. Null if the rendering result is not required.
 	 * @throws CException if the view file does not exist
 	 */
 	public function renderFile($viewFile,$data=null,$return=false)
@@ -110,7 +110,7 @@ abstract class CBaseController extends CComponent
 	 * @param string $_viewFile_ view file
 	 * @param array $_data_ data to be extracted and made available to the view file
 	 * @param boolean $_return_ whether the rendering result should be returned as a string
-	 * @return string the rendering result. Null if the rendering result is not required.
+	 * @return ?string the rendering result. Null if the rendering result is not required.
 	 */
 	public function renderInternal($_viewFile_,$_data_=null,$_return_=false)
 	{
