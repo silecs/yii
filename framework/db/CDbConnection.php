@@ -93,8 +93,8 @@
  * </pre>
  *
  * @property boolean $active Whether the DB connection is established.
- * @property PDO $pdoInstance The PDO instance, null if the connection is not established yet.
- * @property CDbTransaction $currentTransaction The currently active transaction. Null if no active transaction.
+ * @property ?PDO $pdoInstance The PDO instance, null if the connection is not established yet.
+ * @property ?CDbTransaction $currentTransaction The currently active transaction. Null if no active transaction.
  * @property CDbSchema $schema The database schema for the current connection.
  * @property CDbCommandBuilder $commandBuilder The command builder.
  * @property string $lastInsertID The row ID of the last row inserted, or the last value retrieved from the sequence object.
@@ -476,7 +476,7 @@ class CDbConnection extends CApplicationComponent
 
 	/**
 	 * Returns the PDO instance.
-	 * @return PDO the PDO instance, null if the connection is not established yet
+	 * @return ?PDO the PDO instance, null if the connection is not established yet
 	 */
 	public function getPdoInstance()
 	{
@@ -499,7 +499,7 @@ class CDbConnection extends CApplicationComponent
 
 	/**
 	 * Returns the currently active transaction.
-	 * @return CDbTransaction the currently active transaction. Null if no active transaction.
+	 * @return ?CDbTransaction the currently active transaction. Null if no active transaction.
 	 */
 	public function getCurrentTransaction()
 	{

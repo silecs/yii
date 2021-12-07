@@ -47,8 +47,8 @@ Yii::import('CHtml',true);
  * CErrorHandler is a core application component that can be accessed via
  * {@link CApplication::getErrorHandler()}.
  *
- * @property array $error The error details. Null if there is no error.
- * @property Exception|null $exception exception instance. Null if there is no exception.
+ * @property ?array $error The error details. Null if there is no error.
+ * @property ?Exception $exception exception instance. Null if there is no exception.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @package system.base
@@ -145,7 +145,7 @@ class CErrorHandler extends CApplicationComponent
 	 * <li>trace - the call stack of the error</li>
 	 * <li>source - the context source code where the error occurs</li>
 	 * </ul>
-	 * @return array the error details. Null if there is no error.
+	 * @return ?array the error details. Null if there is no error.
 	 */
 	public function getError()
 	{
@@ -154,7 +154,7 @@ class CErrorHandler extends CApplicationComponent
 
 	/**
 	 * Returns the instance of the exception that is currently being handled.
-	 * @return Exception|null exception instance. Null if there is no exception.
+	 * @return ?Exception exception instance. Null if there is no exception.
 	 */
 	public function getException()
 	{

@@ -41,13 +41,13 @@
  * @property boolean $isFlashRequest Whether this is an Adobe Flash or Adobe Flex request.
  * @property string $serverName Server name.
  * @property integer $serverPort Server port number.
- * @property string $urlReferrer URL referrer, null if not present.
- * @property string $userAgent User agent, null if not present.
+ * @property ?string $urlReferrer URL referrer, null if not present.
+ * @property ?string $userAgent User agent, null if not present.
  * @property string $userHostAddress User IP address.
- * @property string $userHost User host name, null if cannot be determined.
+ * @property ?string $userHost User host name, null if cannot be determined.
  * @property string $scriptFile Entry script file path (processed w/ realpath()).
  * @property array $browser User browser capabilities.
- * @property string $acceptTypes User browser accept types, null if not present.
+ * @property ?string $acceptTypes User browser accept types, null if not present.
  * @property integer $port Port number for insecure requests.
  * @property integer $securePort Port number for secure requests.
  * @property CCookieCollection|CHttpCookie[] $cookies The cookie collection.
@@ -361,7 +361,7 @@ class CHttpRequest extends CApplicationComponent
 		if($schema!=='')
 		{
 			$secure=$this->getIsSecureConnection();
-			if($secure && $schema==='https' || !$secure && $schema==='http')
+			if(($secure && $schema==='https') || (!$secure && $schema==='http'))
 				return $this->_hostInfo;
 
 			$port=$schema==='https' ? $this->getSecurePort() : $this->getPort();
@@ -710,7 +710,7 @@ class CHttpRequest extends CApplicationComponent
 
 	/**
 	 * Returns the URL referrer, null if not present
-	 * @return string URL referrer, null if not present
+	 * @return ?string URL referrer, null if not present
 	 */
 	public function getUrlReferrer()
 	{
@@ -719,7 +719,7 @@ class CHttpRequest extends CApplicationComponent
 
 	/**
 	 * Returns the user agent, null if not present.
-	 * @return string user agent, null if not present
+	 * @return ?string user agent, null if not present
 	 */
 	public function getUserAgent()
 	{
@@ -737,7 +737,7 @@ class CHttpRequest extends CApplicationComponent
 
 	/**
 	 * Returns the user host name, null if it cannot be determined.
-	 * @return string user host name, null if cannot be determined
+	 * @return ?string user host name, null if cannot be determined
 	 */
 	public function getUserHost()
 	{
@@ -770,7 +770,7 @@ class CHttpRequest extends CApplicationComponent
 
 	/**
 	 * Returns user browser accept types, null if not present.
-	 * @return string user browser accept types, null if not present
+	 * @return ?string user browser accept types, null if not present
 	 */
 	public function getAcceptTypes()
 	{
