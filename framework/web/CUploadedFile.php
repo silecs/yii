@@ -167,7 +167,7 @@ class CUploadedFile extends CComponent
 		$this->_tempName=$tempName;
 		$this->_type=$type;
 		$this->_size=$size;
-		$this->_error=$error;
+		$this->_error=(int) $error;
 	}
 
 	/**
