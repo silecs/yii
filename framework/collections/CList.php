@@ -134,7 +134,11 @@ class CList extends CComponent implements IteratorAggregate,ArrayAccess,Countabl
 	 */
 	public function add($item)
 	{
-		$this->insertAt($this->_c,$item);
+		if($this->_r !== false)
+		{
+			throw new CException(Yii::t('yii','The list is read only.'));
+		}
+		$this->_d[$this->_c++]=$item;
 		return $this->_c-1;
 	}
 

@@ -99,7 +99,8 @@ abstract class CModule extends CComponent
 	 */
 	public function __get($name)
 	{
-		if($this->hasComponent($name))
+		// For performance, replace `if($this->hasComponent($name))`
+		if (isset($this->_components[$name]) || isset($this->_componentConfig[$name]))
 			return $this->getComponent($name);
 		else
 			return parent::__get($name);
