@@ -93,7 +93,6 @@ return array (
   'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat muss entweder "path" oder "get" sein.',
   'CWinCache requires PHP wincache extension to be loaded.' => 'CWinCache erfordert, dass die PHP Wincache Erweiterung geladen wurde.',
   'CWinCache user cache is disabled. Please set wincache.ucenabled to On in your php.ini.' => 'Anwendercache für CWinCache ist deaktiviert. Bitte setzen Sie in Ihrer php.ini wincache.ucenabled auf On.',
-  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache erfordert, dass die PHP XCache Erweiterung geladen wurde.',
   'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'CZendDataCache efordert, dass die PHP Zend Data Cache Erweiterung geladen wurde.',
   'Can not generate multiple insert command with empty data set.' => 'Ein multi-INSERT-command kann nicht mit leerem Datensatz erstellt werden.',
   'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => 'Kann "{child}" nicht als Kind von "{name}" hinzufügen. Es wurde eine Schleife entdeckt.',

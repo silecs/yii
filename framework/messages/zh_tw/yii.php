@@ -67,7 +67,6 @@ return array (
   'CSecurityManager.validationKey cannot be empty.' => 'CSecurityManager.validationKey 不能是空的.',
   'CTypedList<{type}> can only hold objects of {type} class.' => 'CTypedList<{type}> 只能持有 {type} 類別的物件.',
   'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat 必須是 "path" 或 "get".',
-  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache 要求 PHP XCache 插件必須先被載入.',
   'Cache table "{tableName}" does not exist.' => 'Cache table "{tableName}" 不存在.',
   'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => '無法新增 "{child}" 成為 "{name}" 的子項. 偵測到有迴圈產生.',
   'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => '無法新增 "{child}" 成為 "{parent}" 的子項. 偵測到有迴圈產生.',

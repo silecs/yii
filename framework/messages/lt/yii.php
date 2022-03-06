@@ -82,7 +82,6 @@ return array (
   'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat reikšmė turi būti „path“ arba „get“.',
   'CWinCache requires PHP wincache extension to be loaded.' => 'CWinCache reikalingas įkeltas PHP plėtinys wincache.',
   'CWinCache user cache is disabled. Please set wincache.ucenabled to On in your php.ini.' => 'CWinCache naudotojo podėlis yra išjungtas. Norėdami įjungti, php.ini faile wincache.ucenabled reikšmę nustatykite On.',
-  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache reikalingas įkeltas PHP plėtinys XCache.',
   'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'CZendDataCache reikalingas įkeltas PHP plėtinys Zend Data Cache.',
   'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => 'Negalima priskirti „{child}" kaip „{name}“ priklausinio, gaunamas neteisingas ciklas.',
   'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => 'Negalima priskirti „{child}" kaip „{parent}“ priklausinio, gaunamas neteisingas ciklas.',

@@ -103,7 +103,6 @@ return array (
   'CSecurityManager.validationKey cannot be empty.' => 'La propriété CSecurityManager.validationKey ne peut être vide.',
   'CTypedList<{type}> can only hold objects of {type} class.' => 'CTypedList<{type}> peut uniquement contenir des objets de type {type}.',
   'CUrlManager.UrlFormat must be either "path" or "get".' => 'La propriété CUrlManager.UrlFormat doit être « path » ou « get ».',
-  'CXCache requires PHP XCache extension to be loaded.' => 'L\'extension PHP XCache doit être chargée  CXCache.',
   'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'L\'extension PHP Zend Data Cache doit être chargée pour pouvoir utiliser CZendDataCache.',
   'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => 'Impossible d\'ajouter « {child} » en tant qu\'enfant de « {name} ». Une boucle a été détectée.',
   'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => 'Impossible d\'ajouter « {child} » en tant qu\'enfant de « {parent} ». Une boucle a été détectée.',

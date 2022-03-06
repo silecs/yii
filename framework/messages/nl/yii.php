@@ -85,7 +85,6 @@ return array (
   'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat moet "path" of "get". zijn',
   'CWinCache requires PHP wincache extension to be loaded.' => 'Voor het gebruik van CWinCache moet de PHP wincache extensie geladen zijn.',
   'CWinCache user cache is disabled. Please set wincache.ucenabled to On in your php.ini.' => 'De CWinCache gebruikerscache staat af. Gelieve wincache.ucenabled op "On" te zetten in php.ini.',
-  'CXCache requires PHP XCache extension to be loaded.' => 'Voor het gebruik van CXCache moet de XCache extensie geladen zijn.',
   'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'Voor het gebruik van CZendDataCache moet de PHP Zend Data Cache extensie geladen zijn.',
   'Can not generate multiple insert command with empty data set.' => 'Kan geen meervoudig INSERT-commando genereren met de lege dataset.',
   'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => 'Kan "{child}" niet toevoegen als kind van "{name}". Er werd een lus ontdekt.',

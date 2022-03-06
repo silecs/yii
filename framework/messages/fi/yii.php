@@ -91,7 +91,6 @@ return array (
   'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat pitää olla joko "path" tai "get".',
   'CWinCache requires PHP wincache extension to be loaded.' => 'CWinCache vaatii, että PHP:n wincache-laajennus on ladattu.',
   'CWinCache user cache is disabled. Please set wincache.ucenabled to On in your php.ini.' => 'CWinCache user cache on pois käytöstä. Aseta php.ini-tiedostoon wincache.ucenabled-arvoksi "On".',
-  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache vaatii, että PHP:n XCache-laajennus on ladattu.',
   'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'CZendDataCache vaatii, että PHP:n Zend Data Cache -laajennus on ladattu.',
   'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => 'Kohdetta "{child}" ei voida lisätä kohteen "{name}" lapseksi. Silmukka havaittu.',
   'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => 'Kohdetta "{child}" ei voida lisätä kohteen "{parent}" lapseksi. Silmukka havaittu.',

@@ -115,7 +115,6 @@ return array (
   'CSecurityManager.validationKey cannot be empty.' => 'CSecurityManager.validationKey не може да бъде празно.',
   'CTypedList<{type}> can only hold objects of {type} class.' => 'CTypedList<{type}> може да съдържа само обекти от класа {type}. ',
   'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat трябва да бъде или "path" или "get".',
-  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache изисква да се зареди PHP допълнението XCache.',
   'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => 'Грешка при добавянето на "{child}", като производен на "{name}". Получава се цикъл',
   'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => 'Грешка при добавянето на "{child}", като производен на "{parent}". Получава се цикъл.',
   'Cannot add "{name}" as a child of itself.' => 'Не може да добави "{name}", като производен на себе си.',

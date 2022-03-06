@@ -73,7 +73,6 @@ return array (
   'CSecurityManager.validationKey cannot be empty.' => 'CSecurityManager.validationKey ไม่สามารถเป็นค่าว่างได้',
   'CTypedList<{type}> can only hold objects of {type} class.' => 'CTypedList<{type}> สามารถใช้กับรูปแบบ {type} ได้เท่านั้น',
   'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat จะต้องมี "path" หรือ "get"',
-  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache ต้องการ PHP XCache ในการเรียกใช้งาน',
   'Cache table "{tableName}" does not exist.' => 'ไม่พบ Cache ของตาราง "{tableName}"',
   'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => 'ไม่สามารถเพิ่ม "{child}" เป็นรายการย่อยของ "{name}" ได้ ตรวจพบการดำเนินการซ้ำ',
   'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => 'ไม่สามารถเพิ่ม "{child}" เป็นรายการย่อยของ "{parent}" ได้ ตรวจพบการดำเนินการซ้ำ',

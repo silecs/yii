@@ -86,7 +86,6 @@ return array (
   'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat musí byť "path" alebo "get".',
   'CWinCache requires PHP wincache extension to be loaded.' => 'CWinCache vyžaduje prítomnosť knižnice PHP wincache.',
   'CWinCache user cache is disabled. Please set wincache.ucenabled to On in your php.ini.' => 'CWinCache je deaktivovaná. Nastavte prosím wincache.ucenabled "On" v konfiguračnom súbore php.ini.',
-  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache vyžaduje prítomnosť PHP knižnice XCache.',
   'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'CZendDataCache vyžaduje prítomnosť PHP knižnice Zend Data Cache.',
   'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => 'Nie je možné pridať "{child}" ako potomka "{name}". Bol identifikovaný nekonečný cyklus.',
   'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => 'Nie je možné pridať "{child}" ako potomka "{parent}". Bol identifikovaný nekonečný cyklus.',

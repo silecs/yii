@@ -126,7 +126,6 @@ return array (
   'CSecurityManager.validationKey cannot be empty.' => 'CSecurityManager.validationKey no pot ser buit.',
   'CTypedList<{type}> can only hold objects of {type} class.' => 'CTypedList<{type}> només pot contenir objectes de la clase {type}.',
   'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat ha de ser "path" o "get".',
-  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache necessita l\'extensió XCache de PHP per ser carregat.',
   'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'CZendDataCache necessita l\'extensió PHP Zend Data Cache per poder ser carregada.',
   'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => 'No es pot afegir "{child}" com a fill de "{name}". S\'ha detectat un cicle infinit.',
   'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => 'No es pot afegir "{child}" com a fill de "{parent}". S\'ha detectat un cicle infinit.',

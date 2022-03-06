@@ -72,7 +72,6 @@ return array (
   'CSecurityManager.validationKey cannot be empty.' => 'CSecurityManager.validationKey ne može biti prazan',
   'CTypedList<{type}> can only hold objects of {type} class.' => 'CTypedList<{type}> može da sadrži jedino objekte {type} klase.',
   'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat mora biti "path" ili "get".',
-  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache zahtjeva da ekstenzija PHP XCache bude učitana.',
   'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'CZendDataCache zahtjeva da ekstenzija PHP Zend Cache bude učitana.',
   'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => 'Ne mogu da dodam "{child}" kao dijete od "{name}". Detektovana je petlja.',
   'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => 'Ne mogu da dodam "{child}" kao dijete od "{parent}". Detektovana je petlja.',
