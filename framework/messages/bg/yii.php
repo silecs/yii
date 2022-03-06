@@ -25,7 +25,6 @@ return array (
   'Base path "{path}" is not a valid directory.' => 'Основния път "{path}" не е валидна директория',
   'CDbConnection failed to open the DB connection.' => 'CDbConnection не успя да отвори DB конекция.',
   'CDbTestFixture.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'Грешка със CDbTestFixture.connectionID "{id}". Моля, уверете се, че се отнася към ID-то на CDbConnection компонента на приложението.',
-  'CEAcceleratorCache requires PHP eAccelerator extension to be loaded, enabled or compiled with the "--with-eaccelerator-shared-memory" option.' => 'CEAcceleratorCache изисква PHP eAccelerator разширението да бъде заредено, включено или компилирано с опцията "--with-eaccelerator-shared-memory".',
   'CTypedMap<{type}> can only hold objects of {type} class.' => 'CTypedMap<{type}> може да съдържа само обекти от {type} клас.',
   'CWinCache requires PHP wincache extension to be loaded.' => 'CWinCache изисква PHP wincache разширението да бъде заредено.',
   'CWinCache user cache is disabled. Please set wincache.ucenabled to On in your php.ini.' => 'CWinCache потребителския кеш е изключен. Моля, задайте wincache.ucenabled на On във вашия php.ini.',

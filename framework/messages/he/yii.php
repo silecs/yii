@@ -19,7 +19,6 @@ return array (
   '&lt;&lt; First' => '&lt;&lt; הראשון',
   'Active record class "{class}" does not have a scope named "{scope}".' => 'מחלקת AR "{class}" לא מכילה סקופ בשם "{scope}".',
   'Base path "{path}" is not a valid directory.' => 'נתיב ראשי "{path}" לא הוגדר מאחר והנתיב הוא לא תקני.',
-  'CEAcceleratorCache requires PHP eAccelerator extension to be loaded, enabled or compiled with the "--with-eaccelerator-shared-memory" option.' => 'CEAcceleratorCache דורש את התוסף של PHP בשם eAccelerator שיהיה מותקן, פעיל או מקומפל עם ערך "--with-eaccelerator-shared-memory".',
   'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'CZendDataCache דורש תוסף ב PHP בשם Zend Data Cache שיהיה מותקן ופעיל.',
   'Column "{column} does not exist in table "{table}".' => 'עמודה "{column} לא קיימת בטבלה "{table}".',
   'Column name must be either a string or an array.' => 'שם העמודה צריך להיות סטרינג או מערך',

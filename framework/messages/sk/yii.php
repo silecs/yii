@@ -58,7 +58,6 @@ return array (
   'CDbTestFixture.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbTestFixture.connectionID "{id}" je neplatné. Ubezpečte sa, že odkazuje na platné ID databázového komponentu aplikácie.',
   'CDbTransaction is inactive and cannot perform commit or roll back operations.' => 'CDbTransaction nie je aktívna a nemôže vykonať operácie commit ani rollback.',
   'CDirectoryCacheDependency.directory cannot be empty.' => 'CDirectoryCacheDependency.directory nemôže byť prázdne.',
-  'CEAcceleratorCache requires PHP eAccelerator extension to be loaded, enabled or compiled with the "--with-eaccelerator-shared-memory" option.' => 'CEAcceleratorCache vyžaduje prítomnosť PHP rozšírenia eAccelerator, alebo mať zapnutú podporu s nastavením "--with-eaccelerator-shared-memory".',
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName nemôže byť prázdne.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" ukazuje cestu ku neexistujúcemu adresáru. Ubezpečte sa, že adresár existuje a má zapisovacie oprávnenie pre webový server.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain akceptuje len objekt implementujúci interface IFilter.',

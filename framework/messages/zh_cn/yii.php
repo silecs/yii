@@ -22,7 +22,6 @@ return array (
   'CDbCacheDependency.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbCacheDependency.connectionID "{id}" 无效。请确认它指向一个有效的CDbConnection应用组件的ID',
   'CDbConnection failed to open the DB connection.' => 'CDbConnection连接数据库失败',
   'CDbTestFixture.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbTestFixture.connectionID "{id}" 无效。请确认它指向一个有效的CDbConnection应用组件的ID',
-  'CEAcceleratorCache requires PHP eAccelerator extension to be loaded, enabled or compiled with the "--with-eaccelerator-shared-memory" option.' => 'CEAcceleratorCache需要PHP的Accelerator扩展被调用，并且使用 "--with-eaccelerator-shared-memory" 选项启用或者编译。',
   'CTypedMap<{type}> can only hold objects of {type} class.' => 'CTypedMap<{type}>仅支持{type}类的对象。',
   'CWinCache requires PHP wincache extension to be loaded.' => 'CWinCache需要PHP的wincache扩展被调用。',
   'CWinCache user cache is disabled. Please set wincache.ucenabled to On in your php.ini.' => 'CWinCache用户缓存北京永。请在php.ini中设置wincache.ucenabled启用。',

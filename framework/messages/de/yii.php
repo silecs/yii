@@ -66,7 +66,6 @@ return array (
   'CDbTestFixture.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbFixture.connectionID "{id}" ist ungültig. Bitte stellen Sie sicher, dass sie sich auf die ID einer CDbConnection-Komponente bezieht.',
   'CDbTransaction is inactive and cannot perform commit or roll back operations.' => 'CDbTransaction ist inaktiv und kann keine Commit- oder Rollback-Operation durchführen.',
   'CDirectoryCacheDependency.directory cannot be empty.' => 'CDirectoryCacheDependency.directory darf nicht leer sein.',
-  'CEAcceleratorCache requires PHP eAccelerator extension to be loaded, enabled or compiled with the "--with-eaccelerator-shared-memory" option.' => 'CEAcceleratorCache erfordert, dass die PHP eAccelerator Erweiterung geladen und aktiviert oder mit der "--with-eaccelerator-shared-memory"-Option kompiliert wurde.',
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName darf nicht leer sein.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" zeigt nicht auf ein gültiges Verzeichnis. Stellen Sie sicher, dass das Verzeichnis existiert und der Webserver-Prozess Schreibrechte dafür besitzt.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain kann nur Objekte annehmen die das IFilter-Interface implementieren.',

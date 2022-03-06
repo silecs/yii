@@ -66,7 +66,6 @@ return array (
   'CDbTestFixture.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbTestFixture.connectionID "{id}" идентификаторы қате. Ол CDbConnection қолданба компонентінің ID-не сілтеп тұрғанына көз жеткізіңіз.',
   'CDbTransaction is inactive and cannot perform commit or roll back operations.' => 'CDbTransaction белсенді емес, тіркеу (commit) мен қайтару (roll back) әрекеттерін орындау мүмкін емес.',
   'CDirectoryCacheDependency.directory cannot be empty.' => 'CDirectoryCacheDependency.directory параметрі бос болмауы тиіс.',
-  'CEAcceleratorCache requires PHP eAccelerator extension to be loaded, enabled or compiled with the "--with-eaccelerator-shared-memory" option.' => 'CEAcceleratorCache жұмысы үшін іске қосылған PHP eAccelerator кеңейтуі керек. Ол іске қосылған немесе "--with-eaccelerator-shared-memory" опциясымен компиляцияланған болуы тиіс.',
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName параметрі бос болмауы тиіс.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" жолы қате берілген. Бума бар болып тұрғанына мен веб сервер үрдісі үшін ол бумаға жазу құқығы бар екеніне көз жеткізіңіз.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain құрамында тек IFilter интерфейсін іске асыратын объекттер болуы тиіс.',

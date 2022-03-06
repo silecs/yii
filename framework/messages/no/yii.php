@@ -45,7 +45,6 @@ return array (
   'CDbMessageSource.connectionID is invalid. Please make sure "{id}" refers to a valid database application component.' => 'CDbMessageSource.connectionID er ugyldig. Sjekk at "{id}" refererer til en gyldig database applikasjonskomponent.',
   'CDbTransaction is inactive and cannot perform commit or roll back operations.' => 'CDbTransaction er inaktiv og kan ikke utføre "commit" eller "roll back" operasjoner.',
   'CDirectoryCacheDependency.directory cannot be empty.' => 'CDirectoryCacheDependency.directory kan ikke være tom.',
-  'CEAcceleratorCache requires PHP eAccelerator extension to be loaded, enabled or compiled with the "--with-eaccelerator-shared-memory" option.' => 'CEAcceleratorCache krever at PHP eAccelerator utvidelsen er lastet, aktivert eller kompilert med "--with-eaccelerator-shared-memory".',
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName kan ikke være tom.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" peker ikke til en gyldig katalog. Sjekk at katalogen eksisterer og at webtjenerern kan skrive til den.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain godtar bare objekter som implementerer IFilter-grensesnittet.',

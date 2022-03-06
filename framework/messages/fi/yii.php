@@ -64,7 +64,6 @@ return array (
   'CDbTestFixture.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbTestFixture.connectionID "{id}" on virheellinen. Varmista , että ID viittaa sovelluksen CDbConnection-komponenttiin.',
   'CDbTransaction is inactive and cannot perform commit or roll back operations.' => 'CDbTransaction ei ole aktiivinen eikä se voi suorittaa commit- tai roll back -operaatioita.',
   'CDirectoryCacheDependency.directory cannot be empty.' => 'CDirectoryCacheDependency.directory ei voi olla tyhjä.',
-  'CEAcceleratorCache requires PHP eAccelerator extension to be loaded, enabled or compiled with the "--with-eaccelerator-shared-memory" option.' => 'CEAcceleratorCache vaatii, että PHP:n eAccelerator on ladattu, otettu käyttöön tai käännetty "--with-eaccelerator-shared-memory" -option kanssa.',
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName ei voi olla tyhjä.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" ei osoita kelvolliseen hakemistoon. Varmista, että hakemisto on olemassa ja että web-palvelimen prosessilla on kirjoitusoikeus siihen.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain voi ottaa vastaan vain oliota, jotka toteuttavat IFilter-rajapinnan.',

@@ -57,7 +57,6 @@ return array (
   'CDbTestFixture.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbTestFixture.connectionID "{id}"は無効です。CDbConnectionアプリケーションコンポーネントのIDを指しているか確認してください。',
   'CDbTransaction is inactive and cannot perform commit or roll back operations.' => 'CDbTransaction がアクティブではなく、コミットやロールバック操作を実行できません。',
   'CDirectoryCacheDependency.directory cannot be empty.' => 'CDirectoryCacheDependency.directory は空白ではいけません。',
-  'CEAcceleratorCache requires PHP eAccelerator extension to be loaded, enabled or compiled with the "--with-eaccelerator-shared-memory" option.' => 'CEAcceleratorCache はPHPの eAccelerator 拡張を必要とします。有効にするか、 "--with-eaccelerator-shared-memory" オプションをつけてコンパイルしてください。',
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName は空白ではいけません。',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" が有効なディレクトリではありません。ディレクトリが存在してウェブサーバプロセスが書き込めるかを確認してください。',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain は IFilter インタフェースを実装したオブジェクトのみ受け取ります。',

@@ -106,7 +106,6 @@ return array (
   'CDbMessageSource.connectionID is invalid. Please make sure "{id}" refers to a valid database application component.' => 'CDbMessageSource.connectionID no és vàlid. Aseguri\'s de que "{id}" fa referència a un component d\'aplicació de base de dades vàlid.',
   'CDbTransaction is inactive and cannot perform commit or roll back operations.' => 'CDbTransaction es troba inactiva i no es poden realitzar les operacions commit i roll back.',
   'CDirectoryCacheDependency.directory cannot be empty.' => 'CDirectoryCacheDependency.directory no pot ser buit.',
-  'CEAcceleratorCache requires PHP eAccelerator extension to be loaded, enabled or compiled with the "--with-eaccelerator-shared-memory" option.' => 'CEAcceleratorCache necessita l\'extensió eAccelerator de PHP per ser carregada, activada o carregada amb la opció "--with-eaccelerator-shared-memory".',
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName no puede ser vacío.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" no apunta a un directori vàlid. Verifiqui que el directori existeix i que tingui permisos d\'escriptura pel procés que corre el servidor Web.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain tan sols pot obtindre objectes que implementin la interfície IFilter.',
