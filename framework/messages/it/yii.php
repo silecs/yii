@@ -16,7 +16,6 @@
 return array (
   'CHttpRequest is unable to determine the path info of the request.' => 'CHttpRequest non può determinare le informazioni sul path della richiesta.',
   'CHttpRequest is unable to determine the request URI.' => 'CHttpRequest non può determinare l\'URI richiesto.',
-  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache richiede che l\'estensione XCache di PHP sia caricata.',
   'Cannot add "{name}" as a child of itself.' => 'Non si può aggiungere "{name}" come figlio di se stesso.',
   'The column "{column}" is not a foreign key in table "{table}".' => 'La colonna "{column}" non è una chiave esterna nella tabella  "{table}".',
   '{class} does not have attribute "{attribute}".' => '{class} non ha un attributo "{attribute}".',

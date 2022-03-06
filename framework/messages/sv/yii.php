@@ -86,7 +86,6 @@ return array (
   'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat måste vara "path" eller "get".',
   'CWinCache requires PHP wincache extension to be loaded.' => 'CWinCache kräver att PHP-tillägget wincache har laddats.',
   'CWinCache user cache is disabled. Please set wincache.ucenabled to On in your php.ini.' => 'CWinCache användarcache är avaktiverad. Var god sätt wincache.ucenabled till On i php.ini.',
-  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache kräver att PHP XCache-tillägget är laddat.',
   'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'CZendDataCache kräver att PHP-tillägget Zend Data Cache är laddat.',
   'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => 'Kan inte lägga till "{child}" som avkomma till "{name}". En slinga har detekterats.',
   'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => 'Kan inte lägga till "{child}" som avkomma till "{parent}". En slinga har detekterats.',

@@ -132,7 +132,6 @@ return array (
   'CSecurityManager.validationKey cannot be empty.' => 'CSecurityManager.validationKey 不能是空的.',
   'CTypedList<{type}> can only hold objects of {type} class.' => 'CTypedList<{type}> 只能持有 {type} 类别的对象.',
   'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat 必须是 "path" 或 "get".',
-  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache 要求 PHP XCache extension 必须先被载入.',
   'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => '无法新增 "{child}" 成为 "{name}" 的子项. 侦测到有迴圈产生.',
   'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => '无法新增 "{child}" 成为 "{parent}" 的子项. 侦测到有迴圈产生.',
   'Cannot add "{name}" as a child of itself.' => '无法新增 "{name}" 成为它自己的子项.',

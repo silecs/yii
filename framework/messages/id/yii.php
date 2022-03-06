@@ -86,7 +86,6 @@ return array (
   'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat harus "path" atau "get".',
   'CWinCache requires PHP wincache extension to be loaded.' => 'CWinCache perlu extension PHP wincache di-load.',
   'CWinCache user cache is disabled. Please set wincache.ucenabled to On in your php.ini.' => 'CWinCache user cache dinonaktifkan. Harap set wincache.ucenabled menjadi On pada php.ini anda.',
-  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache memerlukan extension PHP XCache sudah di-load.',
   'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'CZendDataCache perlu extension PHP Zend Data Cache di-load.',
   'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => 'Tidak bisa menambah "{child}" sebagai anak dari "{name}". Sebuah loop terdeteksi.',
   'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => 'Tidak bisa menambah "{child}" sebagai anak dari "{parent}". Sebuah loop terdeteksi.',

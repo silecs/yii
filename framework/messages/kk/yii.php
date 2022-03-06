@@ -93,7 +93,6 @@ return array (
   'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat параметрі тек "path" немесе "get" мәндерін қабылдай алады.',
   'CWinCache requires PHP wincache extension to be loaded.' => 'CWinCache жұмысы үшін жұмысқа жүктелген wincache кеңейтуі керек.',
   'CWinCache user cache is disabled. Please set wincache.ucenabled to On in your php.ini.' => 'Пайдаланушы CWinCache сөндірулі тұр. Өзіңіздің php.ini ішіндегі wincache.ucenabled мәнін On етіп өзгертіңіз.',
-  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache компонентінің жұмысы үшін жұмысқа жүктелген XCache PHP кеңейтуі керек.',
   'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'CZendDataCache жұмысы үшін PHP Zend Data Cache кеңейтуі жұмысқа жүктелген болуы тиіс.',
   'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => '"{child}" элементін "{name}" ұрпағы ретінде қосу мүмкін емес, шексіз цикл табылды.',
   'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => '"{child}" элементін "{parent} ұрпағы ретінде қосу мүмкін емес, шексіз цикл табылды.',

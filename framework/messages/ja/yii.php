@@ -85,7 +85,6 @@ return array (
   'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat は "path" か "get" のいずれかです。',
   'CWinCache requires PHP wincache extension to be loaded.' => 'CWinCacheはPHPのwincache拡張を必要とします。',
   'CWinCache user cache is disabled. Please set wincache.ucenabled to On in your php.ini.' => 'CWinCacheユーザキャッシュが無効化されています。php.ini中のwincache.ucenabledをOnに設定してください。',
-  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache はPHPのXCache拡張を必要とします。',
   'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'CZendDataCache は PHP Zend Data Cache 拡張を必要とします。',
   'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => '"{name}" の子供として "{child}" は追加できません。ループが検出されました。',
   'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => '"{parent}" の子供として "{child}" は追加できません。ループが検出されました。',

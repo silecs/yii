@@ -79,7 +79,6 @@ return array (
   'CSecurityManager.validationKey cannot be empty.' => 'CSecurityManager.validationKey ir jābūt aizpildītam.',
   'CTypedList<{type}> can only hold objects of {type} class.' => 'CTypedList<{type}> var saturēt tikai objektus ar tipu "{type}".',
   'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat var saturēt tikai vērtības "path" vai "get".',
-  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache komponentei ir nepieciešams PHP paplašinājums XCache.',
   'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'CZendDataCache komponentei ir nepieciešams PHP paplašinājums Zend Data Cache.',
   'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => 'Nevar pievienot "{child}" kā bērnu elementam "{name}". Konstatēts mūžīgais cikls.',
   'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => 'Nevar pievienot "{child}" kā bērnu elementam "{parent}". Konstatēts mūžīgais cikls.',

@@ -82,7 +82,6 @@ return array (
   'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat은 "path"또는 "get"중 하나입니다.',
   'CWinCache requires PHP wincache extension to be loaded.' => 'CWinCache는 PHP의 wincache 확장이 필요합니다.',
   'CWinCache user cache is disabled. Please set wincache.ucenabled to On in your php.ini.' => 'CWinCache 사용자 캐시를 사용할 수 없습니다. php.ini의 wincache.ucenabled을 On으로 설정하십시오.',
-  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache은 PHP XCache 확장을 필요로합니다.',
   'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'CZendDataCache는 PHP Zend Data Cache 확장이 필요합니다.',
   'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => '"{name}"의 자식으로 "{child}"를 추가할 수 없습니다. 루프가 발견되었습니다.',
   'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => '"{parent}"의 자식으로 "{child}"를 추가할 수 없습니다. 루프가 발견되었습니다.',

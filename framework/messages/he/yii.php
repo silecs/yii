@@ -111,7 +111,6 @@ return array (
   'CSecurityManager.validationKey cannot be empty.' => 'CSecurityManager.validationKey לא יכול להיות ריק.',
   'CTypedList<{type}> can only hold objects of {type} class.' => 'CTypedList<{type}> יכול להכיל אובייקטים מסוג {type}.',
   'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat חייב להיות מוגדר בתור "path" או "get".',
-  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache דורש תוסף בשם XCache של PHP כדי לתפקד.',
   'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => 'לא ניתן להוסיף "{child}" תחת "{name}". ניתן היה לאתר לולאה אין סופית.',
   'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => 'לא ניתן להוסיף "{child}" תחת "{parent}". ניתן היה לאתר לולאה אין סופית.',
   'Cannot add "{name}" as a child of itself.' => 'לא ניתן להוסיף "{name}" בתור תת של עצמו.',

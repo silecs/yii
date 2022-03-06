@@ -69,7 +69,6 @@ return array (
 'CSecurityManager.validationKey cannot be empty.' => 'CSecurityManager.validationKey nem lehet üres.',
 'CTypedList<{type}> can only hold objects of {type} class.' => 'A CTypedList<{type}> csak az {type} típusú osztályokat tartalmazhatja.',
 'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat "path" vagy "get" kell legyen.',
-'CXCache requires PHP XCache extension to be loaded.' => 'CXCache használatához előbb be kell tölteni a PHP XCache kiterjesztését.',
 'Cache table "{tableName}" does not exist.' => 'A Gyorsítótár-tábla "{tableName}" nem létezik.',
 'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => 'Nem lehet hozzáadni "{child}" elemet "{name}" leszármazottjaként. Körkörös hivatkozás észlelve.',
 'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => 'Nem lehet hozzáadni "{child}" elemet "{parent}" leszármazottjaként. Körkörös hivatkozás észlelve.',

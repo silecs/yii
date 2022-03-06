@@ -99,7 +99,6 @@ return array (
   'CSecurityManager.validationKey cannot be empty.' => 'CSecurityManager.validationKey காலியாக இருக்கக்கூடாது.',
   'CTypedList<{type}> can only hold objects of {type} class.' => 'CTypedList<{type}> ஆல் {type} வகை பொருட்களை மட்டுமே உட்கொள்ள முடியும்.',
   'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat இன் மதிப்பு "path" அல்லது "get" ஆக மட்டுமே இருக்க வேண்டும்.',
-  'CXCache requires PHP XCache extension to be loaded.' => 'PHP இன் XCache உள்ளிணைப்பு இருந்தால்தான் CXCache ஆல் இயங்க முடியும்.',
   'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'PHP இன் Zend Data Cache உள்ளிணைப்பு இருந்தால்தான் CZendDataCache ஆல் இயங்க முடியும்.',
   'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => '"{name}" இன் வாரிசாக "{child}" ஐ சேர்க்க முடியாது. ஒரு சுழற்சி கண்டுபிடிக்கப்பட்டுள்ளது.',
   'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => '"{parent}" இன் வாரிசாக "{child}" ஐ சேர்க்க முடியாது. ஒரு சுழற்சி கண்டுபிடிக்கப்பட்டுள்ளது.',

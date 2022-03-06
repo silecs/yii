@@ -70,7 +70,6 @@ return array (
   'CSecurityManager.validationKey cannot be empty.' => 'CSecurityManager.validationKey kan ikke være tom.',
   'CTypedList<{type}> can only hold objects of {type} class.' => 'CTypedList<{type}> kan bare inneholde objekter av {type} klassen.',
   'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat må være "path" eller "get".',
-  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache krever at PHP tillegget XCache  er lastet.',
   'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'CZendDataCache krever at PHP tillegget Zend Data Cache  er lastet.',
   'Cache table "{tableName}" does not exist.' => 'Cache tabell "{tableName}" eksisterer ikke.',
   'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => 'Kan ikke legge til "{child}" som barn av "{name}". En løkke er oppdaget.',

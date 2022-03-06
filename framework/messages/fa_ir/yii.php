@@ -112,7 +112,6 @@ return array (
   'CSecurityManager.validation must be either "MD5" or "SHA1".' => 'CSecurityManager.validation باید "MD5" یا "SHA1" باشد',
   'CTypedList<{type}> can only hold objects of {type} class.' => 'CTypedList<{type}> تنها می تواند ابجکتهایی از کلاس {type} را نگه دارد',
   'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat باید "path" یا "get" باشد',
-  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache به اکستنشن PHP XCache نیاز دارد که لود شود',
   'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'CZendDataCache به اکستنشن PHP Zend Data Cache نیاز دارد که لود شود',
   'Either "{parent}" or "{child}" does not exist.' => '"{parent}" یا "{child}" وجود ندارد',
   'Error: Table "{table}" does not have a primary key.' => ' جدول "{table}" کلید اصلی ندارد: خطا',

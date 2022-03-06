@@ -95,7 +95,6 @@ return array (
   'CUrlManager.UrlFormat must be either "path" or "get".' => 'Το CUrlManager.UrlFormat μπορεί να είναι είτε "path" είτε "get".',
   'CWinCache requires PHP wincache extension to be loaded.' => 'Το CWinCache απαιτεί να έχει φορτωθεί η επέκταση wincache της PHP.',
   'CWinCache user cache is disabled. Please set wincache.ucenabled to On in your php.ini.' => 'Η λανθάνουσα μνήμη χρήστη CWinCache είναι απενεργοποιημένη. Ορίστε το wincache.ucenabled στην τιμή On στο php.ini.',
-  'CXCache requires PHP XCache extension to be loaded.' => 'Το CXCache απαιτεί να έχει φορτωθεί η επέκταση XCache της PHP.',
   'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'Το CZendDataCache απαιτεί να έχει φορτωθεί η επέκταση Zend Data Cache της PHP.',
   'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => 'Δεν είναι δυνατή η πρόσθεση του "{child}" ως παιδί του "{name}". Ανιχνεύθηκε βρόχος.',
   'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => 'Δεν είναι δυνατή η πρόσθεση του "{child}" ως παιδί του "{name}". Ανιχνεύθηκε βρόχος.',

@@ -83,7 +83,6 @@ return array (
   'CUrlManager.UrlFormat must be either "path" or "get".' => 'Параметр CUrlManager.UrlFormat може приймати тільки значення "path" або "get".',
   'CWinCache requires PHP wincache extension to be loaded.' => 'Для роботи CWinCache потрібно завантажене розширення wincache.',
   'CWinCache user cache is disabled. Please set wincache.ucenabled to On in your php.ini.' => 'Користувальницький CWinCache відключено. Змініть wincache.ucenabled на On у вашому php.ini.',
-  'CXCache requires PHP XCache extension to be loaded.' => 'Для роботы компонента CXCache потрібне PHP-розширення XCache.',
   'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'Для роботы CZendDataCache потрібне PHP-розширення PHP Zend Data Cache.',
   'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => 'Додавання елементу "{child}" у якості нащадка "{name}" неможливе, виявлений нескінченний цикл.',
   'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => 'Додавання елементу "{child}" у якості нащадка "{parent} неможливе, виявлений нескінченний цикл.',

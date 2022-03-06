@@ -83,7 +83,6 @@ return array (
   'CUrlManager.UrlFormat must be either "path" or "get".' => 'Wartość CUrlManager.UrlFormat musi zawierać "path" lub "get".',
   'CWinCache requires PHP wincache extension to be loaded.' => 'CWinCache wymaga załadowanego rozszerzenia PHP wincache.',
   'CWinCache user cache is disabled. Please set wincache.ucenabled to On in your php.ini.' => 'Bufor użytkownika CWinCache jest wyłączony. Ustaw wincache.ucenabled na wartość On w Twoim pliku php.ini.',
-  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache wymaga załadowanego rozszerzenie PHP XCache.',
   'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'CZendDataCache wymaga załadowanego rozszerzenia PHP Zend Data Cache.',
   'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => 'Nie mogę dodać "{child}" jako potomka "{name}". Wykryto zapętlenie.',
   'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => 'Nie mogę dodać "{child}" jako potomka rodzica "{parent}". Wykryto zapętlenie.',

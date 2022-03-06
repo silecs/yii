@@ -69,7 +69,6 @@ return array (
   'CSecurityManager.validationKey cannot be empty.' => 'CSecurityManager.validationKey trebuie să conţină ceva.',
   'CTypedList<{type}> can only hold objects of {type} class.' => 'CTypedList<{type}> poate conţine doar obiecte de clasa {type}.',
   'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat trebuie să fie "path" sau "get".',
-  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache are nevoie ca extensia PHP XCache să fie încărcată.',
   'Cache table "{tableName}" does not exist.' => 'Tabela cache "{tableName}" nu există.',
   'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => 'Nu se poate adăuga "{child}" drept copil al "{name}". A fost detectată o buclă.',
   'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => 'Nu se poate adăuga "{child}" ca copil al "{parent}". A fost detectată o buclă.',

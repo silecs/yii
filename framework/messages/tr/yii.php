@@ -74,7 +74,6 @@ return array (
   'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat "path" veya "get" olmak zorundadır.',
   'CWinCache requires PHP wincache extension to be loaded.' => 'CWinCache PHP wincache uzantısına ihtiyaç duyar.',
   'CWinCache user cache is disabled. Please set wincache.ucenabled to On in your php.ini.' => 'CWinCache user cache pasif. Lütfen php.ini dosyasındaki wincache.ucenabled değerini On olarak değiştirin.',
-  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache PHP XCache uzantısına ihtiyaç duyar.',
   'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'CZendDataCache PHP Zend Data Cache uzantısına ihtiyaç duyar.',
   'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => '"{child}" değeri "{name}" \'nin çocuğu olarak eklenemedi. Bir döngü tespit edildi.',
   'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => '"{child}" değeri "{parent}" \'nin çocuğu olarak eklenemedi. Bir döngü tespit edildi.',

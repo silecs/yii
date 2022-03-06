@@ -16,7 +16,6 @@
 return array (
   'CHttpRequest is unable to determine the path info of the request.' => 'CHttpRequest не можа да установи информације о путањи (path info) за теккући захтев (request).',
   'CHttpRequest is unable to determine the request URI.' => 'CHttpRequest не може да установи URI за текући захтев (zahtev).',
-  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache захтева да екстензија PHP XCache буде учитана.',
   'Cannot add "{name}" as a child of itself.' => 'Не могу да додам "{name}" као своје дете.',
   'The column "{column}" is not a foreign key in table "{table}".' => 'Колона "{column}" није спољни кључ (foreign key) у табели "{table}".',
   '"{path}" is not a valid directory.' => '"{path}" није исправан директоријум.',
