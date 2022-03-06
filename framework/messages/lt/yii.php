@@ -57,7 +57,6 @@ return array (
   'CDbTestFixture.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'Negaliojantis CDbTestFixture.connectionID „{id}“. Pasitikslinkite, ar jis nurodo programos komponento CDbConnection identifikatorių.',
   'CDbTransaction is inactive and cannot perform commit or roll back operations.' => 'CDbTransaction yra neaktyvus, todėl negali atlikti operacijos užbaigimo ir grąžinimo veiksmų.',
   'CDirectoryCacheDependency.directory cannot be empty.' => 'CDirectoryCacheDependency.directory negali būti tuščia.',
-  'CEAcceleratorCache requires PHP eAccelerator extension to be loaded, enabled or compiled with the "--with-eaccelerator-shared-memory" option.' => 'CEAcceleratorCache reikalingas įkeltas, įjungtas arba su parametru „--with-eaccelerator-shared-memory“ sukompiliuotas PHP plėtinys eAccelerator.',
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName negali būti tuščias.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath „{path}“ nenurodo į galiojantį katalogą. Pasitikslinkite, ar toks katalogas egzistuoja ir ar WWW serverio procesas turi teisę į jį rašyti.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain gali priimti tik realizuojančius interfeisą IFilter objektus.',

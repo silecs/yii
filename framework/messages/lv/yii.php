@@ -55,7 +55,6 @@ return array (
   'CDbMessageSource.connectionID is invalid. Please make sure "{id}" refers to a valid database application component.' => 'CDbMessageSource.connectionID "{id}" ir nekorekts. Pārbaudiet, ka tas norāda uz CDbConnection komponentes ID.',
   'CDbTransaction is inactive and cannot perform commit or roll back operations.' => 'CDbTransaction ir neaktīva, nav iespējams veikt atdošanas (commit) un atrites (rollback) operācijas.',
   'CDirectoryCacheDependency.directory cannot be empty.' => 'CDirectoryCacheDependency.directory ir jābūt aizpildītam.',
-  'CEAcceleratorCache requires PHP eAccelerator extension to be loaded, enabled or compiled with the "--with-eaccelerator-shared-memory" option.' => 'CEAcceleratorCache komponentei ir nepieciešams PHP paplašinājums eAccelerator, kas ir kompilēts ar konfigurācijas opciju "--with-eaccelerator-shared-memory".',
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName ir jābūt aizpildītam.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'Ceļš CFileLogRoute.logPath "{path}" norāda uz nekoretu direktoriju. Pārbaudiet, ka direktorijs eksistē un ka tīmekļa servera procesam ir tiesības rakstīt norādītajā direktorijā.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain var saturēt tikai objektus, kas implementē interfeisu IFilter.',

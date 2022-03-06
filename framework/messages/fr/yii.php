@@ -81,7 +81,6 @@ return array (
   'CDbMessageSource.connectionID is invalid. Please make sure "{id}" refers to a valid database application component.' => 'La propriété CDbMessageSource.connectionID est invalide. Vérifiez que « {id} » référence un composant d\'application de base de données valide.',
   'CDbTransaction is inactive and cannot perform commit or roll back operations.' => 'CDbTransaction est inactif et ne peut donc valider ou annuler des opérations.',
   'CDirectoryCacheDependency.directory cannot be empty.' => 'La propriété CDirectoryCacheDependency.directory ne peut être vide.',
-  'CEAcceleratorCache requires PHP eAccelerator extension to be loaded, enabled or compiled with the "--with-eaccelerator-shared-memory" option.' => 'CEAcceleratorCache a besoin de l\'extension PHP eAccelerator pour être chargée, activée ou compilée avec l\'option « --with-eaccelerator-shared-memory ».',
   'CFileCacheDependency.fileName cannot be empty.' => 'La propriété CFileCacheDependency.fileName ne peut être vide.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath « {path} » ne pointe pas vers un dossier valide. Vérifiez que le proccessus du serveur web peut y accéder en écriture.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain peut seulement accepter des objets qui implémentent l\'interface IFilter',

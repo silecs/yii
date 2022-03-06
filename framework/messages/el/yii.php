@@ -68,7 +68,6 @@ return array (
   'CDbTestFixture.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'Το CDbTestFixture.connectionID "{id}" δεν είναι έγκυρο. Βεβαιωθείτε ότι αναφέρεται στο ID ενός δομικού στοιχείου CDbConnection της εφαρμογής.',
   'CDbTransaction is inactive and cannot perform commit or roll back operations.' => 'Το CDbTransaction είναι ανενεργό και δεν μπορεί να εκτελέσει την ολοκλήρωση ή ακύρωση ενεργειών.',
   'CDirectoryCacheDependency.directory cannot be empty.' => 'Το CDirectoryCacheDependency.directory δεν πρέπει να είναι κενό.',
-  'CEAcceleratorCache requires PHP eAccelerator extension to be loaded, enabled or compiled with the "--with-eaccelerator-shared-memory" option.' => 'Το CEAcceleratorCache απαιτεί η επέκταση PHP eAccelerator να είναι φορτωμένη, ενεργοποιημένη ή μεταγλωττισμένη με την επιλογή "--with-eaccelerator-shared-memory".',
   'CFileCacheDependency.fileName cannot be empty.' => 'Το CFileCacheDependency.fileName δεν πρέπει να είναι κενό.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'Το CFileLogRoute.logPath "{path}" δεν δείχνει σε έγκυρο κατάλογο. Επιβεβαιώστε ότι ο κατάλογος υπάρχει και είναι εγγράψιμος από τη διεργασία του διακομιστή ιστοσελίδων.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'Το CFilterChain δέχεται μόνο αντικείμενα που υλοποιούν τη διεπαφή IFilter.',

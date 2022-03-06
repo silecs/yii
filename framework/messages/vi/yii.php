@@ -65,7 +65,6 @@ return array (
   'CDbTestFixture.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbTestFixture.connectionID "{id}" không có hiệu lực. Hãy chắc chắn rằng nó chuyển đến ID của một thành phần trong ứng dụng CDbConnection.',
   'CDbTransaction is inactive and cannot perform commit or roll back operations.' => 'CDbTransaction chưa kích hoạt và không thể thực hiện các thao tác commit hoặc roll back.',
   'CDirectoryCacheDependency.directory cannot be empty.' => 'CDirectoryCacheDependency.directory không được phép rỗng.',
-  'CEAcceleratorCache requires PHP eAccelerator extension to be loaded, enabled or compiled with the "--with-eaccelerator-shared-memory" option.' => 'CEAcceleratorCache cần phải có PHP eAccelerator load sẵn, đã hiệu lực hóa, hoặc biên soạn với lựa chọn của "--with-eaccelerator-shared-memory".',
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName không được phép rỗng.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" không được trỏ tới một thư mục hợp lệ. Hãy chắc rằng thư mục này có tồn tại và được phép ghi bởi Web server.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain chỉ có thể lấy các đối tượng implementing từ IFilter interface.',

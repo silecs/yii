@@ -77,7 +77,6 @@ return array (
   'CDbMessageSource.connectionID is invalid. Please make sure "{id}" refers to a valid database application component.' => 'CDbMessageSource.connectionID தவறானது. "{id}" சரியான தகவல்தள அங்கத்தைக் குறிக்கின்றதா என்று சோதிக்கவும்.',
   'CDbTransaction is inactive and cannot perform commit or roll back operations.' => 'CDbTransaction செயலில் இல்லாததால் கட்டளைக் குழுக்களை இயக்கவோ திருப்பி விடவோ இயலாது.',
   'CDirectoryCacheDependency.directory cannot be empty.' => 'CDirectoryCacheDependency.directory காலியாக இருக்கக்கூடாது.',
-  'CEAcceleratorCache requires PHP eAccelerator extension to be loaded, enabled or compiled with the "--with-eaccelerator-shared-memory" option.' => 'CEAcceleratorCache ஐ செயலாக்க PHP இன் eAccelerator உள்ளிணைப்பு செயலாக்கப்பட்டோ, இயங்குநிலையிலோ அல்லது "--with-eaccelerator-shared-memory" அமைப்பின்மூலம் ஒன்றாக்கப்பட்டோ இருக்க வேண்டும்.',
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName காலியாக இருக்கக்கூடாது.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath இன் "{path}" முகவரி சரியான கோர்வையைக் குறிக்கவில்லை. இந்த முகவரி இணைய வழங்குதளத்தால் எழுதப்படக்கூடிய கோர்வையைக் குறிக்கின்றதா என்று சரிபார்க்கவும்.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain ஆல் IFilter இடைமுகப்பை வரையறுத்துள்ள பொருட்களை மட்டும்தான் உபயோகிக்க முடியும்.',
