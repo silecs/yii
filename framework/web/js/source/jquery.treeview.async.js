@@ -53,36 +53,6 @@ function load(settings, root, child, container) {
 	        $(container).treeview({add: child});
 	    }
 	}, settings.ajax));
-	/*
-	$.getJSON(settings.url, {root: root}, function(response) {
-		function createNode(parent) {
-			var current = $("<li/>").attr("id", this.id || "").html("<span>" + this.text + "</span>").appendTo(parent);
-			if (this.classes) {
-				current.children("span").addClass(this.classes);
-			}
-			if (this.expanded) {
-				current.addClass("open");
-			}
-			if (this.hasChildren || this.children && this.children.length) {
-				var branch = $("<ul/>").appendTo(current);
-				if (this.hasChildren) {
-					current.addClass("hasChildren");
-					createNode.call({
-						classes: "placeholder",
-						text: "&nbsp;",
-						children:[]
-					}, branch);
-				}
-				if (this.children && this.children.length) {
-					$.each(this.children, createNode, [branch])
-				}
-			}
-		}
-		child.empty();
-		$.each(response, createNode, [child]);
-        $(container).treeview({add: child});
-    });
-    */
 }
 
 var proxied = $.fn.treeview;
