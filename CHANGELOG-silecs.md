@@ -8,3 +8,7 @@ ActiveRecord
 
 - Overloading `model()` is no longer necessary.
 
+Miscellanous
+------------
+
+- CTreeView used an undocumented jQuery parameter which was removed in modern versions.
