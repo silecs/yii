@@ -94,7 +94,7 @@ class CMysqlTest extends CTestCase
 		(
 			'name'=>array('id', 'title', 'create_time', 'author_id', 'content'),
 			'rawName'=>array('`id`', '`title`', '`create_time`', '`author_id`', '`content`'),
-			'defaultValue'=>array(null, null, null, null, null),
+			'defaultValue'=>array(null, null, null, null, ''),
 			'size'=>array(11, 128, null, 11, null),
 			'precision'=>array(11, 128, null, 11, null),
 			'scale'=>array(null, null, null, null, null),

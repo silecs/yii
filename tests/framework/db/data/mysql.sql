@@ -35,7 +35,7 @@ CREATE TABLE posts
 	title VARCHAR(128) NOT NULL,
 	create_time TIMESTAMP NOT NULL,
 	author_id INTEGER NOT NULL,
-	content TEXT,
+	content TEXT DEFAULT '',
 	CONSTRAINT FK_post_author FOREIGN KEY (author_id)
 		REFERENCES users (id) ON DELETE CASCADE ON UPDATE RESTRICT
 ) ENGINE=InnoDB;
