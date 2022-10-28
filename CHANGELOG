@@ -1,9 +1,15 @@
                    Yii Framework Change Log
                    ========================
 
-Version 1.1.26 under development
+Version 1.1.27 under development
 --------------------------------
 
+- Bug: PHP 8.1 compatibility: Fix CFileCache call of file_get_contents (Bregi)
+
+Version 1.1.26 September 30, 2022
+--------------------------------
+
+- Enh #4386: Added support for PHP 8.1 (marcovtwout, JonathanArgentao, ivany4, csears123)
 - Enh #4392: Added support for SSL to CRedisCache (andres101)
 - Bug #4453: Alpine Linux compatibility: Avoid using `GLOB_BRACE` in `CFileHelper::removeDirectory` (ivany4)
 
