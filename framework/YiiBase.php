@@ -192,6 +192,10 @@ class YiiBase
 			$type=$config;
 			$config=array();
 		}
+		elseif($config instanceof \Closure)
+		{
+			return call_user_func($config);
+		}
 		elseif(isset($config['class']))
 		{
 			$type=$config['class'];

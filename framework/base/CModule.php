@@ -387,10 +387,11 @@ abstract class CModule extends CComponent
 		elseif(isset($this->_componentConfig[$id]) && $createIfNull)
 		{
 			$config=$this->_componentConfig[$id];
-			if(!isset($config['enabled']) || $config['enabled'])
+			if(!is_array($config) || !isset($config['enabled']) || $config['enabled'])
 			{
 				Yii::trace("Loading \"$id\" application component",'system.CModule');
-				unset($config['enabled']);
+				if (is_array($config))
+					unset($config['enabled']);
 				$component=Yii::createComponent($config);
 				$component->init();
 				return $this->_components[$id]=$component;
