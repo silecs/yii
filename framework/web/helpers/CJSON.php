@@ -45,8 +45,8 @@
 * @author	  Matt Knapp <mdknapp[at]gmail[dot]com>
 * @author	  Brett Stimmerman <brettstimmerman[at]gmail[dot]com>
 * @copyright   2005 Michal Migurski
-* @license	 http://www.opensource.org/licenses/bsd-license.php
-* @link		http://pear.php.net/pepr/pepr-proposal-show.php?id=198
+* @license	 https://www.opensource.org/licenses/bsd-license.php
+* @link		https://pear.php.net/pepr/pepr-proposal-show.php?id=198
 */
 
 /**
@@ -157,7 +157,7 @@ class CJSON
 
 						case (($ord_var_c & 0xE0) == 0xC0):
 							// characters U-00000080 - U-000007FF, mask 110XXXXX
-							// see http://www.cl.cam.ac.uk/~mgk25/unicode.html#utf-8
+							// see https://www.cl.cam.ac.uk/~mgk25/unicode.html#utf-8
 							$char = pack('C*', $ord_var_c, ord($var[$c+1]));
 							$c+=1;
 							$utf16 =  self::utf8ToUTF16BE($char);
@@ -166,7 +166,7 @@ class CJSON
 
 						case (($ord_var_c & 0xF0) == 0xE0):
 							// characters U-00000800 - U-0000FFFF, mask 1110XXXX
-							// see http://www.cl.cam.ac.uk/~mgk25/unicode.html#utf-8
+							// see https://www.cl.cam.ac.uk/~mgk25/unicode.html#utf-8
 							$char = pack('C*', $ord_var_c,
 										 ord($var[$c+1]),
 										 ord($var[$c+2]));
@@ -177,7 +177,7 @@ class CJSON
 
 						case (($ord_var_c & 0xF8) == 0xF0):
 							// characters U-00010000 - U-001FFFFF, mask 11110XXX
-							// see http://www.cl.cam.ac.uk/~mgk25/unicode.html#utf-8
+							// see https://www.cl.cam.ac.uk/~mgk25/unicode.html#utf-8
 							$char = pack('C*', $ord_var_c,
 										 ord($var[$c+1]),
 										 ord($var[$c+2]),
@@ -189,7 +189,7 @@ class CJSON
 
 						case (($ord_var_c & 0xFC) == 0xF8):
 							// characters U-00200000 - U-03FFFFFF, mask 111110XX
-							// see http://www.cl.cam.ac.uk/~mgk25/unicode.html#utf-8
+							// see https://www.cl.cam.ac.uk/~mgk25/unicode.html#utf-8
 							$char = pack('C*', $ord_var_c,
 										 ord($var[$c+1]),
 										 ord($var[$c+2]),
@@ -202,7 +202,7 @@ class CJSON
 
 						case (($ord_var_c & 0xFE) == 0xFC):
 							// characters U-04000000 - U-7FFFFFFF, mask 1111110X
-							// see http://www.cl.cam.ac.uk/~mgk25/unicode.html#utf-8
+							// see https://www.cl.cam.ac.uk/~mgk25/unicode.html#utf-8
 							$char = pack('C*', $ord_var_c,
 										 ord($var[$c+1]),
 										 ord($var[$c+2]),
