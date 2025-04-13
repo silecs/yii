@@ -361,74 +361,25 @@ class CSecurityManager extends CApplicationComponent
 	 * transparent in raw URL encoding.
 	 * @param integer $length length of the generated string in characters.
 	 * @param boolean $cryptographicallyStrong set this to require cryptographically strong randomness.
-	 * @return string|boolean random string or false in case it cannot be generated.
+	 * @return string random string or false in case it cannot be generated.
 	 * @since 1.1.14
 	 */
 	public function generateRandomString($length,$cryptographicallyStrong=true)
 	{
-		if(($randomBytes=$this->generateRandomBytes($length+2,$cryptographicallyStrong))!==false)
-			return strtr($this->substr(base64_encode($randomBytes),0,$length),array('+'=>'_','/'=>'~'));
-		return false;
+		$randomBytes=$this->generateRandomBytes($length+2,$cryptographicallyStrong);
+		return strtr($this->substr(base64_encode($randomBytes),0,$length),array('+'=>'_','/'=>'~'));
 	}
 
 	/**
 	 * Generates a string of random bytes.
 	 * @param integer $length number of random bytes to be generated.
-	 * @param boolean $cryptographicallyStrong whether to fail if a cryptographically strong
-	 * result cannot be generated. The method attempts to read from a cryptographically strong
-	 * pseudorandom number generator (CS-PRNG), see
-	 * {@link https://en.wikipedia.org/wiki/Cryptographically_secure_pseudorandom_number_generator#Requirements Wikipedia}.
-	 * However, in some runtime environments, PHP has no access to a CS-PRNG, in which case
-	 * the method returns false if $cryptographicallyStrong is true. When $cryptographicallyStrong is false,
-	 * the method always returns a pseudorandom result but may fall back to using {@link generatePseudoRandomBlock}.
-	 * This method does not guarantee that entropy, from sources external to the CS-PRNG, was mixed into
-	 * the CS-PRNG state between each successive call. The caller can therefore expect non-blocking
-	 * behavior, unlike, for example, reading from /dev/random on Linux, see
-	 * {@link https://eprint.iacr.org/2006/086.pdf Gutterman et al 2006}.
-	 * @return boolean|string generated random binary string or false on failure.
+	 * @param boolean $cryptographicallyStrong obsolete
+	 * @return string generated random binary string or false on failure.
 	 * @since 1.1.14
 	 */
 	public function generateRandomBytes($length,$cryptographicallyStrong=true)
 	{
-		$bytes='';
-		if(function_exists('openssl_random_pseudo_bytes'))
-		{
-			$bytes=openssl_random_pseudo_bytes($length,$strong);
-			if($this->strlen($bytes)>=$length && ($strong || !$cryptographicallyStrong))
-				return $this->substr($bytes,0,$length);
-		}
-
-		if(function_exists('mcrypt_create_iv') &&
-			($bytes=@mcrypt_create_iv($length, MCRYPT_DEV_URANDOM))!==false &&
-			$this->strlen($bytes)>=$length)
-		{
-			return $this->substr($bytes,0,$length);
-		}
-
-		if(($file=@fopen('/dev/urandom','rb'))!==false &&
-			($bytes=@fread($file,$length))!==false &&
-			(fclose($file) || true) &&
-			$this->strlen($bytes)>=$length)
-		{
-			return $this->substr($bytes,0,$length);
-		}
-
-		$i=0;
-		while($this->strlen($bytes)<$length &&
-			($byte=$this->generateSessionRandomBlock())!==false &&
-			++$i<3)
-		{
-			$bytes.=$byte;
-		}
-		if($this->strlen($bytes)>=$length)
-			return $this->substr($bytes,0,$length);
-
-		if ($cryptographicallyStrong)
-			return false;
-
-		while($this->strlen($bytes)<$length)
-			$bytes.=$this->generatePseudoRandomBlock();
-		return $this->substr($bytes,0,$length);
+		return random_bytes($length);
 	}
 
 	/**
