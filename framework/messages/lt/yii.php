@@ -60,8 +60,6 @@ return array (
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName negali būti tuščias.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath „{path}“ nenurodo į galiojantį katalogą. Pasitikslinkite, ar toks katalogas egzistuoja ir ar WWW serverio procesas turi teisę į jį rašyti.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain gali priimti tik realizuojančius interfeisą IFilter objektus.',
-  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl negali būti tuščias.',
-  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name negali būti tuščias.',
   'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName negali būti tuščias.',
   'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection gali turėti tik CHttpCookie tipo objektus.',
   'CHttpRequest is unable to determine the entry script URL.' => 'CHttpRequest negali nustatyti įėjimo skripto URL.',

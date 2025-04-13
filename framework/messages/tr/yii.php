@@ -52,8 +52,6 @@ return array (
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName boş bırakılamaz.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" yolu geçerli bir dizini işaret etmiyor. Web sunucusu işlemi tarafından yazma izni olduğuna emin olun.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain sadece IFilter arayüzünü implement eden objecleri kullanabilir.',
-  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl boş bırakılamaz.',
-  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name boş bırakılamaz.',
   'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName boş bırakılamaz.',
   'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection sadece CHttpCookie objelerini tutabilir.',
   'CHttpRequest is unable to determine the entry script URL.' => 'CHttpRequest giriş komut dosyası URL \'sini anlayamıyor.',

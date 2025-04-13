@@ -47,8 +47,6 @@ return array (
 'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName nem lehet üres.',
 'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'A CFileLogRoute.logPath "{path}" érvénytelen könyvtárra mutat. Kérjük, győződjön meg róla, hogy a könyvtár létezik, és a Web-szerver által írható.',
 'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain csak olyan objektum lehet, amely implementálja az IFilter interfészt.',
-'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl nem lehet üres.',
-'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name nem lehet üres.',
 'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName nem lehet üres.',
 'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection csak CHttpCookie objektumokat tartalmazhat.',
 'CHttpRequest is unable to determine the entry script URL.' => 'CHttpRequest-nek nem sikerült megállapítania a beléptető program URL-jét.',

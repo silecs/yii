@@ -68,8 +68,6 @@ return array (
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName không được phép rỗng.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" không được trỏ tới một thư mục hợp lệ. Hãy chắc rằng thư mục này có tồn tại và được phép ghi bởi Web server.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain chỉ có thể lấy các đối tượng implementing từ IFilter interface.',
-  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl không được phép rỗng.',
-  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name không được phép rỗng.',
   'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName không được phép rỗng.',
   'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection chỉ có thể quản lý các đối tượng CHttpCookie.',
   'CHttpRequest is unable to determine the entry script URL.' => 'CHttpRequest không thể nào xác định script URL.',

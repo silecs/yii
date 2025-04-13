@@ -69,8 +69,6 @@ return array (
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName параметрі бос болмауы тиіс.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" жолы қате берілген. Бума бар болып тұрғанына мен веб сервер үрдісі үшін ол бумаға жазу құқығы бар екеніне көз жеткізіңіз.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain құрамында тек IFilter интерфейсін іске асыратын объекттер болуы тиіс.',
-  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl параметрі бос болмауы тиіс.',
-  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name параметрі бос болмауы тиіс.',
   'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName параметрі бос болмауы тиіс.',
   'CHttpCacheFilter.lastModified contained a value that could not be understood by strtotime()' => 'CHttpCacheFilter.lastModified құрамында strtotime() түсіне алмаған мән табылды',
   'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection құрамында тек CHttpCookie түріндегі объекттер болуы тиіс.',

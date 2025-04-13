@@ -60,8 +60,6 @@ return array (
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName kan ikke være blank.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" peger ikke på en gyldig mappe. Tjek at mappen eksisterer og at webserveren kan skrive til den.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain godtager kun objekter som implementerer IFilter interface.',
-  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl kan ikke være blank.',
-  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name kan ikke være blank.',
   'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName kan ikke være blank.',
   'CHttpCacheFilter.lastModified contained a value that could not be understood by strtotime()' => 'CHttpCacheFilter.lastModified indeholdt en værdi, som ikke kunne forstås af strtotime()',
   'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection kan kun indeholde objekter af klassen CHttpCookie.',

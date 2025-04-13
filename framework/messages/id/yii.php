@@ -64,8 +64,6 @@ return array (
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName tidak boleh kosong.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" tidak menunjuk ke direktori yang benar. Pastikan direktori ada dan bisa ditulis oleh proses server Web.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain hanya bisa mengambil objek yang mengimplementasikan antar muka IFilter.',
-  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl tidak boleh kosong.',
-  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name tidak boleh kosong.',
   'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName tidak boleh kosong.',
   'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection hanya bisa menampung objek CHttpCookie.',
   'CHttpRequest is unable to determine the entry script URL.' => 'CHttpRequest tidak bisa menentukan URL naskah entri.',

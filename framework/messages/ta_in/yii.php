@@ -80,8 +80,6 @@ return array (
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName காலியாக இருக்கக்கூடாது.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath இன் "{path}" முகவரி சரியான கோர்வையைக் குறிக்கவில்லை. இந்த முகவரி இணைய வழங்குதளத்தால் எழுதப்படக்கூடிய கோர்வையைக் குறிக்கின்றதா என்று சரிபார்க்கவும்.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain ஆல் IFilter இடைமுகப்பை வரையறுத்துள்ள பொருட்களை மட்டும்தான் உபயோகிக்க முடியும்.',
-  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl காலியாக இருக்கக்கூடாது.',
-  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name காலியாக இருக்கக்கூடாது.',
   'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName காலியாக இருக்கக்கூடாது.',
   'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection ஆல் CHttpCookie பொருட்களை மட்டும்தான் உள்ளடக்க முடியும்.',
   'CHttpRequest is unable to determine the entry script URL.' => 'CHttpRequest ஆல் உள்நுழை நிரலின் முகவரியை கண்டுபிடிக்க இயலவில்லை.',

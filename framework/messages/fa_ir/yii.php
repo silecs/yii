@@ -74,8 +74,6 @@ return array (
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName نمی تواند خالی باشد',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" به دایرکتوری معتبر اشاره نمی کند.مطمئن شوید دایرکتوری موجود می باشد و قابل نوشتن توسط وب سرور می باسد',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain فقط می تواند ابجکتهایی را بگیرد که IFilter interface را اجرا می کنند ',
-  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl نمی تواند خالی باشد',
-  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name نمی تواند خالی باشد',
   'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName نمی تواند خالی باشد',
   'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection تنها می تواند ابجکتهای CHttpCookie را نگه دارد',
   'CHttpRequest is unable to determine the entry script URL.' => 'CHttpRequest نمی تواند URL اسکریپت ورودی را تعیین کند',

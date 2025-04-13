@@ -47,8 +47,6 @@ return array (
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName trebuie să fie nenul.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" nu este un director valid. Asiguraţi-vă ca acest director exista şi ca serverul Web are drepturi de scriere.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain poate conţine doar obiecte care implementează interfaţa  IFilter.',
-  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl trebuie să fie nenul.',
-  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name trebuie să fie nenul.',
   'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName trebuie să fie nenul.',
   'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection poate conţine doar obiecte CHttpCookie.',
   'CHttpRequest is unable to determine the entry script URL.' => 'CHttpRequest nu poate determina URL-ul scriptului de intrare.',

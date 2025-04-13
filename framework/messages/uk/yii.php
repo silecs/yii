@@ -61,8 +61,6 @@ return array (
   'CFileCacheDependency.fileName cannot be empty.' => 'Параметр CFileCacheDependency.fileName не може бути порожнім.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'Шлях CFileLogRoute.logPath "{path}" задано невірно. Переконайтесь, що директорія існує та доступна для запису користувачем, під яким працює веб-сервер.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain може містити тільки обʼєкти, які реалізують інтерфейс IFilter.',
-  'CFlexWidget.baseUrl cannot be empty.' => 'Параметр CFlexWidget.baseUrl не може бути порожнім.',
-  'CFlexWidget.name cannot be empty.' => 'Параметр CFlexWidget.name не може бути порожнім.',
   'CGlobalStateCacheDependency.stateName cannot be empty.' => 'Параметр CGlobalStateCacheDependency.stateName не може бути порожнім.',
   'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection може містити тільки обʼєкти типу CHttpCookie.',
   'CHttpRequest is unable to determine the entry script URL.' => 'Компоненту CHttpRequest не вдалося визначити URL вхідного скрипту.',

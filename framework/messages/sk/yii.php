@@ -61,8 +61,6 @@ return array (
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName nemôže byť prázdne.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" ukazuje cestu ku neexistujúcemu adresáru. Ubezpečte sa, že adresár existuje a má zapisovacie oprávnenie pre webový server.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain akceptuje len objekt implementujúci interface IFilter.',
-  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl nemôže byť prázdny.',
-  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name nemôže byť prázdny.',
   'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName nemôže byť prázdny.',
   'CHttpCacheFilter.lastModified contained a value that could not be understood by strtotime()' => 'CHttpCacheFilter.lastModified obsahuje hodnotu, ktorá nie je použiteľná vo funkcii strtotime()',
   'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection môže obsahovať len objekty typu CHttpCookie.',

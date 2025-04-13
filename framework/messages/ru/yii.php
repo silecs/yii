@@ -63,8 +63,6 @@ return array (
   'CFileCacheDependency.fileName cannot be empty.' => 'Параметр CFileCacheDependency.fileName должен быть заполнен.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'Путь CFileLogRoute.logPath "{path}" задан неверно. Удостоверьтесь, что директория существует и доступна для записи пользователю, под которым запущен веб-сервер.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain может содержать только объекты реализующие интерфейс IFilter.',
-  'CFlexWidget.baseUrl cannot be empty.' => 'Параметр CFlexWidget.baseUrl должен быть заполнен.',
-  'CFlexWidget.name cannot be empty.' => 'Параметр CFlexWidget.name должен быть заполнен.',
   'CGlobalStateCacheDependency.stateName cannot be empty.' => 'Параметр CGlobalStateCacheDependency.stateName должен быть заполнен.',
   'CHttpCacheFilter.lastModified contained a value that could not be understood by strtotime()' => 'CHttpCacheFilter.lastModified содержит значение, которое не удалось разобрать при помощи strtotime()',
   'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection может содержать только объекты типа CHttpCookie.',

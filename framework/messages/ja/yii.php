@@ -60,8 +60,6 @@ return array (
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName は空白ではいけません。',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" が有効なディレクトリではありません。ディレクトリが存在してウェブサーバプロセスが書き込めるかを確認してください。',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain は IFilter インタフェースを実装したオブジェクトのみ受け取ります。',
-  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl は空白ではいけません。',
-  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name  は空白ではいけません。',
   'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName は空白ではいけません。',
   'CHttpCacheFilter.lastModified contained a value that could not be understood by strtotime()' => 'CHttpCacheFilter.lastModified に strtotime() が解釈できない値が入っていました。',
   'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection は CHttpCookie オブジェクトのみを持ちます。',

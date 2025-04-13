@@ -60,8 +60,6 @@ return array (
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName mag niet leeg zijn.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" wijst naar een ongeldige map. Dit moet een map door de web server beschrijfbare map zijn.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain kan alleen overweg met objecten die de IFilter interface implementeren.',
-  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl mag niet leeg zijn.',
-  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name mag niet leeg zijn.',
   'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName mag niet leeg zijn.',
   'CHttpCacheFilter.lastModified contained a value that could not be understood by strtotime()' => 'CHttpCacheFilter.lastModified bevatte een waarde die niet begrepen werd door strtotime()',
   'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection kan alleen CHttpCookie objecten bevatten.',

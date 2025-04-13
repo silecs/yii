@@ -108,8 +108,6 @@ return array (
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName no puede ser vacío.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" no apunta a un directori vàlid. Verifiqui que el directori existeix i que tingui permisos d\'escriptura pel procés que corre el servidor Web.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain tan sols pot obtindre objectes que implementin la interfície IFilter.',
-  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl no pot ser buit.',
-  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name no pot ser buit.',
   'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName no pot ser buit.',
   'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection només pot contenir objectes CHttpCookie.',
   'CHttpRequest is unable to determine the entry script URL.' => 'CHttpRequest no pot determinar la URL del vostre script d\'entrada.',

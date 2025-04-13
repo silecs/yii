@@ -51,8 +51,6 @@ return array (
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName ไม่สามารถเป็นค่าว่างได้',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" ไม่สามารถชี้ไดเรกทอรี่ที่ถูกต้องได้ กรุณาตรวจสอบว่าไดเรกทอรี่นั้นถูกต้องและสามารถเขียนได้โดยคำสั่งของเซิฟเวอร์',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain สามารถเรียกใช้งานกับข้อมูลที่อยู่ในรูปแบบของ IFilter ได้',
-  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl ไม่สามารถเป็นค่าว่างได้',
-  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name ไม่สามารถเป็นค่าว่างได้',
   'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName ไม่สามารถเป็นค่าว่างได้',
   'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection สามารถใช้กับ CHttpCookie ได้เท่านั้น',
   'CHttpRequest is unable to determine the entry script URL.' => 'CHttpRequest ไม่สามารถตรวจสอบคำสั่งที่อยู่ของสคริปต์ได้',

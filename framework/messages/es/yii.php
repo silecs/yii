@@ -60,8 +60,6 @@ return array (
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName no puede ser vacío.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" no apunta a un directorio válido. Asegúrese que el directorio exista y tenga permisos de escritura por el proceso que corre el servidor Web.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain solamente puede tomar objetos que implementen la interfaz IFilter.',
-  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl no puede ser vacío.',
-  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name no puede ser vacío.',
   'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName no puede ser vacío.',
   'CHttpCacheFilter.lastModified contained a value that could not be understood by strtotime()' => 'CHttpCacheFilter.lastModified tuvo un valor que no pudo ser entendido por strtotime()',
   'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection solo puede contener objetos CHttpCookie.',

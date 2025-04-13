@@ -90,8 +90,6 @@ return array (
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName לא יכול להיות ריק.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" לא מכוון לתיקיה תקינה בשרת. אנא וודא שהתיקיה קיימת וניתנת לכתיבה על ידי השרת..',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain יכול להכיל אובייקטים אשר משתמשים בממשק מסוג IFilter.',
-  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl לא יכול להיות מוגדר כריק.',
-  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name לא יכול להיות מוגדר כריק.',
   'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName לא יכול להיות מוגדר כריק.',
   'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection יכול להכיל אובייקטים מסוג CHttpCookie.',
   'CHttpRequest is unable to determine the entry script URL.' => 'CHttpRequest לא הצליח לזהות את קובץ הבקשה הראשונה.',

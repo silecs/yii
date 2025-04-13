@@ -60,8 +60,6 @@ return array (
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName은 공백을 사용할 수 없습니다.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}"를 사용하는 디렉토리가 없습니다. 디렉토리가 실제 있는지 웹 서버 프로세스가 쓸 수있는지를 확인하십시오.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain는 IFilter 인터페이스를 구현하는 개체만 가질 수 있습니다.',
-  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl는 공백을 사용할 수 없습니다.',
-  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name는 공백을 사용할 수 없습니다.',
   'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName는 공백을 사용할 수 없습니다.',
   'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection은 CHttpCookie 객체를 가집니다.',
   'CHttpRequest is unable to determine the entry script URL.' => 'CHttpRequest는 항목 스크립트의 URL을 확인할 수 없습니다.',

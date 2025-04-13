@@ -45,8 +45,6 @@ return array (
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName 不能是空的.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" does not point to a valid directory. 請確定目錄存在並且允許 Web server process 寫入.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain 只能取得有實作 IFilter 介面的物件.',
-  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl 不能是空的.',
-  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name 不能是空的.',
   'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName 不能是空的.',
   'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection 只能持有 CHttpCookie 物件.',
   'CHttpRequest is unable to determine the entry script URL.' => 'CHttpRequest 不能確認入口腳本的 URL.',

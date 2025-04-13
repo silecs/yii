@@ -71,8 +71,6 @@ return array (
   'CFileCacheDependency.fileName cannot be empty.' => 'Το CFileCacheDependency.fileName δεν πρέπει να είναι κενό.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'Το CFileLogRoute.logPath "{path}" δεν δείχνει σε έγκυρο κατάλογο. Επιβεβαιώστε ότι ο κατάλογος υπάρχει και είναι εγγράψιμος από τη διεργασία του διακομιστή ιστοσελίδων.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'Το CFilterChain δέχεται μόνο αντικείμενα που υλοποιούν τη διεπαφή IFilter.',
-  'CFlexWidget.baseUrl cannot be empty.' => 'Το CFlexWidget.baseUrl δεν πρέπει να είναι κενό.',
-  'CFlexWidget.name cannot be empty.' => 'Το CFlexWidget.name δεν πρέπει να είναι κενό.',
   'CGlobalStateCacheDependency.stateName cannot be empty.' => 'Το CGlobalStateCacheDependency.stateName δεν πρέπει να είναι κενό.',
   'CHttpCacheFilter.lastModified contained a value that could not be understood by strtotime()' => 'Το CHttpCacheFilter.lastModified περιείχε μια τιμή που δεν ήταν δυνατό να καταλάβει η strtotime()',
   'CHttpCookieCollection can only hold CHttpCookie objects.' => 'Το CHttpCookieCollection μπορεί να κρατά μόνο αντικείμενα τύπου CHttpCookie.',

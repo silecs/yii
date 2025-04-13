@@ -67,8 +67,6 @@ return array (
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName ei voi olla tyhjä.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" ei osoita kelvolliseen hakemistoon. Varmista, että hakemisto on olemassa ja että web-palvelimen prosessilla on kirjoitusoikeus siihen.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain voi ottaa vastaan vain oliota, jotka toteuttavat IFilter-rajapinnan.',
-  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl ei voi olla tyhjä.',
-  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name ei voi olla tyhjä.',
   'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName ei voi olla tyhjä.',
   'CHttpCacheFilter.lastModified contained a value that could not be understood by strtotime()' => 'CHttpCacheFilter.lastModified sisälsi arvon, jota strtotime() ei ymmärtänyt',
   'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection hyväksyy vain CHttpCookie-olioita.',

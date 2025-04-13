@@ -64,8 +64,6 @@ return array (
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName får inte vara tom.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" refererar inte till en giltig katalog. Kontrollera att den är en existerande katalog där webbserverprocessen har skrivrättighet.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain kan bara ha objekt som implementerar gränssnittet IFilter.',
-  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl kan inte vara tom.',
-  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name kan inte vara tom.',
   'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName får inte vara tom.',
   'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection kan endast innehålla objekt av typen CHttpCookie.',
   'CHttpRequest is unable to determine the entry script URL.' => 'CHttpRequest kan inte avgöra ingångsskriptets URL.',

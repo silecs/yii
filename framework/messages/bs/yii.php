@@ -51,8 +51,6 @@ return array (
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName ne smije biti prazno.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" ne pokazuje na nevažeći direktorij. Pripazite da postoji taj direktorij i da proces web servera ima pravo da tamo piše.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain smije primiti samo objekte koje implementiraju IFilter-Interface.',
-  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl ne smije biti prazno.',
-  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name ne smije biti prazno.',
   'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName ne smije biti prazno.',
   'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection smije da sadrži samo CHttpCookie-Objekte.',
   'CHttpRequest is unable to determine the entry script URL.' => 'CHttpRequest ne može da ustanovi URL ulaznog skripta (entry script).',

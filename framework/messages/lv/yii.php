@@ -58,8 +58,6 @@ return array (
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName ir jābūt aizpildītam.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'Ceļš CFileLogRoute.logPath "{path}" norāda uz nekoretu direktoriju. Pārbaudiet, ka direktorijs eksistē un ka tīmekļa servera procesam ir tiesības rakstīt norādītajā direktorijā.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain var saturēt tikai objektus, kas implementē interfeisu IFilter.',
-  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl ir jābūt aizpildītam.',
-  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name ir jābūt aizpildītam.',
   'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName ir jābūt aizpildītam.',
   'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection var saturēt tikai objektus ar tipu CHttpCookie.',
   'CHttpRequest is unable to determine the entry script URL.' => 'CHttpRequest neizdevās noteikt ieejošā skripta URL.',

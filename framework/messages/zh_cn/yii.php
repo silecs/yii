@@ -113,8 +113,6 @@ return array (
   'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName 不能是空的.',
   'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" does not point to a valid directory. 请确定目录存在并且允许 Web server process 写入.',
   'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain 只能取得有实现 IFilter 接口的对象.',
-  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl 不能是空的.',
-  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name 不能是空的.',
   'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName 不能是空的.',
   'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection 只能持有 CHttpCookie 对象.',
   'CHttpRequest is unable to determine the entry script URL.' => 'CHttpRequest 不能确认入口脚本的 URL.',
