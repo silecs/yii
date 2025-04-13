@@ -214,9 +214,9 @@ class CMysqlTest extends CTestCase
 		$this->assertEquals('new post 1',$c->queryScalar());
 		
 		$c=$builder->createUpdateCounterCommand($table,array('author_id'=>-1),new CDbCriteria(array(
-				'condition'=>'u.`username`="user2"',
+				'condition'=>"u.`username`='user2'",
 				'join'=>'JOIN `users` u ON `author_id`=u.`id`')));
-		$this->assertEquals('UPDATE `posts` JOIN `users` u ON `author_id`=u.`id` SET `author_id`=`author_id`-1 WHERE u.`username`="user2"',$c->text);
+		$this->assertEquals("UPDATE `posts` JOIN `users` u ON `author_id`=u.`id` SET `author_id`=`author_id`-1 WHERE u.`username`='user2'",$c->text);
 		$c->execute();
 		$c=$builder->createSqlCommand('SELECT author_id FROM posts WHERE id=2');
 		$this->assertEquals(1,$c->queryScalar());
