@@ -105,7 +105,6 @@ return array (
   'CProfileLogRoute found a mismatching code block "{token}". Make sure the calls to Yii::beginProfile() and Yii::endProfile() be properly nested.' => 'CProfileLogRoute found a mismatching code block "{token}". Make sure the calls to Yii::beginProfile() and Yii::endProfile() be properly nested.',
   'CProfileLogRoute.report "{report}" is invalid. Valid values include "summary" and "callstack".' => 'CProfileLogRoute.report "{report}" نامعتبر می باشد.مقادیر معتبر شامل "summary" و "callstack" می باشد',
   'CSecurityManager.encryptionKey cannot be empty.' => 'CSecurityManager.encryptionKey نمی تواند خالی باشد',
-  'CSecurityManager requires PHP mcrypt extension to be loaded in order to use data encryption feature.' => 'CSecurityManager به اکستنشن PHP mcrypt نیاز دارد که لود شود به منظور استفاده از داده های رمزگذاری شده',
   'CSecurityManager.validationKey cannot be empty.' => 'CSecurityManager.validationKey نمی تواند خالی باشد',
   'CSecurityManager.validation must be either "MD5" or "SHA1".' => 'CSecurityManager.validation باید "MD5" یا "SHA1" باشد',
   'CTypedList<{type}> can only hold objects of {type} class.' => 'CTypedList<{type}> تنها می تواند ابجکتهایی از کلاس {type} را نگه دارد',

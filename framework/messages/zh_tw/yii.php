@@ -59,7 +59,6 @@ return array (
   'CMultiFileUpload.name is required.' => 'CMultiFileUpload.name 是必要的.',
   'CProfileLogRoute found a mismatching code block "{token}". Make sure the calls to Yii::beginProfile() and Yii::endProfile() be properly nested.' => 'CProfileLogRoute found a mismatching code block "{token}". 請確定對於 Yii::beginProfile() 與 Yii::endProfile() 的呼叫是適當地巢狀套疊的.',
   'CProfileLogRoute.report "{report}" is invalid. Valid values include "summary" and "callstack".' => 'CProfileLogRoute.report "{report}" 是無效的. 有效值包含 "summary" 與 "callstack".',
-  'CSecurityManager requires PHP mcrypt extension to be loaded in order to use data encryption feature.' => 'CSecurityManager 要求 PHP mcrypt extension 必須先被載入以便使用資料加密功能.',
   'CSecurityManager.encryptionKey cannot be empty.' => 'CSecurityManager.encryptionKey 不能是空的.',
   'CSecurityManager.validation must be either "MD5" or "SHA1".' => 'CSecurityManager.validation 必須是 "MD5" 或 "SHA1".',
   'CSecurityManager.validationKey cannot be empty.' => 'CSecurityManager.validationKey 不能是空的.',

@@ -61,7 +61,6 @@ return array (
   'CMultiFileUpload.name is required.' => 'CMultiFileUpload.name је обавезно.',
   'CProfileLogRoute found a mismatching code block "{token}". Make sure the calls to Yii::beginProfile() and Yii::endProfile() be properly nested.' => 'CProfileLogRoute је нашао неусаглашен блок кода "{token}". Будите сигурни да су позиви Yii::beginProfile() и Yii::endProfile() исправно угњеждени.',
   'CProfileLogRoute.report "{report}" is invalid. Valid values include "summary" and "callstack".' => 'CProfileLogRoute.report "{report}" је погрешан. Исправне вредности укључују "summary" и "callstack".',
-  'CSecurityManager requires PHP mcrypt extension to be loaded in order to use data encryption feature.' => 'CSecurityManager захтева да PHP mcrypt екстензија буде укључена да би се користила могућност енкрипције података.',
   'CSecurityManager.encryptionKey cannot be empty.' => 'CSecurityManager.encryptionKey не може бити празан.',
   'CSecurityManager.validation must be either "MD5" or "SHA1".' => 'CSecurityManager.validation мора бити "MD5" или "SHA1".',
   'CSecurityManager.validationKey cannot be empty.' => 'CSecurityManager.validationKey не може бити празан',

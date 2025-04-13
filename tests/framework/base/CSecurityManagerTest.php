@@ -23,55 +23,6 @@ class CSecurityManagerTest extends CTestCase
 		$this->assertEquals($app2->securityManager->validationKey,$key);
 	}
 
-	public function testEncryptionKey()
-	{
-		$sm=new CSecurityManager;
-		$sm->cryptAlgorithm='des';
-		$key="\xA5\x94\x72\x26\x1F\xA3\x8A\x5B";
-		$sm->setEncryptionKey($key);
-		$this->assertEquals($key,$sm->getEncryptionKey());
-	}
-
-	/**
-	 * @expectedException CException
-	 */
-	public function testUndersizedGlobalKey()
-	{
-		$sm=new CSecurityManager;
-		$sm->cryptAlgorithm='des';
-		$sm->setEncryptionKey('1');
-	}
-
-	/**
-	 * @expectedException CException
-	 */
-	public function testUndersizedKey()
-	{
-		$sm=new CSecurityManager;
-		$sm->cryptAlgorithm='des';
-		$sm->encrypt('some data', '1');
-	}
-
-	/**
-	 * @expectedException CException
-	 */
-	public function testOversizedGlobalKey()
-	{
-		$sm=new CSecurityManager;
-		$sm->cryptAlgorithm='des';
-		$sm->setEncryptionKey('123456789');
-	}
-
-	/**
-	 * @expectedException CException
-	 */
-	public function testOversizedKey()
-	{
-		$sm=new CSecurityManager;
-		$sm->cryptAlgorithm='des';
-		$sm->encrypt('some data', '123456789');
-	}
-
 	public function testValidation()
 	{
 		$sm=new CSecurityManager;
@@ -97,20 +48,6 @@ class CSecurityManagerTest extends CTestCase
 		$this->assertEquals($data,$sm->validateData($hashedData));
 		$hashedData[3]='c'; // tamper the data
 		$this->assertTrue($sm->validateData($hashedData)===false);
-	}
-
-	public function testEncryptData()
-	{
-		if(!extension_loaded('mcrypt'))
-			$this->markTestSkipped('mcrypt extension is required to test encrypt feature.');
-		$sm=new CSecurityManager;
-		$sm->cryptAlgorithm='des';
-		$sm->setEncryptionKey("\xAF\x84\x8F\xF2\xEE\x92\xDF\xA8");
-		$data='this is raw data';
-		$encryptedData=$sm->encrypt($data);
-		$this->assertTrue($data!==$encryptedData);
-		$data2=$sm->decrypt($encryptedData);
-		$this->assertEquals($data,$data2);
 	}
 
 	public function providerComputeHMAC()

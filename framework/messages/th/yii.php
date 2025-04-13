@@ -65,7 +65,6 @@ return array (
   'CMultiFileUpload.name is required.' => 'CMultiFileUpload.name ต้องการในการใช้งาน',
   'CProfileLogRoute found a mismatching code block "{token}". Make sure the calls to Yii::beginProfile() and Yii::endProfile() be properly nested.' => 'CProfileLogRoute พบคำสั่งที่ห้ามใช้งาน "{token}". กรุณาตรวจสอบว่าการเรียกใช้งาน Yii::beginProfile() และ Yii::endProfile() จะต้องถูกระบุคุณสมบัติต่างๆที่ถูกต้อง',
   'CProfileLogRoute.report "{report}" is invalid. Valid values include "summary" and "callstack".' => 'CProfileLogRoute.report "{report}" ไม่ถูกต้อง ค่าที่ถูกต้องจะต้องมีการเรียก "summary" หรือ "callstack".',
-  'CSecurityManager requires PHP mcrypt extension to be loaded in order to use data encryption feature.' => 'CSecurityManager ต้องการ PHP mcrypt ในการเรียกใช้งานเพื่อใช้งานคุณสมบัติการบีบอัดข้อมูล',
   'CSecurityManager.encryptionKey cannot be empty.' => 'CSecurityManager.encryptionKey ไม่สามารถเป็นค่าว่างได้',
   'CSecurityManager.validation must be either "MD5" or "SHA1".' => 'CSecurityManager.validation จะต้องอยู่ในรูปแบบ "MD5" หรือ "SHA1"',
   'CSecurityManager.validationKey cannot be empty.' => 'CSecurityManager.validationKey ไม่สามารถเป็นค่าว่างได้',

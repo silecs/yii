@@ -103,7 +103,6 @@ return array (
   'CMultiFileUpload.name is required.' => 'CMultiFileUpload.name הוא ערך שחובה להגדירו.',
   'CProfileLogRoute found a mismatching code block "{token}". Make sure the calls to Yii::beginProfile() and Yii::endProfile() be properly nested.' => 'CProfileLogRoute מצא בלוק אשר לא תואם בשרשור שלו "{token}". אנא וודא שקריאות ל Yii::beginProfile() ו Yii::endProfile() משורשרות בהתאם.',
   'CProfileLogRoute.report "{report}" is invalid. Valid values include "summary" and "callstack".' => 'CProfileLogRoute.report "{report}" אינו תקין. ערכים תקנים יכולים להיות "summary" ו "callstack".',
-  'CSecurityManager requires PHP mcrypt extension to be loaded in order to use data encryption feature.' => 'CSecurityManager דורש תוסף בשם mcrypt של PHP כדי לתפקד.',
   'CSecurityManager.encryptionKey cannot be empty.' => 'CSecurityManager.encryptionKey לא יכול להיות ריק.',
   'CSecurityManager.validation must be either "MD5" or "SHA1".' => 'CSecurityManager.validation חייב להיות מוגדר כ "MD5" או "SHA1".',
   'CSecurityManager.validationKey cannot be empty.' => 'CSecurityManager.validationKey לא יכול להיות ריק.',

@@ -61,7 +61,6 @@ return array (
 'CMultiFileUpload.name is required.' => 'CMultiFileUpload.name megadása kötelező',
 'CProfileLogRoute found a mismatching code block "{token}". Make sure the calls to Yii::beginProfile() and Yii::endProfile() be properly nested.' => 'A CProfileLogRoute nem egyező kód-blokkot talált "{token}". Kérjük, győződjön meg róla, hogy a Yii:beginProfile és Yii:endProfile hívásai megfelelően vannak beágyazva.',
 'CProfileLogRoute.report "{report}" is invalid. Valid values include "summary" and "callstack".' => 'A CProfileLogRoute.report "{report}" érvénytelen. Ahhoz, hogy érvényes legyen, tartalmaznia kell a "summary" és "callstack" szavakat.',
-'CSecurityManager requires PHP mcrypt extension to be loaded in order to use data encryption feature.' => 'A CSecurityManager használatához az mcrypt PHP kiterjesztésnek betöltve kell lennie, hogy az adat titkosítás használható legyen.',
 'CSecurityManager.encryptionKey cannot be empty.' => 'CSecurityManager.encryptionKey nem lehet üres.',
 'CSecurityManager.validation must be either "MD5" or "SHA1".' => 'CSecurityManager.validation "MD5" vagy "SHA1" kell legyen.',
 'CSecurityManager.validationKey cannot be empty.' => 'CSecurityManager.validationKey nem lehet üres.',
