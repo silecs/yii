@@ -80,7 +80,7 @@ class CTimestamp
 		        floor(($year / 100) / 4) - 2 *
 		        floor($year / 100) + 77 + $greg_correction;
 
-		return $day - 7 * floor($day / 7);
+		return (int)($day - 7 * floor($day / 7));
 	}
 
 	/**
@@ -365,12 +365,12 @@ class CTimestamp
 	 * @param integer|boolean $day day
 	 * @param integer|boolean $year year
 	 * @param boolean $is_gmt whether this is GMT time. If true, gmmktime() will be used.
-	 * @return integer|float a timestamp given a local time.
+	 * @return integer a timestamp given a local time.
 	 */
 	public static function getTimestamp($hr,$min,$sec,$mon=false,$day=false,$year=false,$is_gmt=false)
 	{
 		if ($mon === false)
 			return $is_gmt? @gmmktime($hr,$min,$sec): @mktime($hr,$min,$sec);
-		return $is_gmt ? @gmmktime($hr,$min,$sec,$mon,$day,$year) : @mktime($hr,$min,$sec,$mon,$day,$year);
+		return (int)($is_gmt ? @gmmktime($hr,$min,$sec,$mon,$day,$year) : @mktime($hr,$min,$sec,$mon,$day,$year));
 	}
 }

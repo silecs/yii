@@ -255,9 +255,9 @@ class CUrlManager extends CApplicationComponent
 	/**
 	 * Creates a URL rule instance.
 	 * The default implementation returns a CUrlRule object.
-	 * @param mixed $route the route part of the rule. This could be a string or an array
+	 * @param array|string $route the route part of the rule. This could be a string or an array
 	 * @param string $pattern the pattern part of the rule
-	 * @return CUrlRule the URL rule instance
+	 * @return array|CUrlRule the URL rule instance
 	 * @since 1.1.0
 	 */
 	protected function createUrlRule($route,$pattern)
@@ -370,7 +370,7 @@ class CUrlManager extends CApplicationComponent
 				if(is_array($rule))
 					$this->_rules[$i]=$rule=Yii::createComponent($rule);
 				if(($r=$rule->parseUrl($this,$request,$pathInfo,$rawPathInfo))!==false)
-					return isset($_GET[$this->routeVar]) ? $_GET[$this->routeVar] : $r;
+					return (string) ($_GET[$this->routeVar] ?? $r);
 			}
 			if($this->useStrictParsing)
 				throw new CHttpException(404,Yii::t('yii','Unable to resolve the request "{route}".',
@@ -378,12 +378,8 @@ class CUrlManager extends CApplicationComponent
 			else
 				return $pathInfo;
 		}
-		elseif(isset($_GET[$this->routeVar]))
-			return $_GET[$this->routeVar];
-		elseif(isset($_POST[$this->routeVar]))
-			return $_POST[$this->routeVar];
 		else
-			return '';
+			return (string) ($_GET[$this->routeVar] ?? $_POST[$this->routeVar] ?? '');
 	}
 
 	/**
@@ -594,7 +590,7 @@ class CUrlRule extends CBaseUrlRule
 	 */
 	public $matchValue;
 	/**
-	 * @var string the HTTP verb (e.g. GET, POST, DELETE) that this rule should match.
+	 * @var null|string|string[] the HTTP verb (e.g. GET, POST, DELETE) that this rule should match.
 	 * If this rule can match multiple verbs, please separate them with commas.
 	 * If this property is not set, the rule can match any verb.
 	 * Note that this property is only used when parsing a request. It is ignored for URL creation.
@@ -680,7 +676,7 @@ class CUrlRule extends CBaseUrlRule
 		$this->hasHostInfo=!strncasecmp($pattern,'http://',7) || !strncasecmp($pattern,'https://',8);
 
 		if($this->verb!==null)
-			$this->verb=preg_split('/[\s,]+/',strtoupper($this->verb),-1,PREG_SPLIT_NO_EMPTY);
+			$this->verb=preg_split('/[\s,]+/',strtoupper($this->verb),-1,PREG_SPLIT_NO_EMPTY) ?: null;
 
 		if(preg_match_all('/<(\w+):?(.*?)?>/',$pattern,$matches))
 		{
@@ -809,12 +805,18 @@ class CUrlRule extends CBaseUrlRule
 	 * @param CHttpRequest $request the request object
 	 * @param string $pathInfo path info part of the URL
 	 * @param string $rawPathInfo path info that contains the potential URL suffix
-	 * @return mixed the route that consists of the controller ID and action ID or false on error
+	 * @return false|string the route that consists of the controller ID and action ID or false on error
 	 */
 	public function parseUrl($manager,$request,$pathInfo,$rawPathInfo)
 	{
-		if($this->verb!==null && !in_array($request->getRequestType(), $this->verb, true))
-			return false;
+		if($this->verb!==null) {
+			if (is_array($this->verb) && !in_array($request->getRequestType(), $this->verb, true)) {
+				return false;
+			}
+			if (is_string($this->verb) && $request->getRequestType() !== $this->verb) {
+				return false;
+			}
+		}
 
 		if($manager->caseSensitive && $this->caseSensitive===null || $this->caseSensitive)
 			$case='';

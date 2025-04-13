@@ -443,13 +443,14 @@ abstract class CActiveRecord extends CModel
 	 * (for some legency database). If the table is already defined with a primary key,
 	 * you do not need to override this method. The default implementation simply returns null,
 	 * meaning using the primary key defined in the database.
-	 * @return mixed the primary key of the associated database table.
+	 * @return null|string|string[] the primary key of the associated database table.
 	 * If the key is a single column, it should return the column name;
 	 * If the key is a composite one consisting of several columns, it should
 	 * return the array of the key column names.
 	 */
 	public function primaryKey()
 	{
+		return null;
 	}
 
 	/**

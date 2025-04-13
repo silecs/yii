@@ -575,7 +575,7 @@ class CDbConnection extends CApplicationComponent
 	public function quoteValue($str)
 	{
 		if(is_int($str) || is_float($str))
-			return $str;
+			return (string)$str;
 
 		$this->setActive(true);
 		return $this->quoteValueInternal($str, PDO::PARAM_STR);

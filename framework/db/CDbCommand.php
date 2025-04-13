@@ -612,9 +612,10 @@ class CDbCommand extends CComponent
 
 			foreach($columns as $i=>$column)
 			{
-				if(is_object($column))
-					$columns[$i]=(string)$column;
-				elseif(strpos($column,'(')===false)
+				if(is_object($column)) {
+					if ($column instanceof \Stringable)
+						$columns[$i]=(string)$column;
+				} elseif(strpos($column,'(')===false)
 				{
 					if(preg_match('/^(.*?)(?i:\s+as\s+|\s+)(.*)$/',$column,$matches))
 						$columns[$i]=$this->_connection->quoteColumnName($matches[1]).' AS '.$this->_connection->quoteColumnName($matches[2]);
@@ -1007,9 +1008,10 @@ class CDbCommand extends CComponent
 				$columns=preg_split('/\s*,\s*/',trim($columns),-1,PREG_SPLIT_NO_EMPTY);
 			foreach($columns as $i=>$column)
 			{
-				if(is_object($column))
-					$columns[$i]=(string)$column;
-				elseif(strpos($column,'(')===false)
+				if(is_object($column)) {
+					if ($column instanceof \Stringable)
+						$columns[$i]=(string)$column;
+				} elseif(strpos($column,'(')===false)
 					$columns[$i]=$this->_connection->quoteColumnName($column);
 			}
 			$this->_query['group']=implode(', ',$columns);
@@ -1101,9 +1103,10 @@ class CDbCommand extends CComponent
 				$columns=preg_split('/\s*,\s*/',trim($columns),-1,PREG_SPLIT_NO_EMPTY);
 			foreach($columns as $i=>$column)
 			{
-				if(is_object($column))
-					$columns[$i]=(string)$column;
-				elseif(strpos($column,'(')===false)
+				if(is_object($column)) {
+					if ($column instanceof \Stringable)
+						$columns[$i]=(string)$column;
+				} elseif(strpos($column,'(')===false)
 				{
 					if(preg_match('/^(.*?)\s+(asc|desc)$/i',$column,$matches))
 						$columns[$i]=$this->_connection->quoteColumnName($matches[1]).' '.strtoupper($matches[2]);
@@ -1159,7 +1162,7 @@ class CDbCommand extends CComponent
 	 */
 	public function getLimit()
 	{
-		return $this->_query['limit'] ?? -1;
+		return $this->_query['limit'] ?? '-1';
 	}
 
 	/**
@@ -1192,7 +1195,7 @@ class CDbCommand extends CComponent
 	 */
 	public function getOffset()
 	{
-		return $this->_query['offset'] ?? -1;
+		return $this->_query['offset'] ?? '-1';
 	}
 
 	/**

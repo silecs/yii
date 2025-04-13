@@ -104,6 +104,7 @@ abstract class CDbMigration extends CComponent
 	 */
 	public function safeUp()
 	{
+		return false;
 	}
 
 	/**
@@ -118,6 +119,7 @@ abstract class CDbMigration extends CComponent
 	 */
 	public function safeDown()
 	{
+		return false;
 	}
 
 	/**

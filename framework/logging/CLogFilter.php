@@ -102,14 +102,17 @@ class CLogFilter extends CComponent implements ILogFilter
 		if($this->logUser && ($user=Yii::app()->getComponent('user',false))!==null)
 			$context[]='User: '.$user->getName().' (ID: '.$user->getId().')';
 
-		if($this->dumper==='var_export' || $this->dumper==='print_r')
+		if(in_array($this->dumper, ['var_export', 'print_r'], true))
 		{
+			/** @var callable $this->dumper */
 			foreach($this->logVars as $name)
 				if(($value=$this->getGlobalsValue($name))!==null)
 					$context[]="\${$name}=".call_user_func($this->dumper,$value,true);
 		}
 		else
 		{
+			if (!is_callable($this->dumper))
+				throw new \CException("dumper must be callable");
 			foreach($this->logVars as $name)
 				if(($value=$this->getGlobalsValue($name))!==null)
 					$context[]="\${$name}=".call_user_func($this->dumper,$value);
@@ -119,12 +122,12 @@ class CLogFilter extends CComponent implements ILogFilter
 	}
 
 	/**
-	 * @param string[] $path
+	 * @param string|string[] $path
 	 * @return string|null
 	 */
 	private function getGlobalsValue(&$path)
 	{
-		if(is_scalar($path))
+		if(is_string($path))
 			return !empty($GLOBALS[$path]) ? $GLOBALS[$path] : null;
 		$pathAux=$path;
 		$parts=array();

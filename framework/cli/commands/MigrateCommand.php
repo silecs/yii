@@ -476,6 +476,9 @@ class MigrateCommand extends CConsoleCommand
 		exit(1);
 	}
 
+	/**
+	 * @return array<string, string>
+	 */
 	protected function getMigrationHistory($limit)
 	{
 		$db=$this->getDbConnection();

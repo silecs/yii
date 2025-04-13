@@ -276,7 +276,7 @@ class CDateFormatter extends CComponent
 	 * @param string $pattern a pattern.
 	 * @param array $date result of {@link CTimestamp::getdate}.
 	 * @throws CException is "dayInYear" pattern is unknown
-	 * @return integer hours in AM/PM format.
+	 * @return string
 	 */
 	protected function formatDayInYear($pattern,$date)
 	{
@@ -333,7 +333,7 @@ class CDateFormatter extends CComponent
 			case 'e':
 			case 'ee':
 			case 'c':
-				return $day ?: 7;
+				return (string) ($day ?: '7');
 			case 'ccc':
 				return $this->_locale->getWeekDayName($day,'abbreviated',true);
 			case 'cccc':
@@ -397,7 +397,7 @@ class CDateFormatter extends CComponent
 		$hour=$date['hours'];
 		$hour=($hour==12|$hour==0)?12:($hour)%12;
 		if($pattern==='h')
-			return $hour;
+			return (string) $hour;
 		elseif($pattern==='hh')
 			return str_pad($hour,2,'0',STR_PAD_LEFT);
 		else
@@ -410,13 +410,13 @@ class CDateFormatter extends CComponent
 	 * @param string $pattern a pattern.
 	 * @param array $date result of {@link CTimestamp::getdate}.
 	 * @throws CException if "hourInDay" pattern is unknown
-	 * @return integer hours [1-24]
+	 * @return string hours [1-24]
 	 */
 	protected function formatHourInDay($pattern,$date)
 	{
 		$hour=$date['hours']==0?24:$date['hours'];
 		if($pattern==='k')
-			return $hour;
+			return (string) $hour;
 		elseif($pattern==='kk')
 			return str_pad($hour,2,'0',STR_PAD_LEFT);
 		else
@@ -429,13 +429,13 @@ class CDateFormatter extends CComponent
 	 * @param string $pattern a pattern.
 	 * @param array $date result of {@link CTimestamp::getdate}.
 	 * @throws CException if "hourInPeriod" pattern is unknown
-	 * @return integer hours in AM/PM format.
+	 * @return string hours in AM/PM format.
 	 */
 	protected function formatHourInPeriod($pattern,$date)
 	{
 		$hour=$date['hours']%12;
 		if($pattern==='K')
-			return $hour;
+			return (string) $hour;
 		elseif($pattern==='KK')
 			return str_pad($hour,2,'0',STR_PAD_LEFT);
 		else
@@ -490,7 +490,7 @@ class CDateFormatter extends CComponent
 	protected function formatWeekInYear($pattern,$date)
 	{
 		if($pattern==='w')
-			return @date('W',@mktime(0,0,0,$date['mon'],$date['mday'],$date['year']));
+			return (int) @date('W',@mktime(0,0,0,$date['mon'],$date['mday'],$date['year']));
 		else
 			throw new CException(Yii::t('yii','The pattern for week in year must be "w".'));
 	}
@@ -498,7 +498,7 @@ class CDateFormatter extends CComponent
 	/**
 	 * Get week in the month.
 	 * @param array $pattern result of {@link CTimestamp::getdate}.
-	 * @param string $date a pattern.
+	 * @param array $date a pattern.
 	 * @throws CException if "weekInMonth" pattern is unknown
 	 * @return integer week in month
 	 */
@@ -507,7 +507,7 @@ class CDateFormatter extends CComponent
 		if($pattern==='W')
 		{
 			$weekDay=date('N',mktime(0,0,0,$date['mon'],1,$date['year']));
-			return floor(($weekDay+$date['mday']-2)/7)+1;
+			return (int) floor(($weekDay+$date['mday']-2)/7)+1;
 		}
 		else
 			throw new CException(Yii::t('yii','The pattern for week in month must be "W".'));

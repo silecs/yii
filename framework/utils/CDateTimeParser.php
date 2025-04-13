@@ -76,7 +76,7 @@ class CDateTimeParser
 	 * parameter is array('minute'=>0, 'second'=>0), then the actual minute and second
 	 * for the parsing result will take value 0, while the actual hour value will be
 	 * the current hour obtained by date('H'). This parameter has been available since version 1.1.5.
-	 * @return integer timestamp for the date string. False if parsing fails.
+	 * @return false|integer timestamp for the date string. False if parsing fails.
 	 */
 	public static function parse($value,$pattern='MM/dd/yyyy',$defaults=array())
 	{

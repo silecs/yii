@@ -1079,7 +1079,7 @@ class CJoinElement
 	 * Generates the join statement for one-many relationship.
 	 * This works for HAS_ONE, HAS_MANY and BELONGS_TO.
 	 * @param CJoinElement $fke the join element containing foreign keys
-	 * @param array $fks the foreign keys
+	 * @param array|string $fks the foreign keys
 	 * @param CJoinElement $pke the join element contains primary keys
 	 * @param CJoinElement $parent the parent join element
 	 * @return string the join statement

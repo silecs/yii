@@ -182,6 +182,7 @@ class CWebApplication extends CApplication
 	 */
 	public function getAuthManager()
 	{
+		/** @var IAuthManager */
 		return $this->getComponent('authManager');
 	}
 
@@ -190,6 +191,7 @@ class CWebApplication extends CApplication
 	 */
 	public function getAssetManager()
 	{
+		/** @var CAssetManager */
 		return $this->getComponent('assetManager');
 	}
 
@@ -198,6 +200,7 @@ class CWebApplication extends CApplication
 	 */
 	public function getSession()
 	{
+		/** @var CHttpSession */
 		return $this->getComponent('session');
 	}
 
@@ -206,6 +209,7 @@ class CWebApplication extends CApplication
 	 */
 	public function getUser()
 	{
+		/** @var CWebUser */
 		return $this->getComponent('user');
 	}
 
@@ -218,6 +222,7 @@ class CWebApplication extends CApplication
 	 */
 	public function getViewRenderer()
 	{
+		/** @var IViewRenderer */
 		return $this->getComponent('viewRenderer');
 	}
 
@@ -227,6 +232,7 @@ class CWebApplication extends CApplication
 	 */
 	public function getClientScript()
 	{
+		/** @var CClientScript */
 		return $this->getComponent('clientScript');
 	}
 
@@ -237,6 +243,7 @@ class CWebApplication extends CApplication
 	 */
 	public function getWidgetFactory()
 	{
+		/** @var IWidgetFactory */
 		return $this->getComponent('widgetFactory');
 	}
 
@@ -245,6 +252,7 @@ class CWebApplication extends CApplication
 	 */
 	public function getThemeManager()
 	{
+		/** @var CThemeManager */
 		return $this->getComponent('themeManager');
 	}
 

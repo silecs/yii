@@ -182,7 +182,7 @@ if(".($this->allowEmpty ? "jQuery.trim(value)!='' && " : '').$condition.") {
 	 * @since 1.1.11
 	 * @param mixed $a first item for comparison
 	 * @param mixed $b second item for comparison
-	 * @return boolean
+	 * @return int
 	 */
 	protected function mxSort($a, $b)
 	{

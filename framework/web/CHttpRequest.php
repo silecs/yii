@@ -726,7 +726,7 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function getServerPort()
 	{
-		return $_SERVER['SERVER_PORT'];
+		return (int) $_SERVER['SERVER_PORT'];
 	}
 
 	/**

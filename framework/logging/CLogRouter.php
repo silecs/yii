@@ -71,7 +71,7 @@ class CLogRouter extends CApplicationComponent
 	}
 
 	/**
-	 * @return array the currently initialized routes
+	 * @return iterable the currently initialized routes
 	 */
 	public function getRoutes()
 	{

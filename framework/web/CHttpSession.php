@@ -565,7 +565,7 @@ class CHttpSession extends CApplicationComponent implements IteratorAggregate,Ar
 	}
 
 	/**
-	 * @return array the list of all session variables in array
+	 * @return array<string, mixed> the list of all session variables in array
 	 */
 	public function toArray()
 	{
