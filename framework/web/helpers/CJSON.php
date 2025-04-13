@@ -115,7 +115,35 @@ class CJSON
 				return json_encode($var, JSON_THROW_ON_ERROR | JSON_UNESCAPED_UNICODE);
 
 			case 'array':
-				return json_encode($var, JSON_THROW_ON_ERROR | JSON_UNESCAPED_UNICODE);
+				/*
+				 * As per JSON spec if any array key is not an integer
+				 * we must treat the the whole array as an object. We
+				 * also try to catch a sparsely populated associative
+				 * array with numeric keys here because some JS engines
+				 * will create an array with empty indexes up to
+				 * max_index which can cause memory issues and because
+				 * the keys, which may be relevant, will be remapped
+				 * otherwise.
+				 *
+				 * As per the ECMA and JSON specification an object may
+				 * have any string as a property. Unfortunately due to
+				 * a hole in the ECMA specification if the key is a
+				 * ECMA reserved word or starts with a digit the
+				 * parameter is only accessible using ECMAScript's
+				 * bracket notation.
+				 */
+
+				// treat as a JSON object
+				if (is_array($var) && count($var) && (array_keys($var) !== range(0, sizeof($var) - 1))) {
+					return '{' .
+						join(',', array_map(array('CJSON', 'nameValue'),
+							array_keys($var),
+							array_values($var)))
+							. '}';
+				}
+
+				// treat it like a regular array
+				return '[' . join(',', array_map(array('CJSON', 'encode'), $var)) . ']';
 
 			case 'object':
 				if (interface_exists('JsonSerializable', false) && $var instanceof JsonSerializable)

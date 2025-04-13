@@ -44,6 +44,7 @@ class CJSONTest extends CTestCase {
 	 */
 	public function testEncodeMultipleARs(){
 		$posts=Post::model()->findAllByPk(array(1, 2));
+		$this->assertCount(2, $posts);
 		$this->assertEquals(
 			'[{"id":"1","title":"post 1","create_time":"100000","author_id":"1","content":"content 1"},{"id":"2","title":"post 2","create_time":"100001","author_id":"2","content":"content 2"}]',
 			CJSON::encode($posts)
@@ -85,7 +86,7 @@ class CJSONTest extends CTestCase {
         $className = get_class($this).'_JsonSerializable';
         $classCode = <<<EOL
 class $className implements JsonSerializable{
-	public function jsonSerialize()
+	public function jsonSerialize(): mixed
 	{
 		return 'test';
 	}
