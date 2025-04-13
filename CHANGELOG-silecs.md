@@ -15,3 +15,4 @@ Miscellanous
 - With MariaDB 10.3+, Yii misunderstood `TEXT DEFAULT ''` with a default value of "''".
 - Removed CFlexWidget (flash is an obsolete web technology)
 - Removed CJuiSliderInput (HTML5 has native alternatives)
+- Removed SOAP (CWebService, CSoapController, etc.)

@@ -51,7 +51,7 @@ $requirements=array(
 		t('yii','DOM extension'),
 		false,
 		class_exists("DOMDocument",false),
-		'<a href="https://www.yiiframework.com/doc/api/CHtmlPurifier">CHtmlPurifier</a>, <a href="https://www.yiiframework.com/doc/api/CWsdlGenerator">CWsdlGenerator</a>',
+		'<a href="https://www.yiiframework.com/doc/api/CHtmlPurifier">CHtmlPurifier</a>',
 		''),
 	array(
 		t('yii','PDO extension'),
@@ -131,12 +131,6 @@ $requirements=array(
 		function_exists('crypt') && defined('CRYPT_BLOWFISH') && CRYPT_BLOWFISH,
 		'<a href="https://www.yiiframework.com/doc/api/1.1/CPasswordHelper">CPasswordHelper</a>',
 		t('yii','Required for secure password storage.')),
-	array(
-		t('yii','SOAP extension'),
-		false,
-		extension_loaded("soap"),
-		'<a href="https://www.yiiframework.com/doc/api/CWebService">CWebService</a>, <a href="https://www.yiiframework.com/doc/api/CWebServiceAction">CWebServiceAction</a>',
-		''),
 	array(
 		t('yii','GD extension with<br />FreeType support<br />or ImageMagick<br />extension with<br />PNG support'),
 		false,
