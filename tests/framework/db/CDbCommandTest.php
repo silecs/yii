@@ -252,4 +252,11 @@ class CDbCommandTest extends CTestCase
 	}
 }
 
-class TestClass {}
+class TestClass
+{
+	public $id;
+	public $title;
+	public $create_time;
+	public $author_id;
+	public $content;
+}
