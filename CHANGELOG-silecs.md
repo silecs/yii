@@ -14,3 +14,4 @@ Miscellanous
 - CTreeView used an undocumented jQuery parameter which was removed in modern versions.
 - With MariaDB 10.3+, Yii misunderstood `TEXT DEFAULT ''` with a default value of "''".
 - Removed CFlexWidget (flash is an obsolete web technology)
+- Removed CJuiSliderInput (HTML5 has native alternatives)
