@@ -80,22 +80,22 @@ class CJSONTest extends CTestCase {
 
 	public function testJsonSerializable()
     {
-        if(!interface_exists('JsonSerializable'))
-            $this->markTestSkipped('JsonSerializable interface is required.');
+	    if(!interface_exists('JsonSerializable'))
+	        $this->markTestSkipped('JsonSerializable interface is required.');
 
-        $className = get_class($this).'_JsonSerializable';
-        $classCode = <<<EOL
-class $className implements JsonSerializable{
-	public function jsonSerialize(): mixed
-	{
-		return 'test';
-	}
-}
+	    $className = get_class($this).'_JsonSerializable';
+	    $classCode = <<<EOL
+	    class $className implements JsonSerializable{
+	    	public function jsonSerialize(): mixed
+	    	{
+	    		return 'test';
+	    	}
+	    }
 EOL;
 		eval($classCode);
 		$object = new $className();
 		$this->assertEquals(CJSON::encode($object), json_encode($object));
-    }
+	}
 
 
 }

@@ -252,6 +252,7 @@ class CDbCommandTest extends CTestCase
 	}
 }
 
+#[\AllowDynamicProperties]
 class TestClass
 {
 	public $id;
