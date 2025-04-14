@@ -49,7 +49,6 @@ fullständig information. Nedan återges en lista med vanligtvis använda DSN-fo
    - SQLite: `sqlite:/path/to/dbfile`
    - MySQL: `mysql:host=localhost;dbname=testdb`
    - PostgreSQL: `pgsql:host=localhost;port=5432;dbname=testdb`
-   - SQL Server: `mssql:host=localhost;dbname=testdb`
    - Oracle: `oci:dbname=//localhost:1521/testdb`
 
 Eftersom [CDbConnection] är en utvidgning av [CApplicationComponent], kan vi 

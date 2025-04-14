@@ -50,7 +50,6 @@ information. Below is a list of commonly used DSN formats:
    - SQLite: `sqlite:/path/to/dbfile`
    - MySQL/MariaDB: `mysql:host=localhost;dbname=testdb`
    - PostgreSQL: `pgsql:host=localhost;port=5432;dbname=testdb`
-   - SQL Server: `mssql:host=localhost;dbname=testdb`
    - Oracle: `oci:dbname=//localhost:1521/testdb`
 
 Because [CDbConnection] extends from [CApplicationComponent], we can also
@@ -87,7 +86,7 @@ Using ODBC Connection
 There is a peculiarity when you want to work with the database through the ODBC layer.
 When using ODBC, its connection string (DSN) doesn't indicate uniquely what database
 type is being used (MySQL, MS SQL Server, etc.). Thus it's not able to automatically
-detect needed DBMS specific classes (`CMysqlSchema`, `CMssqlSchema` and so forth).
+detect needed DBMS specific classes (`CMysqlSchema` and so forth).
 
 That's why you have to use `$driverName` property of the `CDbConnection` class
 to disambiguate that:

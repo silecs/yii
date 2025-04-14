@@ -253,9 +253,6 @@ class CDbConnection extends CApplicationComponent
 		'mysql'=>'CMysqlSchema',    // MySQL,MariaDB
 		'sqlite'=>'CSqliteSchema',  // sqlite 3
 		'sqlite2'=>'CSqliteSchema', // sqlite 2
-		'mssql'=>'CMssqlSchema',    // Mssql driver on windows hosts
-		'dblib'=>'CMssqlSchema',    // dblib drivers on linux (and maybe others os) hosts
-		'sqlsrv'=>'CMssqlSchema',   // Mssql
 		'oci'=>'COciSchema',        // Oracle driver
 	);
 
@@ -429,14 +426,6 @@ class CDbConnection extends CApplicationComponent
 	protected function createPdoInstance()
 	{
 		$pdoClass=$this->pdoClass;
-		if(($driver=$this->getDriverName())!==null)
-		{
-			if($driver==='mssql' || $driver==='dblib')
-				$pdoClass='CMssqlPdoAdapter';
-			elseif($driver==='sqlsrv')
-				$pdoClass='CMssqlSqlsrvPdoAdapter';
-		}
-
 		if(!class_exists($pdoClass))
 			throw new CDbException(Yii::t('yii','CDbConnection is unable to find PDO class "{className}". Make sure PDO is installed correctly.',
 				array('{className}'=>$pdoClass)));

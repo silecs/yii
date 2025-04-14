@@ -84,24 +84,6 @@ $requirements=array(
 		t('yii','All <a href="https://www.yiiframework.com/doc/api/#system.db">DB-related classes</a>'),
 		t('yii','Required for Oracle database.')),
 	array(
-		t('yii','PDO MSSQL extension (pdo_mssql)'),
-		false,
-		extension_loaded('pdo_mssql'),
-		t('yii','All <a href="https://www.yiiframework.com/doc/api/#system.db">DB-related classes</a>'),
-		t('yii','Required for MSSQL database from MS Windows')),
-	array(
-		t('yii','PDO MSSQL extension (pdo_dblib)'),
-		false,
-		extension_loaded('pdo_dblib'),
-		t('yii','All <a href="https://www.yiiframework.com/doc/api/#system.db">DB-related classes</a>'),
-		t('yii','Required for MSSQL database from GNU/Linux or other UNIX.')),
-	array(
-		t('yii','PDO MSSQL extension (<a href="http://sqlsrvphp.codeplex.com/">pdo_sqlsrv</a>)'),
-		false,
-		extension_loaded('pdo_sqlsrv'),
-		t('yii','All <a href="https://www.yiiframework.com/doc/api/#system.db">DB-related classes</a>'),
-		t('yii','Required for MSSQL database with the driver provided by Microsoft.')),
-	array(
 		t('yii','PDO ODBC extension'),
 		false,
 		extension_loaded('pdo_odbc'),

@@ -147,10 +147,6 @@ class CDbHttpSession extends CHttpSession
 				$blob='BYTEA';
 				break;
 			case 'sqlsrv':
-			case 'mssql':
-			case 'dblib':
-				$blob='VARBINARY(MAX)';
-				break;
 			default:
 				$blob='BLOB';
 				break;
@@ -219,12 +215,8 @@ class CDbHttpSession extends CHttpSession
 	public function readSession($id)
 	{
 		$db=$this->getDbConnection();
-		if($db->getDriverName()=='sqlsrv' || $db->getDriverName()=='mssql' || $db->getDriverName()=='dblib')
-			$select='CONVERT(VARCHAR(MAX), data)';
-		else
-			$select='data';
 		$data=$db->createCommand()
-			->select($select)
+			->select('data')
 			->from($this->sessionTableName)
 			->where('expire>:expire AND id=:id',array(':expire'=>time(),':id'=>$id))
 			->queryScalar();
@@ -248,8 +240,6 @@ class CDbHttpSession extends CHttpSession
 			$db=$this->getDbConnection();
 			if($db->getDriverName()=='pgsql')
 				$data=new CDbExpression($db->quoteValueWithType($data, PDO::PARAM_LOB)."::bytea");
-			if($db->getDriverName()=='sqlsrv' || $db->getDriverName()=='mssql' || $db->getDriverName()=='dblib')
-				$data=new CDbExpression('CONVERT(VARBINARY(MAX), '.$db->quoteValue($data).')');
 			if($db->createCommand()->select('id')->from($this->sessionTableName)->where('id=:id',array(':id'=>$id))->queryScalar()===false)
 				$db->createCommand()->insert($this->sessionTableName,array(
 					'id'=>$id,

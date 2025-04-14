@@ -33,7 +33,6 @@ $connection-»active=false;  // סגירת התחברות
 - SQLite: `sqlite:/path/to/dbfile`
 - MySQL: `mysql:host=localhost;dbname=testdb`
 - PostgreSQL: `pgsql:host=localhost;port=5432;dbname=testdb`
-- SQL Server: `mssql:host=localhost;dbname=testdb`
 - Oracle: `oci:dbname=//localhost:1521/testdb`
 
 מאחר ו [CDbConnection] יורשת מהמחלקה [CApplicationComponent], ניתן להשתמש בו גם [כרכיב](/doc/guide/basics.application#application-component). בכדי לעשות זאת, יש להגדיר רכיב [בהגדרות האפליקציה](/doc/guide/basics.application#application-configuration) בשם `db` (או כל שם אחר) בצורה הבאה,

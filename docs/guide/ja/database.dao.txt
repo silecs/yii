@@ -41,7 +41,6 @@ DSN のフォーマットは、使用する PDO データベースドライバ�
    - SQLite: `sqlite:/path/to/dbfile`
    - MySQL/MariaDB: `mysql:host=localhost;dbname=testdb`
    - PostgreSQL: `pgsql:host=localhost;port=5432;dbname=testdb`
-   - SQL Server: `mssql:host=localhost;dbname=testdb`
    - Oracle: `oci:dbname=//localhost:1521/testdb`
 
 [CDbConnection] は [CApplicationComponent] から拡張されているため、[アプリケーションコンポーネント](/doc/guide/basics.application#sec-4) として使用できます。
@@ -71,9 +70,6 @@ ODBC 接続を使う
 ---------------
 
 ODBC レイヤーを通してデータベースを操作したい場合には、一つ、変った点があることに注意して下さい。
-ODBC を使う場合、その接続文字列 (DSN) には、どのタイプのデータベースが使われているか (MySQL、MS SQL Server、等々) を
-特定するものが含まれていません。そのため、必要となる DBMS 固有のクラス (`CMysqlSchema`, `CMssqlSchema` など) を
-自動的にロードすることが出来ません。
 
 このために、`CDbConnection` クラスの `$driverName` プロパティを使って、それを明示する必要があります。
 
