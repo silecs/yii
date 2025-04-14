@@ -132,13 +132,6 @@ $requirements=array(
 		'<a href="https://www.yiiframework.com/doc/api/CCaptchaAction">CCaptchaAction</a>',
 		$message),
 	array(
-		t('yii','Ctype extension'),
-		false,
-		extension_loaded("ctype"),
-		'<a href="https://www.yiiframework.com/doc/api/CDateFormatter">CDateFormatter</a>, <a href="https://www.yiiframework.com/doc/api/CDateFormatter">CDateTimeParser</a>, <a href="https://www.yiiframework.com/doc/api/CTextHighlighter">CTextHighlighter</a>, <a href="https://www.yiiframework.com/doc/api/CHtmlPurifier">CHtmlPurifier</a>',
-		''
-	),
-	array(
 		t('yii','Fileinfo extension'),
 		false,
 		extension_loaded("fileinfo"),
