@@ -453,7 +453,7 @@ class CForm extends CFormElement implements ArrayAccess
 		{
 			ob_start();
 			$this->getOwner()->endWidget();
-			return ob_get_clean();
+			return (string)ob_get_clean();
 		}
 	}
 

@@ -55,9 +55,9 @@ class CWidget extends CBaseController
 	 */
 	private static $_counter=0;
 	/**
-	 * @var string id of the widget.
+	 * @var ?string id of the widget.
 	 */
-	private $_id;
+	private $_id = null;
 	/**
 	 * @var CBaseController owner/creator of this widget. It could be either a widget or a controller.
 	 */
@@ -106,7 +106,7 @@ class CWidget extends CBaseController
 	/**
 	 * Returns the ID of the widget or generates a new one if requested.
 	 * @param boolean $autoGenerate whether to generate an ID if it is not set previously
-	 * @return string id of the widget.
+	 * @return ?string id of the widget.
 	 */
 	public function getId($autoGenerate=true)
 	{
@@ -114,6 +114,7 @@ class CWidget extends CBaseController
 			return $this->_id;
 		elseif($autoGenerate)
 			return $this->_id='yw'.self::$_counter++;
+		return null;
 	}
 
 	/**
@@ -194,7 +195,7 @@ class CWidget extends CBaseController
 	 * for more details.
 	 * The view name can also refer to a path alias if it contains dot characters.
 	 * @param string $viewName name of the view (without file extension)
-	 * @return string the view file path. False if the view file does not exist
+	 * @return false|string the view file path. False if the view file does not exist
 	 * @see CApplication::findLocalizedFile
 	 */
 	public function getViewFile($viewName)

@@ -370,7 +370,7 @@ class CTimestamp
 	public static function getTimestamp($hr,$min,$sec,$mon=false,$day=false,$year=false,$is_gmt=false)
 	{
 		if ($mon === false)
-			return $is_gmt? @gmmktime($hr,$min,$sec): @mktime($hr,$min,$sec);
+			return (int)($is_gmt? @gmmktime($hr,$min,$sec): @mktime($hr,$min,$sec));
 		return (int)($is_gmt ? @gmmktime($hr,$min,$sec,$mon,$day,$year) : @mktime($hr,$min,$sec,$mon,$day,$year));
 	}
 }

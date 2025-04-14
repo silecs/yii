@@ -40,7 +40,7 @@ class CDbTableSchema extends CComponent
 	 */
 	public $rawName;
 	/**
-	 * @var string|array primary key name of this table. If composite key, an array of key names is returned.
+	 * @var string|string[] primary key name of this table. If composite key, an array of key names is returned.
 	 */
 	public $primaryKey;
 	/**
@@ -48,11 +48,11 @@ class CDbTableSchema extends CComponent
 	 */
 	public $sequenceName;
 	/**
-	 * @var array foreign keys of this table. The array is indexed by column name. Each value is an array of foreign table name and foreign column name.
+	 * @var array<string, list{string, string}> foreign keys of this table. The array is indexed by column name. Each value is an array of foreign table name and foreign column name.
 	 */
 	public $foreignKeys=array();
 	/**
-	 * @var array column metadata of this table. Each array element is a CDbColumnSchema object, indexed by column names.
+	 * @var CDbColumnSchema[] column metadata of this table. Each array element is a CDbColumnSchema object, indexed by column names.
 	 */
 	public $columns=array();
 

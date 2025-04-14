@@ -456,7 +456,9 @@ abstract class CApplication extends CModule
 	 */
 	public function getDb()
 	{
-		return $this->getComponent('db');
+		/** @var CDbConnection */
+		$component = $this->getComponent('db');
+		return $component;
 	}
 
 	/**
@@ -465,7 +467,9 @@ abstract class CApplication extends CModule
 	 */
 	public function getErrorHandler()
 	{
-		return $this->getComponent('errorHandler');
+		/** @var CErrorHandler */
+		$component = $this->getComponent('errorHandler');
+		return $component;
 	}
 
 	/**
@@ -474,7 +478,9 @@ abstract class CApplication extends CModule
 	 */
 	public function getSecurityManager()
 	{
-		return $this->getComponent('securityManager');
+		/** @var CSecurityManager */
+		$component = $this->getComponent('securityManager');
+		return $component;
 	}
 
 	/**
@@ -483,16 +489,20 @@ abstract class CApplication extends CModule
 	 */
 	public function getStatePersister()
 	{
-		return $this->getComponent('statePersister');
+		/** @var CStatePersister */
+		$component = $this->getComponent('statePersister');
+		return $component;
 	}
 
 	/**
 	 * Returns the cache component.
-	 * @return ?CCache the cache application component. Null if the component is not enabled.
+	 * @return ?ICache the cache application component. Null if the component is not enabled.
 	 */
 	public function getCache()
 	{
-		return $this->getComponent('cache');
+		/** @var ?ICache */
+		$component = $this->getComponent('cache');
+		return $component;
 	}
 
 	/**
@@ -501,7 +511,9 @@ abstract class CApplication extends CModule
 	 */
 	public function getCoreMessages()
 	{
-		return $this->getComponent('coreMessages');
+		/** @var CPhpMessageSource */
+		$component = $this->getComponent('coreMessages');
+		return $component;
 	}
 
 	/**
@@ -510,7 +522,9 @@ abstract class CApplication extends CModule
 	 */
 	public function getMessages()
 	{
-		return $this->getComponent('messages');
+		/** @var CMessageSource */
+		$component = $this->getComponent('messages');
+		return $component;
 	}
 
 	/**
@@ -519,7 +533,9 @@ abstract class CApplication extends CModule
 	 */
 	public function getRequest()
 	{
-		return $this->getComponent('request');
+		/** @var CHttpRequest */
+		$component = $this->getComponent('request');
+		return $component;
 	}
 
 	/**
@@ -528,7 +544,9 @@ abstract class CApplication extends CModule
 	 */
 	public function getUrlManager()
 	{
-		return $this->getComponent('urlManager');
+		/** @var CUrlManager */
+		$component = $this->getComponent('urlManager');
+		return $component;
 	}
 
 	/**
@@ -537,11 +555,13 @@ abstract class CApplication extends CModule
 	 */
 	public function getFormat()
 	{
-		return $this->getComponent('format');
+		/** @var CFormatter */
+		$component = $this->getComponent('format');
+		return  $component;
 	}
 
 	/**
-	 * @return CController the currently active controller. Null is returned in this base class.
+	 * @return ?CController the currently active controller. Null is returned in this base class.
 	 * @since 1.1.8
 	 */
 	public function getController()
@@ -823,7 +843,7 @@ abstract class CApplication extends CModule
 			try
 			{
 				Yii::import('CErrorEvent',true);
-				$event=new CErrorEvent($this,$code,$message,$file,$line);
+				$event=new CErrorEvent($this,(string)$code,$message,$file,$line);
 				$this->onError($event);
 				if(!$event->handled)
 				{
@@ -894,7 +914,7 @@ abstract class CApplication extends CModule
 	 * @param integer $code error code
 	 * @param string $message error message
 	 * @param string $file error file
-	 * @param string $line error line
+	 * @param int $line error line
 	 */
 	public function displayError($code,$message,$file,$line)
 	{

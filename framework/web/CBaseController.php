@@ -124,10 +124,10 @@ abstract class CBaseController extends CComponent
 			ob_start();
 			ob_implicit_flush(false);
 			require($_viewFile_);
-			return ob_get_clean();
+			return (string)ob_get_clean();
 		}
-		else
-			require($_viewFile_);
+		require($_viewFile_);
+		return null;
 	}
 
 	/**

@@ -296,7 +296,7 @@ class CErrorHandler extends CApplicationComponent
 			$this->renderError();
 		}
 		else
-			$app->displayError($event->code,$event->message,$event->file,$event->line);
+			$app->displayError((int)$event->code,$event->message,$event->file,$event->line);
 	}
 
 	/**
@@ -311,7 +311,7 @@ class CErrorHandler extends CApplicationComponent
 	/**
 	 * Returns the exact trace where the problem occurs.
 	 * @param Exception $exception the uncaught exception
-	 * @return array the exact trace where the problem occurs
+	 * @return ?array the exact trace where the problem occurs
 	 */
 	protected function getExactTrace($exception)
 	{
@@ -382,7 +382,7 @@ class CErrorHandler extends CApplicationComponent
 	 * Determines which view file should be used.
 	 * @param string $view view name (either 'exception' or 'error')
 	 * @param integer $code HTTP status code
-	 * @return string view file path
+	 * @return ?string view file path
 	 */
 	protected function getViewFile($view,$code)
 	{
@@ -401,6 +401,7 @@ class CErrorHandler extends CApplicationComponent
 				 	 return $viewFile;
 			}
 		}
+		return null;
 	}
 
 	/**
@@ -536,7 +537,12 @@ class CErrorHandler extends CApplicationComponent
 		for($i=$beginLine;$i<=$endLine;++$i)
 		{
 			$isErrorLine = $i===$errorLine;
-			$code=sprintf("<span class=\"ln".($isErrorLine?' error-ln':'')."\">%0{$lineNumberWidth}d</span> %s",$i+1,CHtml::encode(str_replace("\t",'    ',$lines[$i])));
+			$code=sprintf(
+				"<span class=\"ln%s\">%0{$lineNumberWidth}d</span> %s",
+				$isErrorLine?' error-ln':'',
+				$i+1,
+				CHtml::encode(str_replace("\t",'    ',$lines[$i]))
+			);
 			if(!$isErrorLine)
 				$output.=$code;
 			else

@@ -307,7 +307,7 @@ class CDateTimeParser
 	/**
 	 * @param string $value the date string to be parsed
 	 * @param integer $offset starting offset
-	 * @return string parsed day period value
+	 * @return false|string parsed day period value
 	 */
 	protected static function parseAmPm($value, $offset)
 	{
@@ -320,7 +320,7 @@ class CDateTimeParser
 	 * @param integer $offset starting offset.
 	 * @param string $width month name width. It can be 'wide', 'abbreviated' or 'narrow'.
 	 * @param string $monthName extracted month name. Passed by reference.
-	 * @return string parsed month name.
+	 * @return false|string parsed month name.
 	 * @since 1.1.13
 	 */
 	protected static function parseMonth($value,$offset,$width,&$monthName)

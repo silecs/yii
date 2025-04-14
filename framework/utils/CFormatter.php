@@ -168,7 +168,7 @@ class CFormatter extends CApplicationComponent
 		{
 			$value='<p>'.str_replace(array("\r\n", "\n", "\r"), '</p><p>',$value).'</p>';
 			if($removeEmptyParagraphs)
-				$value=preg_replace('/(<\/p><p>){2,}/i','</p><p>',$value);
+				$value=(string)preg_replace('/(<\/p><p>){2,}/i','</p><p>',$value);
 			return $value;
 		}
 		else
@@ -232,7 +232,7 @@ class CFormatter extends CApplicationComponent
 			if(ctype_digit($time) || ($time[0]=='-' && ctype_digit(substr($time, 1))))
 				return (int)$time;
 			else
-				return strtotime($time);
+				return (int)strtotime($time);
 		}
 		elseif (class_exists('DateTime', false) && $time instanceof DateTime)
 			return $time->getTimestamp();
@@ -322,7 +322,7 @@ class CFormatter extends CApplicationComponent
 			$value=$value/$base;
 
 		$value=round($value, $this->sizeFormat['decimals']);
-		$formattedValue=isset($this->sizeFormat['decimalSeparator']) ? str_replace('.',$this->sizeFormat['decimalSeparator'],$value) : $value;
+		$formattedValue=isset($this->sizeFormat['decimalSeparator']) ? str_replace('.',$this->sizeFormat['decimalSeparator'],(string)$value) : $value;
 		$params=array($value,'{n}'=>$formattedValue);
 
 		switch($i)

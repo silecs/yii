@@ -159,7 +159,7 @@ class CSecurityManager extends CApplicationComponent
 	 * @param string $data data to be validated. The data must be previously
 	 * generated using {@link hashData()}.
 	 * @param string $key the private key to be used for generating HMAC. Defaults to null, meaning using {@link validationKey}.
-	 * @return string the real data with HMAC stripped off. False if the data
+	 * @return false|string the real data with HMAC stripped off. False if the data
 	 * is tampered.
 	 */
 	public function validateData($data,$key=null)

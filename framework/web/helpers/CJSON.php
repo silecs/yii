@@ -102,11 +102,10 @@ class CJSON
 				return 'null';
 
 			case 'integer':
-				return (int) $var;
+				return (string) $var;
 
 			case 'double':
-			case 'float':
-				return str_replace(',','.',(float)$var); // locale-independent representation
+				return (string) $var; // locale-independent representation in PHP8+
 
 			case 'string':
 				if (($enc=strtoupper(Yii::app()->charset))!=='UTF-8')
@@ -136,7 +135,7 @@ class CJSON
 				// treat as a JSON object
 				if (is_array($var) && count($var) && (array_keys($var) !== range(0, sizeof($var) - 1))) {
 					return '{' .
-						join(',', array_map(array('CJSON', 'nameValue'),
+						join(',', array_map(CJSON::nameValue(...),
 							array_keys($var),
 							array_values($var)))
 							. '}';
@@ -161,7 +160,7 @@ class CJSON
 				else
 					$vars = get_object_vars($var);
 				return '{' .
-					join(',', array_map(array('CJSON', 'nameValue'),
+					join(',', array_map(CJSON::nameValue(...),
 						array_keys($vars),
 						array_values($vars)))
 						. '}';
@@ -230,7 +229,7 @@ class CJSON
 	 * This function returns any UTF-8 encoded text as a list of
 	 * Unicode values:
 	 * @param string $str string to convert
-	 * @return string
+	 * @return array UTF-8 characters
 	 * @author Scott Michael Reynen <scott@randomchaos.com>
 	 * @link   http://www.randomchaos.com/document.php?source=php_and_unicode
 	 * @see	unicodeToUTF8()
@@ -267,7 +266,7 @@ class CJSON
 
 	/**
 	 * This function converts a Unicode array back to its UTF-8 representation
-	 * @param string $str string to convert
+	 * @param string[] $str string to convert, as an array of UTF-8 characters
 	 * @return string
 	 * @author Scott Michael Reynen <scott@randomchaos.com>
 	 * @link   http://www.randomchaos.com/document.php?source=php_and_unicode

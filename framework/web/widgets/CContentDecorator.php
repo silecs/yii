@@ -73,7 +73,7 @@ class CContentDecorator extends COutputProcessor
 		{
 			$data=$this->data;
 			$data['content']=$content;
-			return $owner->renderFile($viewFile,$data,true);
+			return (string) $owner->renderFile($viewFile,$data,true);
 		}
 		else
 			return $content;

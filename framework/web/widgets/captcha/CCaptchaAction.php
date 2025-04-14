@@ -141,7 +141,7 @@ class CCaptchaAction extends CAction
 	{
 		for($h=0,$i=strlen($code)-1;$i>=0;--$i)
 			$h+=ord($code[$i]);
-		return $h;
+		return (string)$h;
 	}
 
 	/**
@@ -162,7 +162,7 @@ class CCaptchaAction extends CAction
 			$session[$name] = $this->generateVerifyCode();
 			$session[$name . 'count'] = 1;
 		}
-		return $session[$name];
+		return (string)$session[$name];
 	}
 
 	/**

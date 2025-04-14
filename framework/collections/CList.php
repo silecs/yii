@@ -179,7 +179,7 @@ class CList extends CComponent implements IteratorAggregate,ArrayAccess,Countabl
 	 * The list will first search for the item.
 	 * The first item found will be removed from the list.
 	 * @param mixed $item the item to be removed.
-	 * @return integer the index at which the item is being removed
+	 * @return false|integer the index at which the item is being removed
 	 * @throws CException If the item does not exist
 	 */
 	public function remove($item)

@@ -56,6 +56,7 @@ abstract class CDbMigration extends CComponent
 				return false;
 			}
 			$transaction->commit();
+			return true;
 		}
 		catch(Exception $e)
 		{
@@ -82,6 +83,7 @@ abstract class CDbMigration extends CComponent
 				return false;
 			}
 			$transaction->commit();
+			return true;
 		}
 		catch(Exception $e)
 		{

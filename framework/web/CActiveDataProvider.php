@@ -143,7 +143,7 @@ class CActiveDataProvider extends CDataProvider
 	/**
 	 * Returns the sorting object.
 	 * @param string $className the sorting object class name. Parameter is available since version 1.1.13.
-	 * @return CSort the sorting object. If this is false, it means the sorting is disabled.
+	 * @return false|CSort the sorting object. If this is false, it means the sorting is disabled.
 	 */
 	public function getSort($className='CSort')
 	{

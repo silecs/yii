@@ -317,7 +317,7 @@ class CHttpRequest extends CApplicationComponent
 	{
 		static $rawBody;
 		if($rawBody===null)
-			$rawBody=file_get_contents('php://input');
+			$rawBody=(string)file_get_contents('php://input');
 		return $rawBody;
 	}
 
@@ -565,18 +565,18 @@ class CHttpRequest extends CApplicationComponent
 		{
 			if(isset($_SERVER['REQUEST_URI']))
 			{
-				$this->_requestUri=$_SERVER['REQUEST_URI'];
+				$this->_requestUri=$_SERVER['REQUEST_URI'] ?? '';
 				if(!empty($_SERVER['HTTP_HOST']))
 				{
 					if(strpos($this->_requestUri,(string) $_SERVER['HTTP_HOST'])!==false)
-						$this->_requestUri=preg_replace('/^\w+:\/\/[^\/]+/','',$this->_requestUri);
+						$this->_requestUri=(string)preg_replace('/^\w+:\/\/[^\/]+/','',$this->_requestUri);
 				}
 				else
-					$this->_requestUri=preg_replace('/^(http|https):\/\/[^\/]+/i','',$this->_requestUri);
+					$this->_requestUri=(string)preg_replace('/^(http|https):\/\/[^\/]+/i','',$this->_requestUri);
 			}
 			elseif(isset($_SERVER['ORIG_PATH_INFO']))  // IIS 5.0 CGI
 			{
-				$this->_requestUri=$_SERVER['ORIG_PATH_INFO'];
+				$this->_requestUri=$_SERVER['ORIG_PATH_INFO'] ?? '';
 				if(!empty($_SERVER['QUERY_STRING']))
 					$this->_requestUri.='?'.$_SERVER['QUERY_STRING'];
 			}
@@ -771,17 +771,16 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function getScriptFile()
 	{
-		if($this->_scriptFile!==null)
-			return $this->_scriptFile;
-		else
-			return $this->_scriptFile=realpath($_SERVER['SCRIPT_FILENAME']);
+		if($this->_scriptFile===null)
+			$this->_scriptFile=(string)realpath($_SERVER['SCRIPT_FILENAME']);
+		return $this->_scriptFile;
 	}
 
 	/**
 	 * Returns information about the capabilities of user browser.
-	 * @param string $userAgent the user agent to be analyzed. Defaults to null, meaning using the
+	 * @param ?string $userAgent the user agent to be analyzed. Defaults to null, meaning using the
 	 * current User-Agent HTTP header information.
-	 * @return array user browser capabilities.
+	 * @return false|array user browser capabilities.
 	 * @see https://www.php.net/manual/en/function.get-browser.php
 	 */
 	public function getBrowser($userAgent=null)
@@ -803,7 +802,7 @@ class CHttpRequest extends CApplicationComponent
 	 * The Content-Type header field indicates the MIME type of the data
 	 * contained in {@link getRawBody()} or, in the case of the HEAD method, the
 	 * media type that would have been sent had the request been a GET.
-	 * @return string request content-type. Null is returned if this information is not available.
+	 * @return ?string request content-type. Null is returned if this information is not available.
 	 * @link https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17
 	 * HTTP 1.1 header field definitions
 	 * @since 1.1.17
@@ -1042,7 +1041,7 @@ class CHttpRequest extends CApplicationComponent
 	/**
 	 * Returns the user preferred accept MIME type.
 	 * The MIME type is returned as an array map (see {@link parseAcceptHeader()}).
-	 * @return array the user preferred accept MIME type or false if the user does not have any.
+	 * @return false|array the user preferred accept MIME type or false if the user does not have any.
 	 */
 	public function getPreferredAcceptType()
 	{
@@ -1104,7 +1103,7 @@ class CHttpRequest extends CApplicationComponent
 	 * supported by the application. The method will try to find the best match.
 	 * @param array $languages a list of the languages supported by the application.
 	 * If empty, this method will return the first language returned by [[getPreferredLanguages()]].
-	 * @return string the language that the application should use. false is returned if both [[getPreferredLanguages()]]
+	 * @return false|string the language that the application should use. false is returned if both [[getPreferredLanguages()]]
 	 * and `$languages` are empty.
 	 */
 	public function getPreferredLanguage($languages=array())
@@ -1496,15 +1495,12 @@ class CCookieCollection extends CMap
 	 */
 	public function add($key,$value)
 	{
-		if($value instanceof CHttpCookie)
-		{
-			$this->remove($key);
-			parent::add($key,$value);
-			if($this->_initialized)
-				$this->addCookie($value);
-		}
-		else
+		if(!($value instanceof CHttpCookie))
 			throw new CException(Yii::t('yii','CHttpCookieCollection can only hold CHttpCookie objects.'));
+		$this->remove($key);
+		parent::add($key,$value);
+		if($this->_initialized)
+			$this->addCookie($value);
 	}
 
 	/**
@@ -1523,11 +1519,12 @@ class CCookieCollection extends CMap
 	 *
 	 * @param mixed $key Cookie name.
 	 * @param array $options Cookie configuration array consisting of name-value pairs, available since 1.1.11.
-	 * @return CHttpCookie The removed cookie object.
+	 * @return ?CHttpCookie The removed cookie object.
 	 */
 	public function remove($key,$options=array())
 	{
-		if(($cookie=parent::remove($key))!==null)
+		$cookie=parent::remove($key);
+		if($cookie!==null)
 		{
 			if($this->_initialized)
 			{

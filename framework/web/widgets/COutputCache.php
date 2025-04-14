@@ -249,11 +249,13 @@ class COutputCache extends CFilterWidget
 	}
 
 	/**
-	 * @return ICache the cache used for caching the content.
+	 * @return ?ICache the cache used for caching the content.
 	 */
 	protected function getCache()
 	{
-		return Yii::app()->getComponent($this->cacheID);
+		/** @var ?ICache */
+		$cache = Yii::app()->getComponent($this->cacheID);
+		return $cache;
 	}
 
 	/**

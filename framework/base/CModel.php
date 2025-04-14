@@ -369,7 +369,7 @@ abstract class CModel extends CComponent implements IteratorAggregate, ArrayAcce
 	/**
 	 * Returns the first error of the specified attribute.
 	 * @param string $attribute attribute name.
-	 * @return string the error message. Null is returned if no error.
+	 * @return ?string the error message. Null is returned if no error.
 	 */
 	public function getError($attribute)
 	{

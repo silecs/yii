@@ -102,11 +102,14 @@ class CFormElementCollection extends CMap
 	/**
 	 * Removes the specified element by key.
 	 * @param string $key the name of the element to be removed from the collection
+	 * @return mixed
 	 * @throws CException
 	 */
 	public function remove($key)
 	{
-		if(($item=parent::remove($key))!==null)
+		$item=parent::remove($key);
+		if($item!==null)
 			$this->_form->removedElement($key,$item,$this->_forButtons);
+		return $item;
 	}
 }

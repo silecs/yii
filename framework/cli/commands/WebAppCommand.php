@@ -95,6 +95,7 @@ EOD;
 			$this->setPermissions($path);
 			echo "\nYour application has been created successfully under {$path}.\n";
 		}
+		return 0;
 	}
 
 	/**
@@ -145,7 +146,7 @@ EOD;
 		$yii=realpath(__DIR__.'/../../yii.php');
 		$yii=$this->getRelativePath($yii,$this->_rootPath.DIRECTORY_SEPARATOR.'index.php');
 		$yii=str_replace('\\','\\\\',$yii);
-		return preg_replace('/\$yii\s*=(.*?);/',"\$yii=$yii;",$content);
+		return (string)preg_replace('/\$yii\s*=(.*?);/',"\$yii=$yii;",$content);
 	}
 
 	/**
@@ -161,7 +162,7 @@ EOD;
 		$yii=realpath(__DIR__.'/../../yiit.php');
 		$yii=$this->getRelativePath($yii,$this->_rootPath.DIRECTORY_SEPARATOR.'protected'.DIRECTORY_SEPARATOR.'tests'.DIRECTORY_SEPARATOR.'bootstrap.php');
 		$yii=str_replace('\\','\\\\',$yii);
-		return preg_replace('/\$yiit\s*=(.*?);/',"\$yiit=$yii;",$content);
+		return (string)preg_replace('/\$yiit\s*=(.*?);/',"\$yiit=$yii;",$content);
 	}
 
 	/**
@@ -177,7 +178,7 @@ EOD;
 		$yiic=realpath(__DIR__.'/../../yiic.php');
 		$yiic=$this->getRelativePath($yiic,$this->_rootPath.DIRECTORY_SEPARATOR.'protected'.DIRECTORY_SEPARATOR.'yiic.php');
 		$yiic=str_replace('\\','\\\\',$yiic);
-		return preg_replace('/\$yiic\s*=(.*?);/',"\$yiic=$yiic;",$content);
+		return (string)preg_replace('/\$yiic\s*=(.*?);/',"\$yiic=$yiic;",$content);
 	}
 
 	/**

@@ -82,7 +82,7 @@ class CJavaScript
 			elseif($value===INF)
 				return 'Number.POSITIVE_INFINITY';
 			else
-				return str_replace(',','.',(float)$value);  // locale-independent representation
+				return (string)(float)$value;  // locale-independent representation with PHP8+
 		}
 		elseif($value instanceof CJavaScriptExpression)
 			return $value->__toString();

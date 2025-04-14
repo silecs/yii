@@ -82,8 +82,10 @@ class CLogFilter extends CComponent implements ILogFilter
 		$prefix='';
 		if($this->prefixSession && ($id=session_id())!=='')
 			$prefix.="[$id]";
-		if($this->prefixUser && ($user=Yii::app()->getComponent('user',false))!==null)
+		if($this->prefixUser && ($user=Yii::app()->getComponent('user',false))!==null) {
+			assert($user instanceof CWebUser);
 			$prefix.='['.$user->getName().']['.$user->getId().']';
+		}
 		if($prefix!=='')
 		{
 			foreach($logs as &$log)
@@ -99,8 +101,10 @@ class CLogFilter extends CComponent implements ILogFilter
 	protected function getContext()
 	{
 		$context=array();
-		if($this->logUser && ($user=Yii::app()->getComponent('user',false))!==null)
+		if($this->logUser && ($user=Yii::app()->getComponent('user',false))!==null) {
+			assert($user instanceof CWebUser);
 			$context[]='User: '.$user->getName().' (ID: '.$user->getId().')';
+		}
 
 		if(in_array($this->dumper, ['var_export', 'print_r'], true))
 		{

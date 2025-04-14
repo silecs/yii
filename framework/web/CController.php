@@ -376,7 +376,7 @@ class CController extends CBaseController
 	{
 		if($this->_dynamicOutput)
 		{
-			$output=preg_replace_callback('/<###dynamic-(\d+)###>/',array($this,'replaceDynamicOutput'),$output);
+			$output=(string)preg_replace_callback('/<###dynamic-(\d+)###>/',array($this,'replaceDynamicOutput'),$output);
 		}
 		return $output;
 	}
@@ -631,7 +631,7 @@ class CController extends CBaseController
 	 * to find its localized version if internationalization is needed.
 	 *
 	 * @param mixed $layoutName layout name
-	 * @return string the view file for the layout. False if the view file cannot be found
+	 * @return false|string the view file for the layout. False if the view file cannot be found
 	 */
 	public function getLayoutFile($layoutName)
 	{

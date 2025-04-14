@@ -267,7 +267,7 @@ class CAssetManager extends CApplicationComponent
 	 * If false, the name will be the hash taken from dirname of the path being published and path mtime.
 	 * Defaults to false. Set true if the path being published is shared among
 	 * different extensions.
-	 * @return string the published file path. False if the file or directory does not exist
+	 * @return false|string the published file path. False if the file or directory does not exist
 	 */
 	public function getPublishedPath($path,$hashByName=false)
 	{
@@ -289,7 +289,7 @@ class CAssetManager extends CApplicationComponent
 	 * If false, the name will be the hash taken from dirname of the path being published and path mtime.
 	 * Defaults to false. Set true if the path being published is shared among
 	 * different extensions.
-	 * @return string the published URL for the file or directory. False if the file or directory does not exist.
+	 * @return false|string the published URL for the file or directory. False if the file or directory does not exist.
 	 */
 	public function getPublishedUrl($path,$hashByName=false)
 	{

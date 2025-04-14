@@ -97,6 +97,7 @@ Yii Interactive Tool v1.1 (based on Yii v{$yiiVersion})
 Please type 'help' for help. Type 'exit' to quit.
 EOD;
 		$this->runShell();
+		return 0;
 	}
 
 	protected function runShell()

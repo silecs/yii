@@ -29,7 +29,11 @@ class CSqliteCommandBuilder extends CDbCommandBuilder
 	protected function createCompositeInCondition($table,$values,$prefix)
 	{
 		$keyNames=array();
-		foreach(array_keys($values[0]) as $name)
+		if(!is_array($values[0] ?? null))
+			throw new CException("Wrong parameter");
+		/** @var array<string, string> */
+		$mapping=$values[0];
+		foreach(array_keys($mapping) as $name)
 			$keyNames[]=$prefix.$table->columns[$name]->rawName;
 		$vs=array();
 		foreach($values as $value)

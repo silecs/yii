@@ -563,6 +563,7 @@ class CDbCommandBuilder extends CComponent
 		{
 			foreach($values as $name=>$value)
 			{
+				assert(is_string($name) && $name !== '');
 				if($name[0]!==':')
 					$name=':'.$name;
 				$command->bindValue($name,$value);

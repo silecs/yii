@@ -118,7 +118,7 @@ class CHttpSession extends CApplicationComponent implements IteratorAggregate,Ar
 	public function open()
 	{
 		if($this->getUseCustomStorage())
-			@session_set_save_handler(array($this,'openSession'),array($this,'closeSession'),array($this,'readSession'),array($this,'writeSession'),array($this,'destroySession'),array($this,'gcSession'));
+			@session_set_save_handler($this->openSession(...),$this->closeSession(...),$this->readSession(...),$this->writeSession(...),$this->destroySession(...),$this->gcSession(...));
 
 		@session_start();
 		if(YII_DEBUG && session_id()=='')
@@ -166,7 +166,7 @@ class CHttpSession extends CApplicationComponent implements IteratorAggregate,Ar
 	}
 
 	/**
-	 * @return string the current session ID
+	 * @return false|string the current session ID
 	 */
 	public function getSessionID()
 	{
@@ -194,7 +194,7 @@ class CHttpSession extends CApplicationComponent implements IteratorAggregate,Ar
 	}
 
 	/**
-	 * @return string the current session name
+	 * @return false|string the current session name
 	 */
 	public function getSessionName()
 	{
@@ -210,7 +210,7 @@ class CHttpSession extends CApplicationComponent implements IteratorAggregate,Ar
 	}
 
 	/**
-	 * @return string the current session save path, defaults to {@link https://php.net/session.save_path}.
+	 * @return false|string the current session save path, defaults to {@link https://php.net/session.save_path}.
 	 */
 	public function getSavePath()
 	{

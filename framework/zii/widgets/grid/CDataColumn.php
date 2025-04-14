@@ -102,15 +102,15 @@ class CDataColumn extends CGridColumn
 	{
 		if(is_string($this->filter))
 			return $this->filter;
-		elseif($this->filter!==false && $this->grid->filter!==null && $this->name!==null && strpos($this->name,'.')===false)
+		if($this->filter!==false && $this->grid->filter!==null && $this->name!==null && strpos($this->name,'.')===false)
 		{
 			if(is_array($this->filter))
 				return CHtml::activeDropDownList($this->grid->filter, $this->name, $this->filter, array('id'=>false,'prompt'=>''));
 			elseif($this->filter===null)
 				return CHtml::activeTextField($this->grid->filter, $this->name, array('id'=>false));
+			return '';
 		}
-		else
-			return parent::getFilterCellContent();
+		return parent::getFilterCellContent();
 	}
 
 	/**

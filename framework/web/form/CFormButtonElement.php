@@ -121,7 +121,7 @@ class CFormButtonElement extends CFormElement
 			$attributes['name']=$this->name;
 			ob_start();
 			$this->getParent()->getOwner()->widget($this->type, $attributes);
-			return ob_get_clean();
+			return (string)ob_get_clean();
 		}
 	}
 

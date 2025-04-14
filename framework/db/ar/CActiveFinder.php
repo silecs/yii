@@ -812,7 +812,7 @@ class CJoinElement
 	 * Populates the active records with the query data.
 	 * @param CJoinQuery $query the query executed
 	 * @param array $row a row of data
-	 * @return CActiveRecord the populated record
+	 * @return ?CActiveRecord the populated record
 	 */
 	private function populateRecord($query,$row)
 	{

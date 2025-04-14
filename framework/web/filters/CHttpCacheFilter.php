@@ -124,20 +124,20 @@ class CHttpCacheFilter extends CFilter
 		{
 			$value=$this->evaluateExpression($this->lastModifiedExpression);
 			if(is_numeric($value)&&$value==(int)$value)
-				return $value;
+				return (int)$value;
 			elseif(($lastModified=strtotime($value))===false)
 				throw new CException(Yii::t('yii','Invalid expression for CHttpCacheFilter.lastModifiedExpression: The evaluation result "{value}" could not be understood by strtotime()',
 					array('{value}'=>$value)));
-			return $lastModified;
+			return (int)$lastModified;
 		}
 
 		if($this->lastModified)
 		{
 			if(is_numeric($this->lastModified)&&$this->lastModified==(int)$this->lastModified)
-				return $this->lastModified;
+				return (int)$this->lastModified;
 			elseif(($lastModified=strtotime($this->lastModified))===false)
 				throw new CException(Yii::t('yii','CHttpCacheFilter.lastModified contained a value that could not be understood by strtotime()'));
-			return $lastModified;
+			return (int)$lastModified;
 		}
 		return false;
 	}

@@ -61,7 +61,7 @@ class CApcCache extends CCache
 	/**
 	 * Retrieves multiple values from cache with the specified keys.
 	 * @param array $keys a list of keys identifying the cached values
-	 * @return array a list of cached values indexed by the keys
+	 * @return false|array a list of cached values indexed by the keys
 	 */
 	protected function getValues($keys)
 	{

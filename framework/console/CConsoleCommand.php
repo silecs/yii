@@ -526,7 +526,7 @@ abstract class CConsoleCommand extends CComponent
 		foreach($rules as $rule=>$replacement)
 		{
 			if(preg_match($rule,$name))
-				return preg_replace($rule,$replacement,$name);
+				return (string)preg_replace($rule,$replacement,$name);
 		}
 		return $name.'s';
 	}
