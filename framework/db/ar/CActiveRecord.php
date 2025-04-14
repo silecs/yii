@@ -1590,7 +1590,7 @@ abstract class CActiveRecord extends CModel
 	 * See {@link find()} for detailed explanation about $condition and $params.
 	 * @param mixed $condition query condition or criteria.
 	 * @param array $params parameters to be bound to an SQL statement.
-	 * @return string the number of rows satisfying the specified query condition. Note: type is string to keep max. precision.
+	 * @return int the number of rows satisfying the specified query condition.
 	 */
 	public function count($condition='',$params=array())
 	{
@@ -1601,12 +1601,10 @@ abstract class CActiveRecord extends CModel
 		$this->applyScopes($criteria);
 
 		if(empty($criteria->with))
-			return $builder->createCountCommand($this->getTableSchema(),$criteria)->queryScalar();
-		else
-		{
-			$finder=$this->getActiveFinder($criteria->with);
-			return $finder->count($criteria);
-		}
+			return (int) $builder->createCountCommand($this->getTableSchema(),$criteria)->queryScalar();
+
+		$finder=$this->getActiveFinder($criteria->with);
+		return (int) $finder->count($criteria);
 	}
 
 	/**
@@ -1616,7 +1614,7 @@ abstract class CActiveRecord extends CModel
 	 * An attribute value can be an array which will be used to generate an IN condition.
 	 * @param mixed $condition query condition or criteria.
 	 * @param array $params parameters to be bound to an SQL statement.
-	 * @return string the number of rows satisfying the specified query condition. Note: type is string to keep max. precision.
+	 * @return int the number of rows satisfying the specified query condition.
 	 * @since 1.1.4
 	 */
 	public function countByAttributes($attributes,$condition='',$params=array())
@@ -1629,12 +1627,10 @@ abstract class CActiveRecord extends CModel
 		$this->applyScopes($criteria);
 
 		if(empty($criteria->with))
-			return $builder->createCountCommand($this->getTableSchema(),$criteria)->queryScalar();
-		else
-		{
-			$finder=$this->getActiveFinder($criteria->with);
-			return $finder->count($criteria);
-		}
+			return (int) $builder->createCountCommand($this->getTableSchema(),$criteria)->queryScalar();
+
+		$finder=$this->getActiveFinder($criteria->with);
+		return (int) $finder->count($criteria);
 	}
 
 	/**
@@ -1643,13 +1639,13 @@ abstract class CActiveRecord extends CModel
 	 * SQL statement and the parameters.
 	 * @param string $sql the SQL statement
 	 * @param array $params parameters to be bound to the SQL statement
-	 * @return string the number of rows using the given SQL statement. Note: type is string to keep max. precision.
+	 * @return int the number of rows using the given SQL statement.
 	 */
 	public function countBySql($sql,$params=array())
 	{
 		Yii::trace(get_class($this).'.countBySql()','system.db.ar.CActiveRecord');
 		$this->beforeCount();
-		return $this->getCommandBuilder()->createSqlCommand($sql,$params)->queryScalar();
+		return (int) $this->getCommandBuilder()->createSqlCommand($sql,$params)->queryScalar();
 	}
 
 	/**
