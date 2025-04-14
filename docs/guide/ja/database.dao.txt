@@ -41,7 +41,6 @@ DSN のフォーマットは、使用する PDO データベースドライバ�
    - SQLite: `sqlite:/path/to/dbfile`
    - MySQL/MariaDB: `mysql:host=localhost;dbname=testdb`
    - PostgreSQL: `pgsql:host=localhost;port=5432;dbname=testdb`
-   - Oracle: `oci:dbname=//localhost:1521/testdb`
 
 [CDbConnection] は [CApplicationComponent] から拡張されているため、[アプリケーションコンポーネント](/doc/guide/basics.application#sec-4) として使用できます。
 そうするには、[アプリケーション初期構成](/doc/guide/basics.application#sec-2) 内で `db` という名前 (もしくは他の名前) のアプリケーションコンポーネントを下記のように設定します。

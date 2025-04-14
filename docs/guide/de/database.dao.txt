@@ -52,7 +52,6 @@ Die gebräuchlichsten DSN-Formate sind:
    - SQLite: `sqlite:/pfad/zu/dbdatei`
    - MySQL: `mysql:host=localhost;dbname=testdb`
    - PostgreSQL: `pgsql:host=localhost;port=5432;dbname=testdb`
-   - Oracle: `oci:dbname=//localhost:1521/testdb`
 
 Da [CDbConnection] von [CApplicationComponent] abgeleitet ist, kann man sie
 auch als [Anwendungskomponente](/doc/guide/basics.application#application-component)

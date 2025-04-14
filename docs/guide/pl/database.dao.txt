@@ -48,7 +48,6 @@ aby uzyskać więcej informacji. Poniżej znajduje się lista najczęściej uży
    - SQLite: `sqlite:/scieżka/do/pliku/bazy`,
    - MySQL: `mysql:host=localhost;dbname=testdb`,
    - PostgreSQL: `pgsql:host=localhost;port=5432;dbname=testdb`,
-   - Oracle: `oci:dbname=//localhost:1521/testdb`
 
 Ponieważ klasa [CDbConnection] dziedziczy z klasy [CApplicationComponent], możemy użyć jej jako 
 [komponent aplikacji](/doc/guide/basics.application#application-component). 

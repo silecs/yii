@@ -45,7 +45,6 @@ $connection->active=false;  // close connection
    - SQLite: `sqlite:/path/to/dbfile`
    - MySQL/MariaDB: `mysql:host=localhost;dbname=testdb`
    - PostgreSQL: `pgsql:host=localhost;port=5432;dbname=testdb`
-   - Oracle: `oci:dbname=//localhost:1521/testdb`
 
 Поскольку [CDbConnection] наследует класс [CApplicationComponent], мы можем использовать его
 в качестве [компонента приложения](/doc/guide/basics.application#application-component). Для этого нужно настроить

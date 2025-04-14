@@ -252,8 +252,6 @@ class CDbConnection extends CApplicationComponent
 		'mysqli'=>'CMysqlSchema',   // MySQL
 		'mysql'=>'CMysqlSchema',    // MySQL,MariaDB
 		'sqlite'=>'CSqliteSchema',  // sqlite 3
-		'sqlite2'=>'CSqliteSchema', // sqlite 2
-		'oci'=>'COciSchema',        // Oracle driver
 	);
 
 	/**
@@ -600,7 +598,7 @@ class CDbConnection extends CApplicationComponent
 				return $quoted;
 		}
 
-		// fallback for drivers that don't support quote (e.g. oci and odbc)
+		// fallback for drivers that don't support quote (e.g. odbc)
 		return "'" . addcslashes(str_replace("'", "''", $value), "\000\n\r\\\032") . "'";
 	}
 

@@ -50,7 +50,6 @@ lebih lengkap. Di bawah ini adalah daftar format DSN yang umum dipakai:
    - SQLite: `sqlite:/path/to/dbfile`
    - MySQL: `mysql:host=localhost;dbname=testdb`
    - PostgreSQL: `pgsql:host=localhost;port=5432;dbname=testdb`
-   - Oracle: `oci:dbname=//localhost:1521/testdb`
 
 Karena [CDbConnection] diturunkan dari [CApplicationComponent], kita juga dapat
 menggunakannya sebagai [komponen

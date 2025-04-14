@@ -41,7 +41,6 @@ DSN 要含有 PDO 驱动的名字，跟上一个冒号，再跟上驱动特定�
    - SQLite: `sqlite:/path/to/dbfile`
    - MySQL: `mysql:host=localhost;dbname=testdb`
    - PostgreSQL: `pgsql:host=localhost;port=5432;dbname=testdb`
-   - Oracle: `oci:dbname=//localhost:1521/testdb`
 
 由于 [CDbConnection] 继承自 [CApplicationComponent]，我们也可以将其作为一个 [应用组件](/doc/guide/basics.application#application-component)
 使用。要这样做的话，
