@@ -25,7 +25,7 @@
  */
 class CFormModel extends CModel
 {
-	private static $_names=array();
+	private array $_names=array();
 
 	/**
 	 * Constructor.
@@ -60,7 +60,7 @@ class CFormModel extends CModel
 	public function attributeNames()
 	{
 		$className=get_class($this);
-		if(!isset(self::$_names[$className]))
+		if(!isset($this->_names[$className]))
 		{
 			$class=new ReflectionClass(get_class($this));
 			$names=array();
@@ -70,9 +70,8 @@ class CFormModel extends CModel
 				if($property->isPublic() && !$property->isStatic())
 					$names[]=$name;
 			}
-			return self::$_names[$className]=$names;
+			$this->_names[$className]=$names;
 		}
-		else
-			return self::$_names[$className];
+		return $this->_names[$className];
 	}
 }
