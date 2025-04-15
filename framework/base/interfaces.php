@@ -604,3 +604,24 @@ interface ILogFilter
 	public function filter(&$logs);
 }
 
+interface ILogRoute
+{
+	/**
+	 * Retrieves filtered log messages from logger for further processing.
+	 *
+	 * @param CLogger $logger logger instance
+	 * @param bool $processLogs whether to process the logs after they are collected from the logger
+	 */
+    public function collectLogs(CLogger $logger, bool $processLogs = false): void;
+
+	/**
+	 * Called after the constructor, once the properties have been initialized.
+	 */
+    public function init();
+
+	/**
+	 * If false, the log router will not call collectLogs().
+	 */
+    public function isEnabled(): bool;
+}
+

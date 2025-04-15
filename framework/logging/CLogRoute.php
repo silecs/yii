@@ -28,7 +28,7 @@
  * @package system.logging
  * @since 1.0
  */
-abstract class CLogRoute extends CComponent
+abstract class CLogRoute extends CComponent implements ILogRoute
 {
 	/**
 	 * @var boolean whether to enable this log route. Defaults to true.
@@ -74,6 +74,11 @@ abstract class CLogRoute extends CComponent
 	{
 	}
 
+	public function isEnabled(): bool
+	{
+		return $this->enabled;
+	}
+
 	/**
 	 * Formats a log message given different fields.
 	 * @param string $message message content
@@ -92,7 +97,7 @@ abstract class CLogRoute extends CComponent
 	 * @param CLogger $logger logger instance
 	 * @param boolean $processLogs whether to process the logs after they are collected from the logger
 	 */
-	public function collectLogs($logger, $processLogs=false)
+	public function collectLogs(CLogger $logger, bool $processLogs=false): void
 	{
 		$logs=$logger->getLogs($this->levels,$this->categories,$this->except);
 		$this->logs=empty($this->logs) ? $logs : array_merge($this->logs,$logs);

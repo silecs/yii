@@ -63,6 +63,9 @@ class CLogRouter extends CApplicationComponent
 		foreach($this->_routes as $name=>$route)
 		{
 			$route=Yii::createComponent($route);
+			if (!($route instanceof ILogRoute)) {
+				throw new CException("Every log route must be an instance of ILogRoute.");
+			}
 			$route->init();
 			$this->_routes[$name]=$route;
 		}
@@ -104,7 +107,7 @@ class CLogRouter extends CApplicationComponent
 		foreach($this->_routes as $route)
 		{
 			/* @var $route CLogRoute */
-			if($route->enabled)
+			if($route->isEnabled())
 				$route->collectLogs($logger,$dumpLogs);
 		}
 	}

@@ -16,3 +16,4 @@ Miscellanous
 - Removed CFlexWidget (flash is an obsolete web technology)
 - Removed CJuiSliderInput (HTML5 has native alternatives)
 - Removed SOAP (CWebService, CSoapController, etc.)
+- New interface for log routes. Classes that inherit from CLogRouter already implement it.
