@@ -120,51 +120,12 @@ class CHttpRequest extends CApplicationComponent
 	}
 
 	/**
-	 * Normalizes the request data.
-	 * This method strips off slashes in request data if get_magic_quotes_gpc() returns true.
-	 * It also performs CSRF validation if {@link enableCsrfValidation} is true.
+	 * Performs CSRF validation if {@link enableCsrfValidation} is true.
 	 */
 	protected function normalizeRequest()
 	{
-		// normalize request
-		if(version_compare(PHP_VERSION,'7.4.0','<'))
-		{
-			if(function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc())
-			{
-				if(isset($_GET))
-					$_GET=$this->stripSlashes($_GET);
-				if(isset($_POST))
-					$_POST=$this->stripSlashes($_POST);
-				if(isset($_REQUEST))
-					$_REQUEST=$this->stripSlashes($_REQUEST);
-				if(isset($_COOKIE))
-					$_COOKIE=$this->stripSlashes($_COOKIE);
-			}
-		}
-
 		if($this->enableCsrfValidation)
 			Yii::app()->attachEventHandler('onBeginRequest',array($this,'validateCsrfToken'));
-	}
-
-
-	/**
-	 * Strips slashes from input data.
-	 * This method is applied when magic quotes is enabled.
-	 * @param mixed $data input data to be processed
-	 * @return mixed processed data
-	 */
-	public function stripSlashes(&$data)
-	{
-		if(is_array($data))
-		{
-			if(count($data) == 0)
-				return $data;
-			$keys=array_map('stripslashes',array_keys($data));
-			$data=array_combine($keys,array_values($data));
-			return array_map(array($this,'stripSlashes'),$data);
-		}
-		else
-			return stripslashes($data);
 	}
 
 	/**
@@ -471,7 +432,7 @@ class CHttpRequest extends CApplicationComponent
 			if(($pos=strpos($pathInfo,'?'))!==false)
 			   $pathInfo=substr($pathInfo,0,$pos);
 
-			$pathInfo=$this->decodePathInfo($pathInfo);
+			$pathInfo=urldecode($pathInfo);
 
 			$scriptUrl=$this->getScriptUrl();
 			$baseUrl=$this->getBaseUrl();
@@ -495,60 +456,6 @@ class CHttpRequest extends CApplicationComponent
 			$this->_pathInfo=$pathInfo;
 		}
 		return $this->_pathInfo;
-	}
-
-	/**
-	 * Decodes the path info.
-	 * This method is an improved variant of the native urldecode() function and used in {@link getPathInfo getPathInfo()} to
-	 * decode the path part of the request URI. You may override this method to change the way the path info is being decoded.
-	 * @param string $pathInfo encoded path info
-	 * @return string decoded path info
-	 * @since 1.1.10
-	 */
-	protected function decodePathInfo($pathInfo)
-	{
-		$pathInfo = urldecode($pathInfo);
-
-		// is it UTF-8?
-		// https://w3.org/International/questions/qa-forms-utf-8.html
-		if(preg_match('%^(?:
-		   [\x09\x0A\x0D\x20-\x7E]            # ASCII
-		 | [\xC2-\xDF][\x80-\xBF]             # non-overlong 2-byte
-		 | \xE0[\xA0-\xBF][\x80-\xBF]         # excluding overlongs
-		 | [\xE1-\xEC\xEE\xEF][\x80-\xBF]{2}  # straight 3-byte
-		 | \xED[\x80-\x9F][\x80-\xBF]         # excluding surrogates
-		 | \xF0[\x90-\xBF][\x80-\xBF]{2}      # planes 1-3
-		 | [\xF1-\xF3][\x80-\xBF]{3}          # planes 4-15
-		 | \xF4[\x80-\x8F][\x80-\xBF]{2}      # plane 16
-		)*$%xs', $pathInfo))
-		{
-			return $pathInfo;
-		}
-		else
-		{
-			return $this->utf8Encode($pathInfo);
-		}
-	}
-
-	/**
-	 * Encodes an ISO-8859-1 string to UTF-8
-	 * @param string $s
-	 * @return string the UTF-8 translation of `s`.
-	 * @see https://github.com/yiisoft/yii/issues/4505
-	 * @see https://github.com/symfony/polyfill-php72/blob/master/Php72.php#L24
-	 */
-	private function utf8Encode($s)
-	{
-		$s.=$s;
-		$len=strlen($s);
-		for ($i=$len>>1,$j=0; $i<$len; ++$i,++$j) {
-			switch (true) {
-				case $s[$i] < "\x80": $s[$j] = $s[$i]; break;
-				case $s[$i] < "\xC0": $s[$j] = "\xC2"; $s[++$j] = $s[$i]; break;
-				default: $s[$j] = "\xC3"; $s[++$j] = chr(ord($s[$i]) - 64); break;
-			}
-		}
-		return substr($s, 0, $j);
 	}
 
 	/**
@@ -1050,21 +957,6 @@ class CHttpRequest extends CApplicationComponent
 	}
 
 	/**
-	 * String compare function used by usort.
-	 * Included to circumvent the use of closures (not supported by PHP 5.2) and create_function (deprecated since PHP 7.2.0)
-	 * @param array $a
-	 * @param array $b
-	 * @return int -1 (a>b), 0 (a==b), 1 (a<b)
-	 */
-	private function stringCompare($a, $b)
-	{
-		if ($a[0] == $b[0]) {
-			return 0;
-		}
-		return ($a[0] < $b[0]) ? 1 : -1;
-	}
-
-	/**
 	 * Returns an array of user accepted languages in order of preference.
 	 * The returned language IDs will NOT be canonicalized using {@link CLocale::getCanonicalID}.
 	 * @return array the user accepted languages in the order of preference.
@@ -1088,7 +980,7 @@ class CHttpRequest extends CApplicationComponent
 						$languages[]=array((float)$q,$matches[1][$i]);
 				}
 
-				usort($languages, array($this, 'stringCompare'));
+				usort($languages, fn ($a, $b) => $b <=> $a);
 				foreach($languages as $language)
 					$sortedLanguages[]=$language[1];
 			}
