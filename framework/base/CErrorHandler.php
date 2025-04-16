@@ -114,16 +114,8 @@ class CErrorHandler extends CApplicationComponent
 			// reset headers in case there was an ob_start("ob_gzhandler") before
 			if($gzHandler && !headers_sent() && ob_list_handlers()===array())
 			{
-				if(function_exists('header_remove')) // php >= 5.3
-				{
-					header_remove('Vary');
-					header_remove('Content-Encoding');
-				}
-				else
-				{
-					header('Vary:');
-					header('Content-Encoding:');
-				}
+				header_remove('Vary');
+				header_remove('Content-Encoding');
 			}
 		}
 

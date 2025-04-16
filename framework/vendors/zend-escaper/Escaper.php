@@ -376,14 +376,8 @@ class Escaper
     {
         if (function_exists('iconv')) {
             $result = iconv($from, $to, $string);
-        } elseif (function_exists('mb_convert_encoding')) {
-            $result = mb_convert_encoding($string, $to, $from);
         } else {
-            throw new Exception(
-                get_class($this)
-                . ' requires either the iconv or mbstring extension to be installed'
-                . ' when escaping for non UTF-8 strings.'
-            );
+            $result = mb_convert_encoding($string, $to, $from);
         }
 
         if ($result === false) {

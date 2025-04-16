@@ -277,16 +277,16 @@ class CFileHelper
 	 */
 	public static function getMimeType($file,$magicFile=null,$checkExtension=true)
 	{
-		if(function_exists('finfo_open'))
-		{
-			$options=defined('FILEINFO_MIME_TYPE') ? FILEINFO_MIME_TYPE : FILEINFO_MIME;
-			$info=$magicFile===null ? finfo_open($options) : finfo_open($options,$magicFile);
-
-			if($info && ($result=finfo_file($info,$file))!==false)
+		$options=defined('FILEINFO_MIME_TYPE') ? FILEINFO_MIME_TYPE : FILEINFO_MIME;
+		$info=$magicFile===null ? finfo_open($options) : finfo_open($options,$magicFile);
+		if ($info) {
+			$result = finfo_file($info, $file);
+			if ($result !== false)
 				return $result;
 		}
 
-		if(function_exists('mime_content_type') && ($result=mime_content_type($file))!==false)
+		$result=mime_content_type($file);
+		if($result!==false)
 			return $result;
 
 		return $checkExtension ? self::getMimeTypeByExtension($file) : null;

@@ -236,16 +236,11 @@ class CFileValidator extends CValidator
 
 		if($this->mimeTypes!==null && !empty($file->tempName))
 		{
-			if(function_exists('finfo_open'))
-			{
-				$mimeType=false;
-				if($info=finfo_open(defined('FILEINFO_MIME_TYPE') ? FILEINFO_MIME_TYPE : FILEINFO_MIME))
-					$mimeType=finfo_file($info,$file->getTempName());
-			}
-			elseif(function_exists('mime_content_type'))
-				$mimeType=mime_content_type($file->getTempName());
+			$mimeType=false;
+			if($info=finfo_open(defined('FILEINFO_MIME_TYPE') ? FILEINFO_MIME_TYPE : FILEINFO_MIME))
+				$mimeType=finfo_file($info,$file->getTempName());
 			else
-				throw new CException(Yii::t('yii','In order to use MIME-type validation provided by CFileValidator fileinfo PECL extension should be installed.'));
+				$mimeType=mime_content_type($file->getTempName());
 
 			if(is_string($this->mimeTypes))
 				$mimeTypes=preg_split('/[\s,]+/',strtolower($this->mimeTypes),-1,PREG_SPLIT_NO_EMPTY);

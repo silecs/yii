@@ -95,7 +95,7 @@ class CPasswordHelper
 		$salt=self::generateSalt($cost);
 		$hash=crypt($password,$salt);
 
-		if(!is_string($hash) || (function_exists('mb_strlen') ? mb_strlen($hash, '8bit') : strlen($hash))<32)
+		if(!is_string($hash) || mb_strlen($hash, '8bit')<32)
 			throw new CException(Yii::t('yii','Internal error while generating hash.'));
 
 		return $hash;
@@ -152,9 +152,8 @@ class CPasswordHelper
 		if(!is_string($a) || !is_string($b))
 			return false;
 
-		$mb=function_exists('mb_strlen');
-		$length=$mb ? mb_strlen($a,'8bit') : strlen($a);
-		if($length!==($mb ? mb_strlen($b,'8bit') : strlen($b)))
+		$length=mb_strlen($a,'8bit');
+		if($length!==mb_strlen($b,'8bit'))
 			return false;
 
 		$check=0;

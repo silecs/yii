@@ -103,9 +103,9 @@ class CEmailValidator extends CValidator
 		$valid=is_string($value) && strlen($value)<=254 && (preg_match($this->pattern,$value) || $this->allowName && preg_match($this->fullPattern,$value));
 		if($valid)
 			$domain=rtrim(substr($value,strpos($value,'@')+1),'>');
-		if($valid && $this->checkMX && function_exists('checkdnsrr'))
+		if($valid && $this->checkMX)
 			$valid=checkdnsrr($domain,'MX');
-		if($valid && $this->checkPort && function_exists('fsockopen') && function_exists('dns_get_record'))
+		if($valid && $this->checkPort)
 			$valid=$this->checkMxPorts($domain);
 		return $valid;
 	}
@@ -199,23 +199,14 @@ if(".($this->allowEmpty ? "jQuery.trim(value)!='' && " : '').$condition.") {
 	{
 		if(preg_match_all('/^(.*)@(.*)$/',$value,$matches))
 		{
-			if(function_exists('idn_to_ascii'))
+			$value=$matches[1][0].'@';
+			if (defined('IDNA_NONTRANSITIONAL_TO_ASCII') && defined('INTL_IDNA_VARIANT_UTS46'))
 			{
-				$value=$matches[1][0].'@';
-				if (defined('IDNA_NONTRANSITIONAL_TO_ASCII') && defined('INTL_IDNA_VARIANT_UTS46'))
-				{
-					$value.=idn_to_ascii($matches[2][0],IDNA_NONTRANSITIONAL_TO_ASCII, INTL_IDNA_VARIANT_UTS46);
-				}
-				else
-				{
-					$value.=idn_to_ascii($matches[2][0]);
-				}
+				$value.=idn_to_ascii($matches[2][0],IDNA_NONTRANSITIONAL_TO_ASCII, INTL_IDNA_VARIANT_UTS46);
 			}
 			else
 			{
-				require_once(Yii::getPathOfAlias('system.vendors.Net_IDNA2.Net').DIRECTORY_SEPARATOR.'IDNA2.php');
-				$idna=new Net_IDNA2();
-				$value=$matches[1][0].'@'.@$idna->encode($matches[2][0]);
+				$value.=idn_to_ascii($matches[2][0]);
 			}
 		}
 		return $value;

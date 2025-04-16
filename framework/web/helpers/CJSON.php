@@ -307,13 +307,7 @@ class CJSON
 	protected static function utf8ToUTF16BE(&$str, $bom = false)
 	{
 		$out = $bom ? "\xFE\xFF" : '';
-		if(function_exists('mb_convert_encoding'))
-			return $out.mb_convert_encoding($str,'UTF-16BE','UTF-8');
-
-		$uni = self::utf8ToUnicode($str);
-		foreach($uni as $cp)
-			$out .= pack('n',$cp);
-		return $out;
+		return $out.mb_convert_encoding($str,'UTF-16BE','UTF-8');
 	}
 
 	/**

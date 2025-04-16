@@ -198,29 +198,7 @@ class CSecurityManager extends CApplicationComponent
 		if($hashAlgorithm===null)
 			$hashAlgorithm=$this->hashAlgorithm;
 
-		if(function_exists('hash_hmac'))
-			return hash_hmac($hashAlgorithm,$data,$key);
-
-		if(0===strcasecmp($hashAlgorithm,'sha1'))
-		{
-			$pack='H40';
-			$func='sha1';
-		}
-		elseif(0===strcasecmp($hashAlgorithm,'md5'))
-		{
-			$pack='H32';
-			$func='md5';
-		}
-		else
-		{
-			throw new CException(Yii::t('yii','Only SHA1 and MD5 hashing algorithms are supported when using PHP 5.1.1 or below.'));
-		}
-		if($this->strlen($key)>64)
-			$key=pack($pack,$func($key));
-		if($this->strlen($key)<64)
-			$key=str_pad($key,64,chr(0));
-		$key=$this->substr($key,0,64);
-		return $func((str_repeat(chr(0x5C), 64) ^ $key) . pack($pack, $func((str_repeat(chr(0x36), 64) ^ $key) . $data)));
+		return hash_hmac($hashAlgorithm,$data,$key);
 	}
 
 	/**

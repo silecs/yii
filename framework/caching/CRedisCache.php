@@ -204,7 +204,7 @@ class CRedisCache extends CCache
 	 */
 	private function byteLength($str)
 	{
-		return function_exists('mb_strlen') ? mb_strlen($str, '8bit') : strlen($str);
+		return mb_strlen($str, '8bit');
 	}
 
 	/**

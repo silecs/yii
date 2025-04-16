@@ -259,10 +259,8 @@ class CHttpRequest extends CApplicationComponent
 			$result=array();
 			if (strncmp((string)$this->getContentType(), 'application/json', 16) === 0)
 				$result = CJSON::decode($this->getRawBody(), $this->jsonAsArray);
-			elseif(function_exists('mb_parse_str'))
-				mb_parse_str($this->getRawBody(), $result);
 			else
-				parse_str($this->getRawBody(), $result);
+				mb_parse_str($this->getRawBody(), $result);
 			$this->_restParams=$result;
 		}
 
@@ -1033,7 +1031,7 @@ class CHttpRequest extends CApplicationComponent
 				$mimeType='text/plain';
 		}
 
-		$fileSize=(function_exists('mb_strlen') ? mb_strlen($content,'8bit') : strlen($content));
+		$fileSize=mb_strlen($content,'8bit');
 		$contentStart=0;
 		$contentEnd=$fileSize-1;
 
@@ -1094,7 +1092,7 @@ class CHttpRequest extends CApplicationComponent
 		header('Content-Length: '.$length);
 		header("Content-Disposition: attachment; filename=\"$fileName\"");
 		header('Content-Transfer-Encoding: binary');
-		$content=function_exists('mb_substr') ? mb_substr($content,$contentStart,$length,'8bit') : substr($content,$contentStart,$length);
+		$content=mb_substr($content,$contentStart,$length,'8bit');
 
 		if($terminate)
 		{
