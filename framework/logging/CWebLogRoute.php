@@ -31,13 +31,6 @@ class CWebLogRoute extends CLogRoute
 	 */
 	public $ignoreAjaxInFireBug=true;
 	/**
-	 * @var boolean whether the log should be ignored in FireBug for Flash/Flex calls. Defaults to true.
-	 * This option should be used carefully, because an Flash/Flex call returns all output as a result data.
-	 * For example if the Flash/Flex call expects an XML type result any output from the logger will cause Flash/Flex call to fail.
-	 * @since 1.1.11
-	 */
-	public $ignoreFlashInFireBug=true;
-	/**
 	 * @var boolean whether the log should be collapsed by default in Firebug. Defaults to false.
 	 * @since 1.1.13.
 	 */
@@ -61,12 +54,11 @@ class CWebLogRoute extends CLogRoute
 	{
 		$app=Yii::app();
 		$isAjax=$app->getRequest()->getIsAjaxRequest();
-		$isFlash=$app->getRequest()->getIsFlashRequest();
 
 		if($this->showInFireBug)
 		{
-			// do not output anything for ajax and/or flash requests if needed
-			if($isAjax && $this->ignoreAjaxInFireBug || $isFlash && $this->ignoreFlashInFireBug)
+			// do not output anything for ajax if needed
+			if($isAjax && $this->ignoreAjaxInFireBug)
 				return;
 			$view.='-firebug';
 			if(($userAgent=$app->getRequest()->getUserAgent())!==null && preg_match('/msie [5-9]/i',$userAgent))
@@ -76,7 +68,7 @@ class CWebLogRoute extends CLogRoute
 				echo "</script>\n";
 			}
 		}
-		elseif(!($app instanceof CWebApplication) || $isAjax || $isFlash)
+		elseif(!($app instanceof CWebApplication) || $isAjax)
 			return;
 
 		$viewFile=YII_PATH.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.$view.'.php';

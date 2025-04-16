@@ -38,7 +38,6 @@
  * @property boolean $isPutRequest Whether this is a PUT request.
  * @property boolean $isPatchRequest Whether this is a PATCH request.
  * @property boolean $isAjaxRequest Whether this is an AJAX (XMLHttpRequest) request.
- * @property boolean $isFlashRequest Whether this is an Adobe Flash or Adobe Flex request.
  * @property string $serverName Server name.
  * @property integer $serverPort Server port number.
  * @property ?string $urlReferrer URL referrer, null if not present.
@@ -604,16 +603,6 @@ class CHttpRequest extends CApplicationComponent
 	public function getIsAjaxRequest()
 	{
 		return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']==='XMLHttpRequest';
-	}
-
-	/**
-	 * Returns whether this is an Adobe Flash or Adobe Flex request.
-	 * @return boolean whether this is an Adobe Flash or Adobe Flex request.
-	 * @since 1.1.11
-	 */
-	public function getIsFlashRequest()
-	{
-		return isset($_SERVER['HTTP_USER_AGENT']) && (stripos($_SERVER['HTTP_USER_AGENT'],'Shockwave')!==false || stripos($_SERVER['HTTP_USER_AGENT'],'Flash')!==false);
 	}
 
 	/**
