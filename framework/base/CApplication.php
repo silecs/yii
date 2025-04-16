@@ -197,6 +197,12 @@ abstract class CApplication extends CModule
 	 */
 	public function end($status=0,$exit=true)
 	{
+		$error = error_get_last();
+		if ($error) {
+			$message = sprintf("%s\nin %s:%d", $error['message'], $error['file'], $error['line']);
+			Yii::log($message,CLogger::LEVEL_ERROR,'php');
+			error_clear_last();
+		}
 		if($this->hasEventHandler('onEndRequest'))
 			$this->onEndRequest(new CEvent($this));
 		if($exit)
