@@ -87,6 +87,8 @@ class CDateFormatter extends CComponent
 	{
 		if($time===null)
 			return null;
+		if($time===0 || $time==="0")
+			return "";
 
 		if(is_string($time))
 		{
