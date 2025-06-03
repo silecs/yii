@@ -24,6 +24,7 @@
 class CHtml
 {
 	const ID_PREFIX='yt';
+	private const VOID_ELEMENTS = ['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'source', 'track', 'wbr'];
 	/**
 	 * @var string the CSS class for displaying error summaries (see {@link errorSummary}).
 	 */
@@ -171,6 +172,9 @@ class CHtml
 	public static function tag($tag,$htmlOptions=array(),$content=false,$closeTag=true)
 	{
 		$html='<' . $tag . self::renderAttributes($htmlOptions);
+		if (in_array($tag, self::VOID_ELEMENTS, true)) {
+			return "$html>";
+		}
 		if($content===false)
 			return $closeTag && self::$closeSingleTags ? $html.' />' : $html.'>';
 		else

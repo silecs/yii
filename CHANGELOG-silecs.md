@@ -17,3 +17,4 @@ Miscellanous
 - Removed CJuiSliderInput (HTML5 has native alternatives)
 - Removed SOAP (CWebService, CSoapController, etc.)
 - New interface for log routes. Classes that inherit from CLogRouter already implement it.
+- Use HTML5 syntax instead of HTML4/xHTML.
