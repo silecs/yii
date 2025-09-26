@@ -923,12 +923,10 @@ class CController extends CBaseController
 	 * controller class. If the method does not exist, it is assumed to be a global PHP function.
 	 * Note, the callback should return the dynamic content instead of echoing it.
 	 */
-	public function renderDynamic($callback)
+	public function renderDynamic($callback, ...$params)
 	{
 		$n=($this->_dynamicOutput === null ? 0 : count($this->_dynamicOutput));
 		echo "<###dynamic-$n###>";
-		$params=func_get_args();
-		array_shift($params);
 		$this->renderDynamicInternal($callback,$params);
 	}
 

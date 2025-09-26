@@ -1701,11 +1701,10 @@ abstract class CActiveRecord extends CModel
 	 *
 	 * @return static the AR object itself.
 	 */
-	public function with()
+	public function with(...$with)
 	{
-		if(func_num_args()>0)
+		if($with)
 		{
-			$with=func_get_args();
 			if(is_array($with[0]))  // the parameter is given as an array
 				$with=$with[0];
 			if(!empty($with))

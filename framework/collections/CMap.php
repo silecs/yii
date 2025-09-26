@@ -277,18 +277,16 @@ class CMap extends CComponent implements IteratorAggregate,ArrayAccess,Countable
 	 * For integer-keyed elements, the elements from the latter array will
 	 * be appended to the former array.
 	 * @param array $a array to be merged to
-	 * @param array $b array to be merged from. You can specify additional
+	 * @param array ... $args array to be merged from. You can specify additional
 	 * arrays via third argument, fourth argument etc.
 	 * @return array the merged array (the original arrays are not changed.)
 	 * @see mergeWith
 	 */
-	public static function mergeArray($a,$b)
+	public static function mergeArray($a, ...$args)
 	{
-		$args=func_get_args();
-		$res=array_shift($args);
-		while(!empty($args))
+		$res=$a;
+		foreach($args as $next)
 		{
-			$next=array_shift($args);
 			foreach($next as $k => $v)
 			{
 				if(is_integer($k))

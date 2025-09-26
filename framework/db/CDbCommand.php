@@ -126,10 +126,9 @@ class CDbCommand extends CComponent
 	 * @see https://www.php.net/manual/en/function.PDOStatement-setFetchMode.php
 	 * @since 1.1.7
 	 */
-	public function setFetchMode($mode)
+	public function setFetchMode($mode, ...$args)
 	{
-		$params=func_get_args();
-		$this->_fetchMode = $params;
+		$this->_fetchMode = [$mode, ...$args];
 		return $this;
 	}
 
@@ -515,7 +514,7 @@ class CDbCommand extends CComponent
 			else
 			{
 				$mode=(array)$mode;
-				call_user_func_array(array($this->_statement, 'setFetchMode'), $mode);
+				$this->_statement->setFetchMode(...$mode);
 				$result=$this->_statement->$method();
 				$this->_statement->closeCursor();
 			}

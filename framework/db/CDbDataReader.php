@@ -77,10 +77,9 @@ class CDbDataReader extends CComponent implements Iterator, Countable
 	 * @param mixed $mode fetch mode
 	 * @see https://www.php.net/manual/en/function.PDOStatement-setFetchMode.php
 	 */
-	public function setFetchMode($mode)
+	public function setFetchMode($mode, ...$args)
 	{
-		$params=func_get_args();
-		call_user_func_array(array($this->_statement,'setFetchMode'),$params);
+		$this->_statement->setFetchMode($mode, ...$args);
 	}
 
 	/**
