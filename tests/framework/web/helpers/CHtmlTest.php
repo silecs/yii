@@ -73,8 +73,8 @@ class CHtmlTest extends CTestCase
 	public static function providerActiveDOMElements()
 	{
 		return array(
-				array(new CHtmlTestModel(array('attr1'=>true)), 'attr1', array(), '<input id="ytCHtmlTestModel_attr1" type="hidden" value="0" name="CHtmlTestModel[attr1]" /><input name="CHtmlTestModel[attr1]" id="CHtmlTestModel_attr1" value="1" type="checkbox" />'),
-				array(new CHtmlTestModel(array('attr1'=>false)), 'attr1', array(), '<input id="ytCHtmlTestModel_attr1" type="hidden" value="0" name="CHtmlTestModel[attr1]" /><input name="CHtmlTestModel[attr1]" id="CHtmlTestModel_attr1" value="1" type="checkbox" />')
+				array(new CHtmlTestModel(array('attr1'=>true)), 'attr1', array(), '<input id="ytCHtmlTestModel_attr1" type="hidden" value="0" name="CHtmlTestModel[attr1]"><input name="CHtmlTestModel[attr1]" id="CHtmlTestModel_attr1" value="1" type="checkbox">'),
+				array(new CHtmlTestModel(array('attr1'=>false)), 'attr1', array(), '<input id="ytCHtmlTestModel_attr1" type="hidden" value="0" name="CHtmlTestModel[attr1]"><input name="CHtmlTestModel[attr1]" id="CHtmlTestModel_attr1" value="1" type="checkbox">')
 			);
 	}
 
@@ -100,8 +100,8 @@ class CHtmlTest extends CTestCase
 				array("index", "post", array(), '<form action="index" method="post">'),
 				array("index?myFirstParam=3&mySecondParam=true#anchor", "get", array(),
 "<form action=\"index?myFirstParam=3&amp;mySecondParam=true#anchor\" method=\"get\">\n".
-"<input type=\"hidden\" value=\"3\" name=\"myFirstParam\" />\n".
-"<input type=\"hidden\" value=\"true\" name=\"mySecondParam\" />"),
+"<input type=\"hidden\" value=\"3\" name=\"myFirstParam\">\n".
+"<input type=\"hidden\" value=\"true\" name=\"mySecondParam\">"),
 
 			);
 	}
@@ -212,15 +212,15 @@ class CHtmlTest extends CTestCase
 	{
 		return array(
 			array('simple-meta-tag', null, null, array(),
-				'<meta content="simple-meta-tag" />'),
+				'<meta content="simple-meta-tag">'),
 			array('test-name-attr', 'random-name', null, array(),
-				'<meta name="random-name" content="test-name-attr" />'),
+				'<meta name="random-name" content="test-name-attr">'),
 			array('text/html; charset=UTF-8', null, 'Content-Type', array(),
-				'<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />'),
+				'<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">'),
 			array('test-attrs', null, null, array('xhtml-invalid-attr'=>'attr-value'),
-				'<meta xhtml-invalid-attr="attr-value" content="test-attrs" />'),
+				'<meta xhtml-invalid-attr="attr-value" content="test-attrs">'),
 			array('complex-test', 'testing-name', 'Content-Type', array('attr1'=>'value2'),
-				'<meta attr1="value2" name="testing-name" http-equiv="Content-Type" content="complex-test" />'),
+				'<meta attr1="value2" name="testing-name" http-equiv="Content-Type" content="complex-test">'),
 		);
 	}
 
@@ -241,14 +241,14 @@ class CHtmlTest extends CTestCase
 	public function providerLinkTag()
 	{
 		return array(
-			array(null, null, null, null, array(), '<link />'),
-			array('stylesheet', null, null, null, array(), '<link rel="stylesheet" />'),
-			array(null, 'text/css', null, null, array(), '<link type="text/css" />'),
-			array(null, null, '/css/style.css', null, array(), '<link href="/css/style.css" />'),
-			array(null, null, null, 'screen', array(), '<link media="screen" />'),
-			array(null, null, null, null, array('attr'=>'value'), '<link attr="value" />'),
+			array(null, null, null, null, array(), '<link>'),
+			array('stylesheet', null, null, null, array(), '<link rel="stylesheet">'),
+			array(null, 'text/css', null, null, array(), '<link type="text/css">'),
+			array(null, null, '/css/style.css', null, array(), '<link href="/css/style.css">'),
+			array(null, null, null, 'screen', array(), '<link media="screen">'),
+			array(null, null, null, null, array('attr'=>'value'), '<link attr="value">'),
 			array('stylesheet', 'text/css', '/css/style.css', 'screen', array('attr'=>'value'),
-				'<link attr="value" rel="stylesheet" type="text/css" href="/css/style.css" media="screen" />'),
+				'<link attr="value" rel="stylesheet" type="text/css" href="/css/style.css" media="screen">'),
 		);
 	}
 
@@ -316,8 +316,8 @@ class CHtmlTest extends CTestCase
 	public static function providerCssFile()
 	{
 		return array(
-			array('/css/style.css?a=1&b=2', '', '<link rel="stylesheet" type="text/css" href="/css/style.css?a=1&amp;b=2" />'),
-			array('/css/style.css?c=3&d=4', 'screen', '<link rel="stylesheet" type="text/css" href="/css/style.css?c=3&amp;d=4" media="screen" />'),
+			array('/css/style.css?a=1&b=2', '', '<link rel="stylesheet" type="text/css" href="/css/style.css?a=1&amp;b=2">'),
+			array('/css/style.css?c=3&d=4', 'screen', '<link rel="stylesheet" type="text/css" href="/css/style.css?c=3&amp;d=4" media="screen">'),
 		);
 	}
 
@@ -692,8 +692,8 @@ class CHtmlTest extends CTestCase
 	public static function providerPageStateField()
 	{
 		return array(
-			array('testing-value', '<input type="hidden" name="'.CController::STATE_INPUT_NAME.'" value="testing-value" />'),
-			array('another-testing&value', '<input type="hidden" name="'.CController::STATE_INPUT_NAME.'" value="another-testing&value" />'),
+			array('testing-value', '<input type="hidden" name="'.CController::STATE_INPUT_NAME.'" value="testing-value">'),
+			array('another-testing&value', '<input type="hidden" name="'.CController::STATE_INPUT_NAME.'" value="another-testing&value">'),
 		);
 	}
 
@@ -750,12 +750,12 @@ class CHtmlTest extends CTestCase
 			array(
 				10,
 				'https://yiiframework.com/',
-				'<meta http-equiv="refresh" content="10;url=https://yiiframework.com/" />'."\n",
+				'<meta http-equiv="refresh" content="10;url=https://yiiframework.com/">'."\n",
 			),
 			array(
 				15,
 				array('site/index'),
-				'<meta http-equiv="refresh" content="15;url=/bootstrap.php?r=site/index" />'."\n",
+				'<meta http-equiv="refresh" content="15;url=/bootstrap.php?r=site/index">'."\n",
 			),
 		);
 	}
@@ -855,8 +855,8 @@ class CHtmlTest extends CTestCase
 	public static function providerImage()
 	{
 		return array(
-			array('/images/logo.png', 'YiiSoft, LLC', array(), '<img src="/images/logo.png" alt="YiiSoft, LLC" />'),
-			array('/img/test.jpg', '', array('class'=>'test-img'), '<img class="test-img" src="/img/test.jpg" alt="" />'),
+			array('/images/logo.png', 'YiiSoft, LLC', array(), '<img src="/images/logo.png" alt="YiiSoft, LLC">'),
+			array('/img/test.jpg', '', array('class'=>'test-img'), '<img class="test-img" src="/img/test.jpg" alt="">'),
 		);
 	}
 
@@ -938,13 +938,13 @@ class CHtmlTest extends CTestCase
 	{
 		return array(
 			array(false, 'userName', array('class'=>'user-name-field'),
-				'<input class="user-name-field" name="CHtmlTestActiveModel[userName]" id="CHtmlTestActiveModel_userName" type="text" />'),
+				'<input class="user-name-field" name="CHtmlTestActiveModel[userName]" id="CHtmlTestActiveModel_userName" type="text">'),
 			array(true, 'userName', array('class'=>'user-name-field'),
-				'<input class="user-name-field error" name="CHtmlTestActiveModel[userName]" id="CHtmlTestActiveModel_userName" type="text" />'),
+				'<input class="user-name-field error" name="CHtmlTestActiveModel[userName]" id="CHtmlTestActiveModel_userName" type="text">'),
 			array(false, 'firstName', array('class'=>'first-name-field'),
-				'<input class="first-name-field" name="CHtmlTestActiveModel[firstName]" id="CHtmlTestActiveModel_firstName" type="text" />'),
+				'<input class="first-name-field" name="CHtmlTestActiveModel[firstName]" id="CHtmlTestActiveModel_firstName" type="text">'),
 			array(true, 'firstName', array('class'=>'first-name-field'),
-				'<input class="first-name-field" name="CHtmlTestActiveModel[firstName]" id="CHtmlTestActiveModel_firstName" type="text" />'),
+				'<input class="first-name-field" name="CHtmlTestActiveModel[firstName]" id="CHtmlTestActiveModel_firstName" type="text">'),
 		);
 	}
 
@@ -968,13 +968,13 @@ class CHtmlTest extends CTestCase
 	{
 		return array(
 			array(false, 'userName', array('class'=>'test-class-attr'),
-				'<input class="test-class-attr" name="CHtmlTestActiveModel[userName]" id="CHtmlTestActiveModel_userName" type="url" />'),
+				'<input class="test-class-attr" name="CHtmlTestActiveModel[userName]" id="CHtmlTestActiveModel_userName" type="url">'),
 			array(true, 'userName', array('another-attr'=>'another-attr-value', 'id'=>'changed-id'),
-				'<input another-attr="another-attr-value" id="changed-id" name="CHtmlTestActiveModel[userName]" type="url" class="error" />'),
+				'<input another-attr="another-attr-value" id="changed-id" name="CHtmlTestActiveModel[userName]" type="url" class="error">'),
 			array(false, 'firstName', array(),
-				'<input name="CHtmlTestActiveModel[firstName]" id="CHtmlTestActiveModel_firstName" type="url" />'),
+				'<input name="CHtmlTestActiveModel[firstName]" id="CHtmlTestActiveModel_firstName" type="url">'),
 			array(true, 'firstName', array('disabled'=>true, 'name'=>'changed-name'),
-				'<input disabled="disabled" name="changed-name" id="changed-name" type="url" />'),
+				'<input disabled="disabled" name="changed-name" id="changed-name" type="url">'),
 		);
 	}
 
@@ -997,11 +997,11 @@ class CHtmlTest extends CTestCase
 	public function providerButton()
 	{
 		return array(
-			array('button1', array('name'=>null, 'class'=>'class1'), '<input class="class1" type="button" value="button1" />'),
-			array('button2', array('name'=>'custom-name', 'class'=>'class2'), '<input name="custom-name" class="class2" type="button" value="button2" />'),
-			array('button3', array('type'=>'submit'), '<input type="submit" name="yt0" value="button3" />'),
-			array('button4', array('value'=>'button-value'), '<input value="button-value" name="yt0" type="button" />'),
-			array('button5', array(), '<input name="yt0" type="button" value="button5" />'),
+			array('button1', array('name'=>null, 'class'=>'class1'), '<input class="class1" type="button" value="button1">'),
+			array('button2', array('name'=>'custom-name', 'class'=>'class2'), '<input name="custom-name" class="class2" type="button" value="button2">'),
+			array('button3', array('type'=>'submit'), '<input type="submit" name="yt0" value="button3">'),
+			array('button4', array('value'=>'button-value'), '<input value="button-value" name="yt0" type="button">'),
+			array('button5', array(), '<input name="yt0" type="button" value="button5">'),
 		);
 	}
 
@@ -1043,8 +1043,8 @@ class CHtmlTest extends CTestCase
 	public function providerSubmitButton()
 	{
 		return array(
-			array('submit', array(), '<input type="submit" name="yt0" value="submit" />'),
-			array('submit1', array('type'=>'button'), '<input type="submit" name="yt0" value="submit1" />'),
+			array('submit', array(), '<input type="submit" name="yt0" value="submit">'),
+			array('submit1', array('type'=>'button'), '<input type="submit" name="yt0" value="submit1">'),
 		);
 	}
 
@@ -1063,8 +1063,8 @@ class CHtmlTest extends CTestCase
 	public function providerResetButton()
 	{
 		return array(
-			array('reset', array(), '<input type="reset" name="yt0" value="reset" />'),
-			array('reset1', array('type'=>'button'), '<input type="reset" name="yt0" value="reset1" />'),
+			array('reset', array(), '<input type="reset" name="yt0" value="reset">'),
+			array('reset1', array('type'=>'button'), '<input type="reset" name="yt0" value="reset1">'),
 		);
 	}
 
@@ -1083,9 +1083,9 @@ class CHtmlTest extends CTestCase
 	public function providerImageButton()
 	{
 		return array(
-			array('/images/test-image.png', array('src'=>'ignored-src'), '<input src="/images/test-image.png" type="image" name="yt0" />'),
-			array('/images/test-image.jpg', array('type'=>'button'), '<input type="image" src="/images/test-image.jpg" name="yt0" />'),
-			array('/images/test-image.gif', array('value'=>'image'), '<input value="image" src="/images/test-image.gif" type="image" name="yt0" />'),
+			array('/images/test-image.png', array('src'=>'ignored-src'), '<input src="/images/test-image.png" type="image" name="yt0">'),
+			array('/images/test-image.jpg', array('type'=>'button'), '<input type="image" src="/images/test-image.jpg" name="yt0">'),
+			array('/images/test-image.gif', array('value'=>'image'), '<input value="image" src="/images/test-image.gif" type="image" name="yt0">'),
 		);
 	}
 

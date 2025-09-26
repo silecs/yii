@@ -423,7 +423,7 @@ class CHtml
 	 */
 	public static function pageStateField($value)
 	{
-		return '<input type="hidden" name="'.CController::STATE_INPUT_NAME.'" value="'.$value.'" />';
+		return '<input type="hidden" name="'.CController::STATE_INPUT_NAME.'" value="'.$value.'">';
 	}
 
 	/**
