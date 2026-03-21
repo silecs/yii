@@ -118,7 +118,27 @@ class CHttpSession extends CApplicationComponent implements IteratorAggregate,Ar
 	public function open()
 	{
 		if($this->getUseCustomStorage())
-			@session_set_save_handler($this->openSession(...),$this->closeSession(...),$this->readSession(...),$this->writeSession(...),$this->destroySession(...),$this->gcSession(...));
+		{
+			// PHP 8.4+ deprecates callback-style session_set_save_handler().
+			// Use object-style handler on PHP 7.0+ to avoid deprecation.
+			// CHttpSessionHandler is in a separate file to avoid parse errors on PHP 5.3
+			// where SessionHandlerInterface doesn't exist.
+			if(version_compare(PHP_VERSION, '7.0', '>='))
+			{
+				@session_set_save_handler(new CHttpSessionHandler($this), true);
+			}
+			else
+			{
+				@session_set_save_handler(
+					$this->openSession(...),
+					$this->closeSession(...),
+					$this->readSession(...),
+					$this->writeSession(...),
+					$this->destroySession(...),
+					$this->gcSession(...)
+				);
+			}
+		}
 
 		@session_start();
 		if(YII_DEBUG && session_id()=='')
