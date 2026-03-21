@@ -580,7 +580,7 @@ class CController extends CBaseController
 	 * to find its localized version if internationalization is needed.
 	 *
 	 * @param string $viewName view name
-	 * @return string the view file path, false if the view file does not exist
+	 * @return string|false the view file path, false if the view file does not exist
 	 * @see resolveViewFile
 	 * @see CApplication::findLocalizedFile
 	 */
@@ -685,7 +685,7 @@ class CController extends CBaseController
 	 * @param string $basePath the directory that is used to search for an absolute view name under the application
 	 * @param string $moduleViewPath the directory that is used to search for an absolute view name under the current module.
 	 * If this is not set, the application base view path will be used.
-	 * @return mixed the view file path. False if the view file does not exist.
+	 * @return string|false the view file path. False if the view file does not exist.
 	 */
 	public function resolveViewFile($viewName,$viewPath,$basePath,$moduleViewPath=null)
 	{
@@ -932,7 +932,7 @@ class CController extends CBaseController
 
 	/**
 	 * This method is internally used.
-	 * @param callable $callback a PHP callback which returns the needed dynamic content.
+	 * @param callable|string $callback a PHP callback which returns the needed dynamic content.
 	 * @param array $params parameters passed to the PHP callback
 	 * @see renderDynamic
 	 */

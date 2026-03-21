@@ -434,7 +434,7 @@ abstract class CModel extends CComponent implements IteratorAggregate, ArrayAcce
 
 	/**
 	 * Returns all attribute values.
-	 * @param array $names list of attributes whose value needs to be returned.
+	 * @param ?array $names list of attributes whose value needs to be returned.
 	 * Defaults to null, meaning all attributes as listed in {@link attributeNames} will be returned.
 	 * If it is an array, only the attributes in the array will be returned.
 	 * @return array attribute values (name=>value).

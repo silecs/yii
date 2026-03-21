@@ -79,7 +79,7 @@
 class CAccessControlFilter extends CFilter
 {
 	/**
-	 * @var string the error message to be displayed when authorization fails.
+	 * @var ?string the error message to be displayed when authorization fails.
 	 * This property can be overridden by individual access rule via {@link CAccessRule::message}.
 	 * If this property is not set, a default error message will be displayed.
 	 * @since 1.1.1

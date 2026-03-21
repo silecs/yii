@@ -43,9 +43,9 @@ class CCompareValidator extends CValidator
 	 */
 	public $compareAttribute;
 	/**
-	 * @var string the constant value to be compared with
+	 * @var ?string the constant value to be compared with
 	 */
-	public $compareValue;
+	public $compareValue = null;
 	/**
 	 * @var boolean whether the comparison is strict (both value and type must be the same.)
 	 * Defaults to false.

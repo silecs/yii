@@ -58,7 +58,7 @@ class CStringValidator extends CValidator
 	 */
 	public $allowEmpty=true;
 	/**
-	 * @var string the encoding of the string value to be validated (e.g. 'UTF-8').
+	 * @var null|false|string the encoding of the string value to be validated (e.g. 'UTF-8').
 	 * This property is used only when mbstring PHP extension is enabled.
 	 * The value of this property will be used as the 2nd parameter of the
 	 * mb_strlen() function. If this property is not set, the application charset

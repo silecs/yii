@@ -23,20 +23,20 @@
 abstract class CInputWidget extends CWidget
 {
 	/**
-	 * @var CModel the data model associated with this widget.
+	 * @var ?CModel the data model associated with this widget.
 	 */
 	public $model;
 	/**
-	 * @var string the attribute associated with this widget.
+	 * @var ?string the attribute associated with this widget.
 	 * The name can contain square brackets (e.g. 'name[1]') which is used to collect tabular data input.
 	 */
 	public $attribute;
 	/**
-	 * @var string the input name. This must be set if {@link model} is not set.
+	 * @var ?string the input name. This must be set if {@link model} is not set.
 	 */
 	public $name;
 	/**
-	 * @var string the input value
+	 * @var ?string the input value
 	 */
 	public $value;
 	/**

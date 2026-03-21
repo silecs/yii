@@ -46,7 +46,7 @@ abstract class CActiveRecord extends CModel
 	const STAT='CStatRelation';
 
 	/**
-	 * @var CDbConnection the default database connection for all active record classes.
+	 * @var ?CDbConnection the default database connection for all active record classes.
 	 * By default, this is the 'db' application component.
 	 * @see getDbConnection
 	 */

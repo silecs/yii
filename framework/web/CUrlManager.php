@@ -608,13 +608,13 @@ class CUrlRule extends CBaseUrlRule
 	 */
 	public $route;
 	/**
-	 * @var array the mapping from route param name to token name (e.g. _r1=><1>)
+	 * @var array<string, string> the mapping from route param name to token name (e.g. _r1=><1>)
 	 */
 	public $references=array();
 	/**
-	 * @var string the pattern used to match route
+	 * @var ?string the pattern used to match route
 	 */
-	public $routePattern;
+	public $routePattern = null;
 	/**
 	 * @var string regular expression used to parse a URL
 	 */
@@ -646,7 +646,7 @@ class CUrlRule extends CBaseUrlRule
 
 	/**
 	 * Constructor.
-	 * @param string $route the route of the URL (controller/action)
+	 * @param array|string $route the route of the URL (controller/action)
 	 * @param string $pattern the pattern for matching the URL
 	 * @throws CException
 	 */
@@ -675,7 +675,7 @@ class CUrlRule extends CBaseUrlRule
 
 		$this->hasHostInfo=!strncasecmp($pattern,'http://',7) || !strncasecmp($pattern,'https://',8);
 
-		if($this->verb!==null)
+		if(is_string($this->verb))
 			$this->verb=preg_split('/[\s,]+/',strtoupper($this->verb),-1,PREG_SPLIT_NO_EMPTY) ?: null;
 
 		if(preg_match_all('/<(\w+):?(.*?)?>/',$pattern,$matches))

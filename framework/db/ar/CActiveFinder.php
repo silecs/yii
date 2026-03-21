@@ -347,7 +347,7 @@ class CJoinElement
 	 */
 	public $stats=array();
 	/**
-	 * @var string table alias for this join element
+	 * @var ?string table alias for this join element
 	 */
 	public $tableAlias;
 	/**
@@ -369,7 +369,7 @@ class CJoinElement
 	 * @param CActiveFinder $finder the finder
 	 * @param mixed $relation the relation (if the third parameter is not null)
 	 * or the model (if the third parameter is null) associated with this tree node.
-	 * @param CJoinElement $parent the parent tree node
+	 * @param ?CJoinElement $parent the parent tree node
 	 * @param integer $id the ID of this tree node that is unique among all the tree nodes
 	 */
 	public function __construct($finder,$relation,$parent=null,$id=0)
