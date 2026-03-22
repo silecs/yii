@@ -128,7 +128,7 @@ class CUrlManager extends CApplicationComponent
 	const PATH_FORMAT='path';
 
 	/**
-	 * @var array the URL rules (pattern=>route).
+	 * @var array<string, mixed> the URL rules (pattern=>route).
 	 */
 	public $rules=array();
 	/**
@@ -193,6 +193,7 @@ class CUrlManager extends CApplicationComponent
 	public $urlRuleClass='CUrlRule';
 
 	private $_urlFormat=self::GET_FORMAT;
+	/** @var list<array|CUrlRule> */
 	private $_rules=array();
 	private $_baseUrl;
 
@@ -232,7 +233,7 @@ class CUrlManager extends CApplicationComponent
 	 * Adds new URL rules.
 	 * In order to make the new rules effective, this method must be called BEFORE
 	 * {@link CWebApplication::processRequest}.
-	 * @param array $rules new URL rules (pattern=>route).
+	 * @param array<string, array|string> $rules new URL rules (pattern=>route).
 	 * @param boolean $append whether the new URL rules should be appended to the existing ones. If false,
 	 * they will be inserted at the beginning.
 	 * @since 1.1.4
@@ -299,7 +300,7 @@ class CUrlManager extends CApplicationComponent
 		{
 			if(is_array($rule))
 				$this->_rules[$i]=$rule=Yii::createComponent($rule);
-			if(($url=$rule->createUrl($this,$route,$params,$ampersand))!==false)
+			if(($rule instanceof CUrlRule) && ($url=$rule->createUrl($this,$route,$params,$ampersand))!==false)
 			{
 				if($rule->hasHostInfo)
 					return $url==='' ? '/'.$anchor : $url.$anchor;
@@ -731,13 +732,14 @@ class CUrlRule extends CBaseUrlRule
 		else
 			$case='i';
 
+		/** @var array<string, string> $tr */
 		$tr=array();
 		if($route!==$this->route)
 		{
 			if($this->routePattern!==null && preg_match($this->routePattern.$case,$route,$matches))
 			{
 				foreach($this->references as $key=>$name)
-					$tr[$name]=$matches[$key];
+					$tr[$name]=(string)$matches[$key];
 			}
 			else
 				return false;
@@ -846,11 +848,12 @@ class CUrlRule extends CBaseUrlRule
 				if(!isset($_GET[$name]))
 					$_REQUEST[$name]=$_GET[$name]=$value;
 			}
+			/** @var array<string, string> $tr */
 			$tr=array();
 			foreach($matches as $key=>$value)
 			{
 				if(isset($this->references[$key]))
-					$tr[$this->references[$key]]=$value;
+					$tr[(string)$this->references[$key]]=(string)$value;
 				elseif(isset($this->params[$key]))
 					$_REQUEST[$key]=$_GET[$key]=$value;
 			}

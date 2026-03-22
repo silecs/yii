@@ -323,7 +323,7 @@ class CHttpRequest extends CApplicationComponent
 				return $this->_hostInfo;
 
 			$port=$schema==='https' ? $this->getSecurePort() : $this->getPort();
-			if($port!==80 && $schema==='http' || $port!==443 && $schema==='https')
+			if(($port!==80 && $schema==='http') || ($port!==443 && $schema==='https'))
 				$port=':'.$port;
 			else
 				$port='';

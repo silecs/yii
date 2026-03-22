@@ -40,7 +40,7 @@ class CConsoleCommandEvent extends CEvent
 	/**
 	 * Constructor.
 	 * @param mixed $sender sender of the event
-	 * @param string $params the parameters to be passed to the action method.
+	 * @param array $params the parameters to be passed to the action method.
 	 * @param string $action the action name
 	 * @param integer $exitCode the application exit code
 	 */

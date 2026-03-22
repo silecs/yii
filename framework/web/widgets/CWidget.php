@@ -132,10 +132,14 @@ class CWidget extends CBaseController
 	 */
 	public function getController()
 	{
-		if($this->_owner instanceof CController)
+		if ($this->_owner instanceof CController) {
 			return $this->_owner;
-		else
-			return Yii::app()->getController();
+		}
+		$c = Yii::app()->getController();
+		if (!($c instanceof CController)) {
+			throw new Exception();
+		}
+		return $c;
 	}
 
 	/**

@@ -117,7 +117,7 @@ EOD;
 	 */
 	protected function getSourceDir()
 	{
-		return realpath(__DIR__.'/../views/webapp');
+		return realpath(__DIR__.'/../views/webapp') ?: "";
 	}
 
 	/**

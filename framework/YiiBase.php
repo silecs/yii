@@ -147,7 +147,7 @@ class YiiBase
 	 * Repeated invocation of this method or the CApplication constructor
 	 * will cause the throw of an exception.
 	 * To retrieve the application instance, use {@link app()}.
-	 * @param CApplication $app the application instance. If this is null, the existing
+	 * @param ?CApplication $app the application instance. If this is null, the existing
 	 * application singleton will be removed.
 	 * @throws CException if multiple application instances are registered.
 	 */

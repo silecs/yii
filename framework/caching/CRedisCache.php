@@ -231,14 +231,14 @@ class CRedisCache extends CCache
 	 * Retrieves a value from cache with a specified key.
 	 * This is the implementation of the method declared in the parent class.
 	 * @param string $key a unique key identifying the cached value
-	 * @return string|boolean the value stored in cache, false if the value is not in the cache or expired.
+	 * @return string|false the value stored in cache, false if the value is not in the cache or expired.
 	 */
 	protected function getValue($key)
 	{
 		$value=$this->executeCommand('GET',array($key));
 		if ($value===null)
 			return false;
-		return $value;
+		return (string)$value;
 	}
 
 	/**
@@ -252,7 +252,7 @@ class CRedisCache extends CCache
 		$result=array();
 		$i=0;
 		foreach($keys as $key)
-			$result[$key]=$response[$i++];
+			$result[$key]=(string)$response[$i++];
 		return $result;
 	}
 
@@ -313,6 +313,6 @@ class CRedisCache extends CCache
 	 */
 	protected function flushValues()
 	{
-		return $this->executeCommand('FLUSHDB');
+		return (bool)$this->executeCommand('FLUSHDB');
 	}
 }
