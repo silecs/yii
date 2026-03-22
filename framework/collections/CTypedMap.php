@@ -21,7 +21,7 @@
  * @package system.collections
  * @since 1.0
  */
-class CTypedMap extends CMap
+class CTypedMap extends CMap implements IteratorAggregate, ArrayAccess
 {
 	private $_type;
 
