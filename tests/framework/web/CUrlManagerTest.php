@@ -600,4 +600,54 @@ class CUrlManagerTest extends CTestCase
 		$url=$um->createUrl('article/read', array('id'=>345));
 		$this->assertEquals('/apps/index.php/article/345',$url);
 	}
+
+	public function testAddRulesOrder()
+	{
+		$config=array(
+			'basePath'=>dirname(__FILE__),
+			'components'=>array(
+				'request'=>array(
+					'class'=>'TestHttpRequest',
+					'scriptUrl'=>'/app/index.php',
+				),
+			),
+		);
+		$app=new TestApplication($config);
+		$app->controllerPath=dirname(__FILE__).DIRECTORY_SEPARATOR.'controllers';
+		$request=$app->request;
+		$_SERVER['HTTP_HOST']='admin.example.com';
+		$um=new CUrlManager;
+		$um->urlSuffix='.html';
+		$um->urlFormat='path';
+		$um->addRules(['article/<id:\d+>'=>'article/read']);
+		$um->addRules(['article/999'=>'article/last'], true); // append (unreachable)
+		$um->addRules(['article/0'=>'article/first'], false); // prepend (reachable)
+		$um->init($app);
+
+		$entries = [
+			[
+				'pathInfo'=>'article/123',
+				'route'=>'article/read',
+				'params'=>['id' => '123'],
+			],
+			[
+				'pathInfo'=>'article/0',
+				'route'=>'article/first',
+				'params'=>[],
+			],
+			[
+				'pathInfo'=>'article/999',
+				'route'=>'article/read',
+				'params'=>['id' => '999'],
+			],
+		];
+		foreach($entries as $entry)
+		{
+			$request->pathInfo=$entry['pathInfo'];
+			$_GET=array();
+			$route=$um->parseUrl($request);
+			$this->assertEquals($entry['route'],$route, "Test with pathInfo='{$entry['pathInfo']}'");
+			$this->assertEquals($entry['params'],$_GET);
+		}
+	}
 }
