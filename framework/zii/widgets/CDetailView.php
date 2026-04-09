@@ -211,7 +211,7 @@ class CDetailView extends CWidget
 			if(!isset($attribute['type']))
 				$attribute['type']='text';
 			if(isset($attribute['value']))
-				$value=is_callable($attribute['value']) ? call_user_func($attribute['value'],$this->data) : $attribute['value'];
+				$value=!is_string($attribute['value']) && is_callable($attribute['value']) ? call_user_func($attribute['value'],$this->data) : $attribute['value'];
 			elseif(isset($attribute['name']))
 				$value=CHtml::value($this->data,$attribute['name']);
 			else
