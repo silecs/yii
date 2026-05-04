@@ -27,14 +27,14 @@ Yii::import('zii.widgets.grid.CGridColumn');
 class CDataColumn extends CGridColumn
 {
 	/**
-	 * @var string the attribute name of the data model. Used for column sorting, filtering and to render the corresponding
+	 * @var ?string the attribute name of the data model. Used for column sorting, filtering and to render the corresponding
 	 * attribute value in each data cell. If {@link value} is specified it will be used to rendered the data cell instead of the attribute value.
 	 * @see value
 	 * @see sortable
 	 */
 	public $name;
 	/**
-	 * @var string a PHP expression that will be evaluated for every data cell using {@link evaluateExpression} and whose result will be rendered
+	 * @var mixed a PHP expression that will be evaluated for every data cell using {@link evaluateExpression} and whose result will be rendered
 	 * as the content of the data cell.
 	 * In this expression, you can use the following variables:
 	 * <ul>
@@ -148,6 +148,9 @@ class CDataColumn extends CGridColumn
 			$value=$this->evaluateExpression($this->value,array('data'=>$data,'row'=>$row));
 		elseif($this->name!==null)
 			$value=CHtml::value($data,$this->name);
-		return $value===null ? $this->grid->nullDisplay : $this->grid->getFormatter()->format($value,$this->type);
+		if ($value === null) {
+			return $this->grid?->nullDisplay ?? '';
+		}
+		return $this->grid === null ? $value : $this->grid->getFormatter()->format($value,$this->type);
 	}
 }

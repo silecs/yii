@@ -31,20 +31,20 @@
 abstract class CGridColumn extends CComponent
 {
 	/**
-	 * @var string the ID of this column. This value should be unique among all grid view columns.
+	 * @var ?string the ID of this column. This value should be unique among all grid view columns.
 	 * If this is not set, it will be assigned one automatically.
 	 */
 	public $id;
 	/**
-	 * @var CGridView the grid view object that owns this column.
+	 * @var ?CGridView the grid view object that owns this column.
 	 */
 	public $grid;
 	/**
-	 * @var string the header cell text. Note that it will not be HTML-encoded.
+	 * @var ?string the header cell text. Note that it will not be HTML-encoded.
 	 */
 	public $header;
 	/**
-	 * @var string the footer cell text. Note that it will not be HTML-encoded.
+	 * @var ?string the footer cell text. Note that it will not be HTML-encoded.
 	 */
 	public $footer;
 	/**
@@ -52,7 +52,7 @@ abstract class CGridColumn extends CComponent
 	 */
 	public $visible=true;
 	/**
-	 * @var string a PHP expression that is evaluated for every data cell and whose result
+	 * @var mixed a PHP expression that is evaluated for every data cell and whose result
 	 * is used as the CSS class name for the data cell. In this expression, you can use the following variables:
 	 * <ul>
 	 *   <li><code>$row</code> the row number (zero-based).</li>
@@ -90,7 +90,7 @@ abstract class CGridColumn extends CComponent
 
 	/**
 	 * Constructor.
-	 * @param CGridView $grid the grid view that owns this column.
+	 * @param ?CGridView $grid the grid view that owns this column.
 	 */
 	public function __construct($grid)
 	{
@@ -180,7 +180,7 @@ abstract class CGridColumn extends CComponent
 	 */
 	public function getHeaderCellContent()
 	{
-		return $this->header!==null && trim($this->header)!=='' ? $this->header : $this->grid->blankDisplay;
+		return $this->header!==null && trim($this->header)!=='' ? $this->header : $this->grid?->blankDisplay ?? '';
 	}
 
 	/**
@@ -201,7 +201,7 @@ abstract class CGridColumn extends CComponent
 	 */
 	public function getFooterCellContent()
 	{
-		return $this->footer!==null && trim($this->footer)!=='' ? $this->footer : $this->grid->blankDisplay;
+		return $this->footer!==null && trim($this->footer)!=='' ? $this->footer : $this->grid?->blankDisplay ?? '';
 	}
 
 	/**
@@ -223,7 +223,7 @@ abstract class CGridColumn extends CComponent
 	 */
 	public function getDataCellContent($row)
 	{
-		return $this->grid->blankDisplay;
+		return $this->grid?->blankDisplay ?? '';
 	}
 
 	/**
@@ -246,7 +246,7 @@ abstract class CGridColumn extends CComponent
 	 */
 	public function getFilterCellContent()
 	{
-		return $this->grid->blankDisplay;
+		return $this->grid?->blankDisplay ?? '';
 	}
 
 	/**

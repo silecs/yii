@@ -30,7 +30,7 @@ class CLinkColumn extends CGridColumn
 	 */
 	public $label='Link';
 	/**
-	 * @var string a PHP expression that will be evaluated for every data cell and whose result will be rendered
+	 * @var mixed a PHP expression that will be evaluated for every data cell and whose result will be rendered
 	 * as the label of the hyperlink of the data cell.
 	 * In this expression, you can use the following variables:
 	 * <ul>
@@ -51,7 +51,7 @@ class CLinkColumn extends CGridColumn
 	 */
 	public $labelExpression;
 	/**
-	 * @var string the URL to the image. If this is set, an image link will be rendered.
+	 * @var mixed the URL to the image. If this is set, an image link will be rendered.
 	 */
 	public $imageUrl;
 	/**
@@ -61,7 +61,7 @@ class CLinkColumn extends CGridColumn
 	 */
 	public $url='javascript:void(0)';
 	/**
-	 * @var string a PHP expression that will be evaluated for every data cell and whose result will be rendered
+	 * @var mixed a PHP expression that will be evaluated for every data cell and whose result will be rendered
 	 * as the URL of the hyperlink of the data cells.
 	 * In this expression, you can use the following variables:
 	 * <ul>

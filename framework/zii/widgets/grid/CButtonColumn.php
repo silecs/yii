@@ -45,17 +45,17 @@ class CButtonColumn extends CGridColumn
 	 */
 	public $template='{view} {update} {delete}';
 	/**
-	 * @var string the label for the view button. Defaults to "View".
+	 * @var ?string the label for the view button. Defaults to "View".
 	 * Note that the label will not be HTML-encoded when rendering.
 	 */
 	public $viewButtonLabel;
 	/**
-	 * @var string the image URL for the view button. If not set, an integrated image will be used.
+	 * @var mixed the image URL for the view button. If not set, an integrated image will be used.
 	 * You may set this property to be false to render a text link instead.
 	 */
 	public $viewButtonImageUrl;
 	/**
-	 * @var string a PHP expression that is evaluated for every view button and whose result is used
+	 * @var mixed a PHP expression that is evaluated for every view button and whose result is used
 	 * as the URL for the view button. In this expression, you can use the following variables:
 	 * <ul>
 	 *   <li><code>$row</code> the row number (zero-based).</li>
@@ -80,17 +80,17 @@ class CButtonColumn extends CGridColumn
 	public $viewButtonOptions=array('class'=>'view');
 
 	/**
-	 * @var string the label for the update button. Defaults to "Update".
+	 * @var mixed the label for the update button. Defaults to "Update".
 	 * Note that the label will not be HTML-encoded when rendering.
 	 */
 	public $updateButtonLabel;
 	/**
-	 * @var string the image URL for the update button. If not set, an integrated image will be used.
+	 * @var ?string the image URL for the update button. If not set, an integrated image will be used.
 	 * You may set this property to be false to render a text link instead.
 	 */
 	public $updateButtonImageUrl;
 	/**
-	 * @var string a PHP expression that is evaluated for every update button and whose result is used
+	 * @var mixed a PHP expression that is evaluated for every update button and whose result is used
 	 * as the URL for the update button. In this expression, you can use the following variables:
 	 * <ul>
 	 *   <li><code>$row</code> the row number (zero-based).</li>
@@ -115,17 +115,17 @@ class CButtonColumn extends CGridColumn
 	public $updateButtonOptions=array('class'=>'update');
 
 	/**
-	 * @var string the label for the delete button. Defaults to "Delete".
+	 * @var ?string the label for the delete button. Defaults to "Delete".
 	 * Note that the label will not be HTML-encoded when rendering.
 	 */
 	public $deleteButtonLabel;
 	/**
-	 * @var string the image URL for the delete button. If not set, an integrated image will be used.
+	 * @var mixed the image URL for the delete button. If not set, an integrated image will be used.
 	 * You may set this property to be false to render a text link instead.
 	 */
 	public $deleteButtonImageUrl;
 	/**
-	 * @var string a PHP expression that is evaluated for every delete button and whose result is used
+	 * @var mixed a PHP expression that is evaluated for every delete button and whose result is used
 	 * as the URL for the delete button. In this expression, you can use the following variables:
 	 * <ul>
 	 *   <li><code>$row</code> the row number (zero-based).</li>
@@ -149,7 +149,7 @@ class CButtonColumn extends CGridColumn
 	 */
 	public $deleteButtonOptions=array('class'=>'delete');
 	/**
-	 * @var string the confirmation message to be displayed when delete button is clicked.
+	 * @var ?string the confirmation message to be displayed when delete button is clicked.
 	 * By setting this property to be false, no confirmation message will be displayed.
 	 * This property is used only if <code>$this->buttons['delete']['click']</code> is not set.
 	 */

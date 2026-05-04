@@ -32,13 +32,13 @@ Yii::import('zii.widgets.grid.CGridColumn');
 class CCheckBoxColumn extends CGridColumn
 {
 	/**
-	 * @var string the attribute name of the data model. The corresponding attribute value will be rendered
+	 * @var ?string the attribute name of the data model. The corresponding attribute value will be rendered
 	 * in each data cell as the checkbox value. Note that if {@link value} is specified, this property will be ignored.
 	 * @see value
 	 */
 	public $name;
 	/**
-	 * @var string a PHP expression that will be evaluated for every data cell and whose result will be rendered
+	 * @var mixed a PHP expression that will be evaluated for every data cell and whose result will be rendered
 	 * in each data cell as the checkbox value. In this expression, you can use the following variables:
 	 * <ul>
 	 *   <li><code>$row</code> the row number (zero-based).</li>
@@ -58,7 +58,7 @@ class CCheckBoxColumn extends CGridColumn
 	 */
 	public $value;
 	/**
-	 * @var string a PHP expression that will be evaluated for every data cell and whose result will
+	 * @var mixed a PHP expression that will be evaluated for every data cell and whose result will
 	 * determine if checkbox for each data cell is checked. In this expression, you can use the following variables:
 	 * <ul>
 	 *   <li><code>$row</code> the row number (zero-based).</li>
@@ -79,7 +79,7 @@ class CCheckBoxColumn extends CGridColumn
 	 */
 	public $checked;
 	/**
-	 * @var string a PHP expression that will be evaluated for every data cell and whose result will
+	 * @var mixed a PHP expression that will be evaluated for every data cell and whose result will
 	 * determine if checkbox for each data cell is disabled. In this expression, you can use the following variables:
 	 * <ul>
 	 *   <li><code>$row</code> the row number (zero-based).</li>
@@ -214,7 +214,7 @@ EOD;
 	public function getHeaderCellContent()
 	{
 		if(trim($this->headerTemplate)==='')
-			return $this->grid->blankDisplay;
+			return $this->grid?->blankDisplay ?? '';
 
 		if($this->selectableRows===null && $this->grid->selectableRows>1)
 			$item=CHtml::checkBox($this->id.'_all',false,array('class'=>'select-on-check-all'));
@@ -237,6 +237,8 @@ EOD;
 	 */
 	public function getDataCellContent($row)
 	{
+		if ($this->grid===null)
+			return '';
 		$data=$this->grid->dataProvider->data[$row];
 		if($this->value!==null)
 			$value=$this->evaluateExpression($this->value,array('data'=>$data,'row'=>$row));
