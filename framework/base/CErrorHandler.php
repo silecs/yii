@@ -190,8 +190,15 @@ class CErrorHandler extends CApplicationComponent
 			}
 
 			$this->_exception=$exception;
+			if ($exception instanceof CHttpException) {
+				$code = $exception->statusCode;
+			} elseif (($exception instanceof TypeError) && preg_match('/(Action::run|::action\w+)\(/', $exception->getMessage())) {
+				$code = 400;
+			} else {
+				$code = 500;
+			}
 			$this->_error=$data=array(
-				'code'=>($exception instanceof CHttpException)?$exception->statusCode:500,
+				'code'=>$code,
 				'type'=>get_class($exception),
 				'errorCode'=>$exception->getCode(),
 				'message'=>$exception->getMessage(),
