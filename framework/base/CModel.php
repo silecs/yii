@@ -37,7 +37,7 @@ abstract class CModel extends CComponent implements IteratorAggregate, ArrayAcce
 
 	/**
 	 * Returns the list of attribute names of the model.
-	 * @return array list of attribute names.
+	 * @return list<string> list of attribute names.
 	 */
 	abstract public function attributeNames();
 

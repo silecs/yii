@@ -124,7 +124,7 @@ class CDetailView extends CWidget
 	 */
 	public $baseScriptUrl;
 	/**
-	 * @var string the URL of the CSS file used by this detail view. Defaults to null, meaning using the integrated
+	 * @var null|false|string the URL of the CSS file used by this detail view. Defaults to null, meaning using the integrated
 	 * CSS file. If this is set false, you are responsible to explicitly include the necessary CSS file in your page.
 	 */
 	public $cssFile;

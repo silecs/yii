@@ -93,7 +93,7 @@ class CLinkPager extends CBasePager
 	 */
 	public $footer='';
 	/**
-	 * @var mixed the CSS file used for the widget. Defaults to null, meaning
+	 * @var null|false|string the CSS file used for the widget. Defaults to null, meaning
 	 * using the default CSS file included together with the widget.
 	 * If false, no CSS file will be used. Otherwise, the specified CSS file
 	 * will be included when using this widget.
