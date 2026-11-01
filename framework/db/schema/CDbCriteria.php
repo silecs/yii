@@ -588,7 +588,7 @@ class CDbCriteria extends CComponent
 			$scopes2=(array)$criteria->scopes;
 			foreach($scopes1 as $k=>$v)
 			{
-				if(is_integer($k))
+				if(is_int($k))
 					$scopes[]=$v;
 				elseif(isset($scopes2[$k]))
 					$scopes[]=array($k=>$v);
@@ -597,7 +597,7 @@ class CDbCriteria extends CComponent
 			}
 			foreach($scopes2 as $k=>$v)
 			{
-				if(is_integer($k))
+				if(is_int($k))
 					$scopes[]=$v;
 				elseif(isset($scopes1[$k]))
 					$scopes[]=array($k=>$v);
@@ -614,7 +614,7 @@ class CDbCriteria extends CComponent
 			$this->with=(array)$this->with;
 			foreach((array)$criteria->with as $k=>$v)
 			{
-				if(is_integer($k))
+				if(is_int($k))
 					$this->with[]=$v;
 				elseif(isset($this->with[$k]))
 				{
