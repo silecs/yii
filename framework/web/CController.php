@@ -774,7 +774,7 @@ class CController extends CBaseController
 	 * about how the view script is resolved.
 	 * @param array $data data to be extracted into PHP variables and made available to the view script
 	 * @param boolean $return whether the rendering result should be returned instead of being displayed to end users.
-	 * @return ?string the rendering result. Null if the rendering result is not required.
+	 * @return ($return is true ? string : void) the rendering result. Null if the rendering result is not required.
 	 * @see renderPartial
 	 * @see getLayoutFile
 	 */
@@ -827,7 +827,7 @@ class CController extends CBaseController
 	 * The string will be inserted in the current controller layout and returned back.
 	 * @param string $text the static text string
 	 * @param boolean $return whether the rendering result should be returned instead of being displayed to end users.
-	 * @return ?string the rendering result. Null if the rendering result is not required.
+	 * @return ($return is true ? string : void) the rendering result. Null if the rendering result is not required.
 	 * @see getLayoutFile
 	 */
 	public function renderText($text,$return=false)
@@ -859,7 +859,7 @@ class CController extends CBaseController
 	 * @param array $data data to be extracted into PHP variables and made available to the view script
 	 * @param boolean $return whether the rendering result should be returned instead of being displayed to end users
 	 * @param boolean $processOutput whether the rendering result should be postprocessed using {@link processOutput}.
-	 * @return ?string the rendering result. Null if the rendering result is not required.
+	 * @return ($return is true ? string : void) the rendering result. Null if the rendering result is not required.
 	 * @throws CException if the view does not exist
 	 * @see getViewFile
 	 * @see processOutput
@@ -891,7 +891,7 @@ class CController extends CBaseController
 	 * @param array $params an array of named parameters (name=>value) that should replace
 	 * their corresponding placeholders in the clip
 	 * @param boolean $return whether to return the clip content or echo it.
-	 * @return mixed either the clip content or null
+	 * @return ($return is true ? string : void) either the clip content or null
 	 * @since 1.1.8
 	 */
 	public function renderClip($name,$params=array(),$return=false)
