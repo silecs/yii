@@ -334,7 +334,7 @@ abstract class CActiveRecord extends CModel
 
 	/**
 	 * Sets the query criteria for the current model.
-	 * @param CDbCriteria $criteria the query criteria
+	 * @param ?CDbCriteria $criteria the query criteria
 	 * @since 1.1.3
 	 */
 	public function setDbCriteria($criteria)
