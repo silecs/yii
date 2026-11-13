@@ -379,7 +379,7 @@ abstract class CModel extends CComponent implements IteratorAggregate, ArrayAcce
 	/**
 	 * Adds a new error to the specified attribute.
 	 * @param string $attribute attribute name
-	 * @param string $error new error message
+	 * @param string|Stringable $error new error message
 	 */
 	public function addError($attribute,$error)
 	{
@@ -388,7 +388,7 @@ abstract class CModel extends CComponent implements IteratorAggregate, ArrayAcce
 
 	/**
 	 * Adds a list of errors.
-	 * @param array $errors a list of errors. The array keys must be attribute names.
+	 * @param array<string, string|Stringable> $errors a list of errors. The array keys must be attribute names.
 	 * The array values should be error messages. If an attribute has multiple errors,
 	 * these errors must be given in terms of an array.
 	 * You may use the result of {@link getErrors} as the value for this parameter.
