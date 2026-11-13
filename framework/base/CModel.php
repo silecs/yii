@@ -356,7 +356,7 @@ abstract class CModel extends CComponent implements IteratorAggregate, ArrayAcce
 	/**
 	 * Returns the errors for all attribute or a single attribute.
 	 * @param string $attribute attribute name. Use null to retrieve errors for all attributes.
-	 * @return array errors for all attributes or the specified attribute. Empty array is returned if no error.
+	 * @return ($attribute is null ? array<string, list<string>> : list<string>) Errors for all attributes or the specified attribute. Empty array is returned if no error.
 	 */
 	public function getErrors($attribute=null)
 	{
